@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85D20281-63EF-414A-98DA-7E7745EBFCA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>GeneralDepartmentOfLawAffairs</RootNamespace>
+    <AssemblyName>GeneralDepartmentOfLawAffairs</AssemblyName>
+    <LoadBehavior>3</LoadBehavior>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Word</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="CeaseNote.cs" />
+    <Compile Include="Direction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Direction.designer.cs">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DraftResolution.cs" />
+    <Compile Include="EmptyLetter.cs" />
+    <Compile Include="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddCeaseInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddCeaseInvestigation.Designer.cs">
+      <DependentUpon>FrmAddCeaseInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddInspection.Designer.cs">
+      <DependentUpon>FrmAddInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddInvestigation.Designer.cs">
+      <DependentUpon>FrmAddInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmApReferring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmApReferring.designer.cs">
+      <DependentUpon>FrmApReferring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCeaseNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCeaseNote.Designer.cs">
+      <DependentUpon>FrmCeaseNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDraftResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDraftResolution.Designer.cs">
+      <DependentUpon>FrmDraftResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEmptyLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEmptyLetter.Designer.cs">
+      <DependentUpon>FrmEmptyLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHurryLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHurryLetters.designer.cs">
+      <DependentUpon>FrmHurryLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInspecInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInspecInquiry.Designer.cs">
+      <DependentUpon>FrmInspecInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInspectionLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInspectionLetter.designer.cs">
+      <DependentUpon>frmInspectionLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInspectionNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInspectionNote.Designer.cs">
+      <DependentUpon>FrmInspectionNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInspectionRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInspectionRef.Designer.cs">
+      <DependentUpon>FrmInspectionRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIntensiveNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIntensiveNotification.designer.cs">
+      <DependentUpon>FrmIntensiveNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInvestInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInvestInquiry.Designer.cs">
+      <DependentUpon>FrmInvestInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIssuanceRescriptLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIssuanceRescriptLetter.Designer.cs">
+      <DependentUpon>FrmIssuanceRescriptLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNominationLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNominationLetter.Designer.cs">
+      <DependentUpon>FrmNominationLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegularNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegularNote.Designer.cs">
+      <DependentUpon>FrmRegularNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegularNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegularNotification.designer.cs">
+      <DependentUpon>FrmRegularNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRescriptSentLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRescriptSentLetter.Designer.cs">
+      <DependentUpon>FrmRescriptSentLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSettings.designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSpecialNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSpecialNotification.designer.cs">
+      <DependentUpon>FrmSpecialNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTableNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTableNote.Designer.cs">
+      <DependentUpon>FrmTableNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTest.designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForm.designer.cs">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InspecInquiryLetter.cs" />
+    <Compile Include="InspectionLetter.cs" />
+    <Compile Include="InspectionNote.cs" />
+    <Compile Include="InspectionRefLetter.cs" />
+    <Compile Include="IntensiveNotificationLetter.cs" />
+    <Compile Include="InvestInquiryLetter.cs" />
+    <Compile Include="IssuanceRescriptLetter.cs" />
+    <Compile Include="Letter.cs" />
+    <Compile Include="LetterData.cs" />
+    <Compile Include="LetterSentences.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetterSentences.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainInterface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MissionLetter.cs" />
+    <Compile Include="NominationLetter.cs" />
+    <Compile Include="Paragraph.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Direction.resx">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddCeaseInvestigation.resx">
+      <DependentUpon>FrmAddCeaseInvestigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddInspection.resx">
+      <DependentUpon>FrmAddInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddInvestigation.resx">
+      <DependentUpon>FrmAddInvestigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmApReferring.resx">
+      <DependentUpon>FrmApReferring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCeaseNote.resx">
+      <DependentUpon>FrmCeaseNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEmptyLetter.resx">
+      <DependentUpon>FrmEmptyLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHurryLetters.resx">
+      <DependentUpon>FrmHurryLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInspectionLetter.resx">
+      <DependentUpon>frmInspectionLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInspectionRef.resx">
+      <DependentUpon>FrmInspectionRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIntensiveNotification.resx">
+      <DependentUpon>FrmIntensiveNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIssuanceRescriptLetter.resx">
+      <DependentUpon>FrmIssuanceRescriptLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNominationLetter.resx">
+      <DependentUpon>FrmNominationLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegularNotification.resx">
+      <DependentUpon>FrmRegularNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRescriptSentLetter.resx">
+      <DependentUpon>FrmRescriptSentLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSpecialNotification.resx">
+      <DependentUpon>FrmSpecialNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForm.resx">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LetterSentences.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LetterSentences.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SentPhotoCopy.resx">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="GeneralDepartmentOfLawAffairs_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReferringLetter.cs" />
+    <Compile Include="RegularNote.cs" />
+    <Compile Include="RegularNotificationLetter.cs" />
+    <Compile Include="RescriptSentLetter.cs" />
+    <Compile Include="SentPhotoCopy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SentPhotoCopy.designer.cs">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialNotificationLetter.cs" />
+    <Compile Include="TableNote.cs" />
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-Add-icon.png" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GeneralDepartmentOfLawAffairs_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>12EBD03399E974F9497135466F2A567DAD65F8A9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="GeneralDepartmentOfLawAffairs" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

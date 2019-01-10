@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="GeneralDepartmentOfLawAffairs.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="GMName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">أ./سمية عبد السلام</Value>
+    </Setting>
+    <Setting Name="CMName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">محمد عثمان ابو المجد</Value>
+    </Setting>
+    <Setting Name="ResearcherName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">اسلام معروف</Value>
+    </Setting>
+    <Setting Name="ChDeptName" Type="System.String" Scope="User">
+      <Value Profile="(Default)"> أ./رقية عبد الغفور</Value>
+    </Setting>
+    <Setting Name="researcherSign" Type="System.String" Scope="User">
+      <Value Profile="(Default)">**إسلام**</Value>
+    </Setting>
+    <Setting Name="MinisterName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">غادة فتحي والي</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
