@@ -218,6 +218,7 @@ namespace GeneralDepartmentOfLawAffairs {
 
         protected override void SignSection() {
             Signature(SignType.ResearcherSign);
+            _doc.Range().InsertBreak(WdBreakType.wdPageBreak);
         }
     }
 }

@@ -186,7 +186,9 @@ namespace GeneralDepartmentOfLawAffairs
             }
         }
 
-        protected void Heading(HeadingType hType, string optionalStr = "") {
+        private const string CentralDepartmentName = "الإدارة المركزية لشئون مكتب الوزير";
+
+        protected void Heading(HeadingType hType, string attachmentsStr = "", string cDptName = CentralDepartmentName) {
             // Table.
             var tableParagraph = _doc.Paragraphs.Add();
             Table table;
@@ -219,7 +221,7 @@ namespace GeneralDepartmentOfLawAffairs
                                 c.Range.Borders.Enable = 1;
                             }
                             else if ((i == 3) && (j == 1)) {
-                                TableParagraph(c, LetterSentences.CentralDepartName, 8);
+                                TableParagraph(c, cDptName, 8);
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
                             else if (i == 3 && j == 3) {
@@ -233,7 +235,7 @@ namespace GeneralDepartmentOfLawAffairs
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
                             else if ((i == 4) && (j == 3)) {
-                                var str = LetterSentences.Attachments + optionalStr;
+                                var str = LetterSentences.Attachments + attachmentsStr;
                                 TableParagraph(c, str, 8);
                                 c.Range.Borders.Enable = 1;
                             }
@@ -273,7 +275,7 @@ namespace GeneralDepartmentOfLawAffairs
                             }
                             else if ((i == 3) && (j == 1))
                             {
-                                TableParagraph(c, LetterSentences.CentralDepartName, 8);
+                                TableParagraph(c, cDptName, 8);
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
                             else if ((i == 4) && (j == 1))
@@ -324,7 +326,7 @@ namespace GeneralDepartmentOfLawAffairs
                                 TableParagraph(c, LetterSentences.History, 8);
                             }
                             else if ((i == 2) && (j == 2)) {
-                                TableParagraph(c, LetterSentences.InvNo + optionalStr, 8);
+                                TableParagraph(c, LetterSentences.InvNo + attachmentsStr, 8);
                             }
                         }
 
@@ -390,7 +392,7 @@ namespace GeneralDepartmentOfLawAffairs
                                 TableParagraph(c, LetterSentences.CentralDepartName, 8);
                             }
                             else if ((i == 4) && (j == 3)) {
-                                var str = LetterSentences.Attachments + optionalStr;
+                                var str = LetterSentences.Attachments + attachmentsStr;
                                 TableParagraph(c, str, 8);
                             }
                             else if ((i == 5) && (j == 1)) {
