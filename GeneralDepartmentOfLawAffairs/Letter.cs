@@ -295,6 +295,45 @@ namespace GeneralDepartmentOfLawAffairs
                     table.Range.ParagraphFormat.SpaceAfter = 0;
                     break;
 
+                case HeadingType.DraftResolution:
+
+                    columnsCount = 3;
+                    rowsCount = 5;
+                    table = tableParagraph
+                        .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
+
+                    for (var i = 1; i <= rowsCount; i++)
+                        for (var j = 1; j <= columnsCount; j++)
+                        {
+                            var c = table.Cell(i, j);
+
+                            if ((i == 1) && (j == 1))
+                            {
+                                c.Range.InlineShapes.AddPicture(@"C:\Windows\Temp\eagle.png");
+                            }
+                            else if ((i == 2) && (j == 1))
+                            {
+                                TableParagraph(c, LetterSentences.arabRepublicOfEgypt, 9);
+                            }
+                            else if ((i == 3) && (j == 1))
+                            {
+                                TableParagraph(c, LetterSentences.MinistryMame, 9);
+                            }
+                            else if ((i == 4) && (j == 1))
+                            {
+                                TableParagraph(c, LetterSentences.AffairsSector, 8);
+                            }
+                            else if ((i == 5) && (j == 1))
+                            {
+                                TableParagraph(c, cDptName, 8);
+                                c.Range.Font.Underline = WdUnderline.wdUnderlineSingle;
+                            }
+                        }
+
+                    table.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
+                    table.Range.ParagraphFormat.SpaceAfter = 0;
+                    break;
+
                 case HeadingType.Notification:
 
                     columnsCount = 3;
@@ -429,6 +468,7 @@ namespace GeneralDepartmentOfLawAffairs
         protected enum HeadingType {
             Typical,
             Note,
+            DraftResolution,
             Notification,
             Mission,
             Full

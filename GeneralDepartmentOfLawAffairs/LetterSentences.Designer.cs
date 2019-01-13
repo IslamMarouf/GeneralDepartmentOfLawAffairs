@@ -106,6 +106,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to قطاع الشئون.
+        /// </summary>
+        public static string AffairsSector {
+            get {
+                return ResourceManager.GetString("AffairsSector", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to المطلوب.
         /// </summary>
         public static string Agreement {

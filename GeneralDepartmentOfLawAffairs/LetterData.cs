@@ -123,6 +123,7 @@ namespace GeneralDepartmentOfLawAffairs
 
         // ministry name. rscript 
         public bool HasSentPhotoCopy { get; set; }
+        public bool HasDraftResolution { get; set; }
         public string AttachmentsCount { get; set; }
         public string OurLetterNumber { get; set; }
         public string IncomingLetterNumber { get; set; }
@@ -137,6 +138,7 @@ namespace GeneralDepartmentOfLawAffairs
         public string InspectionDate { get; set; }
         public string Guilty { get; set; }
         public string Name { get; set; }
+        public string CDptName { get; set; }
         public string DepartmentName { get; set; }
         public string CeaseDays { get; set; }
         public string ApLetterNum { get; set; }

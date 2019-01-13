@@ -786,4 +786,7 @@
   <data name="Third" xml:space="preserve">
     <value>ثالثا: -</value>
   </data>
+  <data name="AffairsSector" xml:space="preserve">
+    <value>قطاع الشئون</value>
+  </data>
 </root>

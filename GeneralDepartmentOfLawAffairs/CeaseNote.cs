@@ -15,7 +15,7 @@ namespace GeneralDepartmentOfLawAffairs {
         public override void Write() {
             if (Initialize()) {
                 LetterSections();
-                Draft();
+                DraftResolution();
             }
         }
 
@@ -222,16 +222,17 @@ namespace GeneralDepartmentOfLawAffairs {
             Signature(SignType.ResearcherSign);
         }
 
-        private void Draft()
+        private void DraftResolution()
         {
-            Paragraph separatorParagraph = new Paragraph(_doc);
-            separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
-            separatorParagraph.GetRange().InsertBreak(WdBreakType.wdPageBreak);
+            if (_letterData.HasDraftResolution) {
+                Paragraph separatorParagraph = new Paragraph(_doc);
+                separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
+                separatorParagraph.GetRange().InsertBreak(WdBreakType.wdPageBreak);
 
-            string str15 = LetterSentences.Third + LetterSentences.CeaseNote20 + " "
-                           + _letterData.CeaseDays + LetterSentences.CeaseNote21;
-            var noteParagraph15 = new Paragraph(_doc);
-            noteParagraph15.AddFormatted(str15, "Times New Roman", 14, false, true);
+                Heading(HeadingType.DraftResolution, "", _letterData.CDptName);
+
+
+            }
         }
     }
 }

@@ -40,7 +40,7 @@
             this.lblInvestigationNum = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.lblSubject = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chbxDraftRes = new System.Windows.Forms.CheckBox();
             this.cmbxInvestigationNum = new System.Windows.Forms.ComboBox();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).BeginInit();
@@ -197,16 +197,16 @@
             this.lblSubject.TabIndex = 87;
             this.lblSubject.Text = "الموضوع :";
             // 
-            // checkBox1
+            // chbxDraftRes
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.checkBox1.Location = new System.Drawing.Point(17, 156);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(95, 23);
-            this.checkBox1.TabIndex = 88;
-            this.checkBox1.Text = "مشروع قرار";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbxDraftRes.AutoSize = true;
+            this.chbxDraftRes.ForeColor = System.Drawing.SystemColors.Info;
+            this.chbxDraftRes.Location = new System.Drawing.Point(17, 156);
+            this.chbxDraftRes.Name = "chbxDraftRes";
+            this.chbxDraftRes.Size = new System.Drawing.Size(95, 23);
+            this.chbxDraftRes.TabIndex = 88;
+            this.chbxDraftRes.Text = "مشروع قرار";
+            this.chbxDraftRes.UseVisualStyleBackColor = true;
             // 
             // cmbxInvestigationNum
             // 
@@ -227,7 +227,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 241);
             this.Controls.Add(this.cmbxInvestigationNum);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chbxDraftRes);
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.lblSubject);
             this.Controls.Add(this.label1);
@@ -238,6 +238,7 @@
             this.Controls.Add(this.pnlButtons);
             this.Name = "FrmCeaseNote";
             this.Text = "مذكرة إنقطاع";
+            this.Load += new System.EventHandler(this.FrmCeaseNote_Load);
             this.pnlButtons.ResumeLayout(false);
             this.pnlButtons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).EndInit();
@@ -260,7 +261,7 @@
         private System.Windows.Forms.Label lblInvestigationNum;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label lblSubject;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chbxDraftRes;
         private System.Windows.Forms.ComboBox cmbxInvestigationNum;
     }
 }
