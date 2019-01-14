@@ -628,6 +628,204 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to قرار.
+        /// </summary>
+        public static string DraftResolution1 {
+            get {
+                return ResourceManager.GetString("DraftResolution1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وبناءً على ما عرضه علينا السيد الأستاذ / مدير عام.
+        /// </summary>
+        public static string DraftResolution10 {
+            get {
+                return ResourceManager.GetString("DraftResolution10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قررنا.
+        /// </summary>
+        public static string DraftResolution11 {
+            get {
+                return ResourceManager.GetString("DraftResolution11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الأولى.
+        /// </summary>
+        public static string DraftResolution12 {
+            get {
+                return ResourceManager.GetString("DraftResolution12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الثانية.
+        /// </summary>
+        public static string DraftResolution13 {
+            get {
+                return ResourceManager.GetString("DraftResolution13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الثالثة.
+        /// </summary>
+        public static string DraftResolution14 {
+            get {
+                return ResourceManager.GetString("DraftResolution14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الرابعة.
+        /// </summary>
+        public static string DraftResolution15 {
+            get {
+                return ResourceManager.GetString("DraftResolution15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الخامسة.
+        /// </summary>
+        public static string DraftResolution16 {
+            get {
+                return ResourceManager.GetString("DraftResolution16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة السادسة.
+        /// </summary>
+        public static string DraftResolution17 {
+            get {
+                return ResourceManager.GetString("DraftResolution17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة السابعة.
+        /// </summary>
+        public static string DraftResolution18 {
+            get {
+                return ResourceManager.GetString("DraftResolution18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة الثامنة.
+        /// </summary>
+        public static string DraftResolution19 {
+            get {
+                return ResourceManager.GetString("DraftResolution19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بعد الاطلاع على قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016 ولائحته التنفيذية..
+        /// </summary>
+        public static string DraftResolution2 {
+            get {
+                return ResourceManager.GetString("DraftResolution2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة التاسعة.
+        /// </summary>
+        public static string DraftResolution20 {
+            get {
+                return ResourceManager.GetString("DraftResolution20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to المادة العاشرة.
+        /// </summary>
+        public static string DraftResolution21 {
+            get {
+                return ResourceManager.GetString("DraftResolution21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to على جميع الجهات المختصة تنفيذ هذا القرار كل فيما يخصه..
+        /// </summary>
+        public static string DraftResolution22 {
+            get {
+                return ResourceManager.GetString("DraftResolution22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وعلى قرار رئيس الجمهورية.
+        /// </summary>
+        public static string DraftResolution3 {
+            get {
+                return ResourceManager.GetString("DraftResolution3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بشأن التشكيل الوزاري الحالي..
+        /// </summary>
+        public static string DraftResolution4 {
+            get {
+                return ResourceManager.GetString("DraftResolution4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وعلى القرار الوزاري رقم 252 / 96 بشأن لائحة الجزاءات التأديبية للعاملين بديوان عام الوزارة..
+        /// </summary>
+        public static string DraftResolution5 {
+            get {
+                return ResourceManager.GetString("DraftResolution5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وعلي كتاب.
+        /// </summary>
+        public static string DraftResolution6 {
+            get {
+                return ResourceManager.GetString("DraftResolution6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to والمرفق به مذكرة التحقيق الإداري.
+        /// </summary>
+        public static string DraftResolution7 {
+            get {
+                return ResourceManager.GetString("DraftResolution7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to والمقيد ضد /.
+        /// </summary>
+        public static string DraftResolution8 {
+            get {
+                return ResourceManager.GetString("DraftResolution8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to في الموضوع الموضح فيما بعد..
+        /// </summary>
+        public static string DraftResolution9 {
+            get {
+                return ResourceManager.GetString("DraftResolution9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تحريرا في:.
         /// </summary>
         public static string EditedIn {

@@ -231,7 +231,57 @@ namespace GeneralDepartmentOfLawAffairs {
 
                 Heading(HeadingType.DraftResolution, "", _letterData.CDptName);
 
+                string draftResStr1 = LetterSentences.DraftResolution1;
+                var draftResParagraph1 = new Paragraph(_doc);
+                draftResParagraph1.AddFormatted(draftResStr1, "pt bold heading", 12);
 
+                string draftResStr2 = LetterSentences.Num + " (" + "      ) " 
+                                      + LetterSentences.OutCome + " " 
+                                      + LetterSentences.Dated + "      /      /" + DateTime.Now.Year;
+                var draftResParagraph2 = new Paragraph(_doc);
+                draftResParagraph2.AddFormatted(draftResStr2, "pt bold heading", 12, true, true, true);
+
+                string draftResStr3 = LetterSentences.Head + " ";
+                var draftResParagraph3 = new Paragraph(_doc);
+                draftResParagraph3.AddFormatted(draftResStr3, "pt bold heading", 12, false, true, true);
+
+                string draftResStr4 = LetterSentences.DraftResolution2;
+                var draftResParagraph4 = new Paragraph(_doc);
+                draftResParagraph4.AddFormatted(draftResStr4, "Times New Roman", 14, false);
+                draftResParagraph4.GetRange().ListFormat.ApplyBulletDefault();
+
+                string draftResStr5 = string.Empty;
+                var draftResParagraph5 = new Paragraph(_doc);
+
+                string draftResStr6 = string.Empty;
+                var draftResParagraph6 = new Paragraph(_doc);
+
+                string draftResStr7 = string.Empty;
+                var draftResParagraph7 = new Paragraph(_doc);
+
+                string draftResStr8 = string.Empty;
+                var draftResParagraph8 = new Paragraph(_doc);
+
+                string draftResStr9 = string.Empty;
+                var draftResParagraph9 = new Paragraph(_doc);
+
+                string draftResStr10 = string.Empty;
+                var draftResParagraph10 = new Paragraph(_doc);
+
+                string draftResStr11 = string.Empty;
+                var draftResParagraph11 = new Paragraph(_doc);
+
+                string draftResStr12 = string.Empty;
+                var draftResParagraph12 = new Paragraph(_doc);
+
+                string draftResStr13 = string.Empty;
+                var draftResParagraph13 = new Paragraph(_doc);
+
+                string draftResStr14 = string.Empty;
+                var draftResParagraph14 = new Paragraph(_doc);
+
+                string draftResStr15 = string.Empty;
+                var draftResParagraph15 = new Paragraph(_doc);
             }
         }
     }

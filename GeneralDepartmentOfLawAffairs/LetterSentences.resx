@@ -789,4 +789,70 @@
   <data name="AffairsSector" xml:space="preserve">
     <value>قطاع الشئون</value>
   </data>
+  <data name="DraftResolution1" xml:space="preserve">
+    <value>قرار</value>
+  </data>
+  <data name="DraftResolution10" xml:space="preserve">
+    <value>وبناءً على ما عرضه علينا السيد الأستاذ / مدير عام</value>
+  </data>
+  <data name="DraftResolution11" xml:space="preserve">
+    <value>قررنا</value>
+  </data>
+  <data name="DraftResolution12" xml:space="preserve">
+    <value>المادة الأولى</value>
+  </data>
+  <data name="DraftResolution13" xml:space="preserve">
+    <value>المادة الثانية</value>
+  </data>
+  <data name="DraftResolution14" xml:space="preserve">
+    <value>المادة الثالثة</value>
+  </data>
+  <data name="DraftResolution15" xml:space="preserve">
+    <value>المادة الرابعة</value>
+  </data>
+  <data name="DraftResolution16" xml:space="preserve">
+    <value>المادة الخامسة</value>
+  </data>
+  <data name="DraftResolution17" xml:space="preserve">
+    <value>المادة السادسة</value>
+  </data>
+  <data name="DraftResolution18" xml:space="preserve">
+    <value>المادة السابعة</value>
+  </data>
+  <data name="DraftResolution19" xml:space="preserve">
+    <value>المادة الثامنة</value>
+  </data>
+  <data name="DraftResolution2" xml:space="preserve">
+    <value>بعد الاطلاع على قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016 ولائحته التنفيذية.</value>
+  </data>
+  <data name="DraftResolution20" xml:space="preserve">
+    <value>المادة التاسعة</value>
+  </data>
+  <data name="DraftResolution21" xml:space="preserve">
+    <value>المادة العاشرة</value>
+  </data>
+  <data name="DraftResolution22" xml:space="preserve">
+    <value>على جميع الجهات المختصة تنفيذ هذا القرار كل فيما يخصه.</value>
+  </data>
+  <data name="DraftResolution3" xml:space="preserve">
+    <value>وعلى قرار رئيس الجمهورية</value>
+  </data>
+  <data name="DraftResolution4" xml:space="preserve">
+    <value>بشأن التشكيل الوزاري الحالي.</value>
+  </data>
+  <data name="DraftResolution5" xml:space="preserve">
+    <value>وعلى القرار الوزاري رقم 252 / 96 بشأن لائحة الجزاءات التأديبية للعاملين بديوان عام الوزارة.</value>
+  </data>
+  <data name="DraftResolution6" xml:space="preserve">
+    <value>وعلي كتاب</value>
+  </data>
+  <data name="DraftResolution7" xml:space="preserve">
+    <value>والمرفق به مذكرة التحقيق الإداري</value>
+  </data>
+  <data name="DraftResolution8" xml:space="preserve">
+    <value>والمقيد ضد /</value>
+  </data>
+  <data name="DraftResolution9" xml:space="preserve">
+    <value>في الموضوع الموضح فيما بعد.</value>
+  </data>
 </root>
