@@ -247,11 +247,13 @@ namespace GeneralDepartmentOfLawAffairs {
 
                 string draftResStr4 = LetterSentences.DraftResolution2;
                 var draftResParagraph4 = new Paragraph(_doc);
-                draftResParagraph4.AddFormatted(draftResStr4, "Times New Roman", 14, false);
+                draftResParagraph4.AddFormatted(draftResStr4, "Times New Roman", 14, false, true);
                 draftResParagraph4.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr5 = string.Empty;
+                string draftResStr5 = LetterSentences.DraftResolution3 + " " + LetterSentences.Num + " " + LetterSentences.DraftResolution4;
                 var draftResParagraph5 = new Paragraph(_doc);
+                draftResParagraph5.AddFormatted(draftResStr5, "Times New Roman", 14, false, true);
+                draftResParagraph5.GetRange().ListFormat.ApplyBulletDefault();
 
                 string draftResStr6 = string.Empty;
                 var draftResParagraph6 = new Paragraph(_doc);
