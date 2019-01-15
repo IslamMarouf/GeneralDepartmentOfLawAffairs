@@ -120,35 +120,30 @@ namespace GeneralDepartmentOfLawAffairs {
             var missionTable = tableParagraph
                 .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
-            for (var i = 1; i <= rowsCount; i++)
-            {
-                for (var j = 1; j <= columnsCount; j++)
-                {
+            for (var i = 1; i <= rowsCount; i++) {
+                for (var j = 1; j <= columnsCount; j++) {
                     var c = missionTable.Cell(i, j);
 
-                    if (i == 1 && j == 1)
-                    {
+                    if (i == 1 && j == 1) {
                         TableParagraph(c, _letterData.Name, "times new roman", 14);
                     }
-                    else if (i == 1 && j == 2)
-                    {
+                    else if (i == 1 && j == 2) {
                         TableParagraph(c, "", "times new roman", 14);
                     }
-                    
                 }
             }
 
             missionTable.Range.ParagraphFormat.SpaceAfter = 0;
-            
+
             Paragraph separatorParagraph = new Paragraph(_doc);
             separatorParagraph.AddFormatted("", "Times New Roman", 1);
 
             string str13 = LetterSentences.CeaseNote16 + " "
-                + LetterSentences.CeaseNote17 + " "
-                + LetterSentences.CeaseNote26 + " "
-                + _letterData.CeaseDays + " "
-                + LetterSentences.CeaseNote8 + " "
-                + LetterSentences.CeaseNote18;
+                                                       + LetterSentences.CeaseNote17 + " "
+                                                       + LetterSentences.CeaseNote26 + " "
+                                                       + _letterData.CeaseDays + " "
+                                                       + LetterSentences.CeaseNote8 + " "
+                                                       + LetterSentences.CeaseNote18;
             var noteParagraph13 = new Paragraph(_doc);
             noteParagraph13.AddFormatted(str13, "Times New Roman", 14, false, true);
 
@@ -157,7 +152,7 @@ namespace GeneralDepartmentOfLawAffairs {
             noteParagraph14.AddFormatted(str14, "Times New Roman", 14, false, true);
 
             string str15 = LetterSentences.Third + LetterSentences.CeaseNote20 + " "
-                + _letterData.CeaseDays + LetterSentences.CeaseNote21;
+                           + _letterData.CeaseDays + LetterSentences.CeaseNote21;
             var noteParagraph15 = new Paragraph(_doc);
             noteParagraph15.AddFormatted(str15, "Times New Roman", 14, false, true);
 
@@ -167,11 +162,9 @@ namespace GeneralDepartmentOfLawAffairs {
         }
 
         protected override void RequestSection() {
-            
         }
 
-        private void TableParagraph(Cell c, string text, string fontName, float size, int bold = 1)
-        {
+        private void TableParagraph(Cell c, string text, string fontName, float size, int bold = 1) {
             c.Range.Text = text;
             c.Range.Font.NameBi = fontName;
             c.Range.Font.SizeBi = size;
@@ -180,8 +173,7 @@ namespace GeneralDepartmentOfLawAffairs {
             c.Range.ParagraphFormat.SpaceBefore = 0;
         }
 
-        protected override void Greeting()
-        {
+        protected override void Greeting() {
             var greetingParagraph = new Paragraph(_doc);
             greetingParagraph.AddFormatted(LetterSentences.Thanks, "Bold Italic Art", 8);
 
@@ -222,8 +214,7 @@ namespace GeneralDepartmentOfLawAffairs {
             Signature(SignType.ResearcherSign);
         }
 
-        private void DraftResolution()
-        {
+        private void DraftResolution() {
             if (_letterData.HasDraftResolution) {
                 Paragraph separatorParagraph = new Paragraph(_doc);
                 separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
@@ -235,8 +226,8 @@ namespace GeneralDepartmentOfLawAffairs {
                 var draftResParagraph1 = new Paragraph(_doc);
                 draftResParagraph1.AddFormatted(draftResStr1, "pt bold heading", 12);
 
-                string draftResStr2 = LetterSentences.Num + " (" + "      ) " 
-                                      + LetterSentences.OutCome + " " 
+                string draftResStr2 = LetterSentences.Num + " (" + "      ) "
+                                      + LetterSentences.OutCome + " "
                                       + LetterSentences.Dated + "      /      /" + DateTime.Now.Year;
                 var draftResParagraph2 = new Paragraph(_doc);
                 draftResParagraph2.AddFormatted(draftResStr2, "pt bold heading", 12, true, true, true);
@@ -250,19 +241,36 @@ namespace GeneralDepartmentOfLawAffairs {
                 draftResParagraph4.AddFormatted(draftResStr4, "Times New Roman", 14, false, true);
                 draftResParagraph4.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr5 = LetterSentences.DraftResolution3 + " " + LetterSentences.Num + " " + LetterSentences.DraftResolution4;
+                string draftResStr5 = LetterSentences.DraftResolution3 + " "
+                                                                       + LetterSentences.Num + " "
+                                                                       + LetterSentences.DraftResolution4;
                 var draftResParagraph5 = new Paragraph(_doc);
                 draftResParagraph5.AddFormatted(draftResStr5, "Times New Roman", 14, false, true);
                 draftResParagraph5.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr6 = string.Empty;
+                string draftResStr6 = LetterSentences.DraftResolution5;
                 var draftResParagraph6 = new Paragraph(_doc);
+                draftResParagraph6.AddFormatted(draftResStr6, "Times New Roman", 14, false, true);
+                draftResParagraph6.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr7 = string.Empty;
+                string draftResStr7 = LetterSentences.DraftResolution6 + " "
+                                                                       + LetterSentences.GeneralDepartName + " "
+                                                                       + LetterSentences.Num + "      "
+                                                                       + LetterSentences.Dated + "  /  /" +
+                                                                       DateTime.Now.Year + " "
+                                                                       + LetterSentences.DraftResolution7 + " "
+                                                                       + LetterSentences.Num + "   /" + DateTime.Now.Year
+                                                                       + LetterSentences.DraftResolution8 + " "
+                                                                       + _letterData.Name + " "
+                                                                       + LetterSentences.DraftResolution9;
                 var draftResParagraph7 = new Paragraph(_doc);
+                draftResParagraph7.AddFormatted(draftResStr7, "Times New Roman", 14, false, true);
+                draftResParagraph7.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr8 = string.Empty;
+                string draftResStr8 = "";
                 var draftResParagraph8 = new Paragraph(_doc);
+                draftResParagraph8.AddFormatted(draftResStr8, "Times New Roman", 14, false, true);
+                draftResParagraph8.GetRange().ListFormat.ApplyBulletDefault();
 
                 string draftResStr9 = string.Empty;
                 var draftResParagraph9 = new Paragraph(_doc);
