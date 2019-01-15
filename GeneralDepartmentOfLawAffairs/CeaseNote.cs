@@ -117,12 +117,12 @@ namespace GeneralDepartmentOfLawAffairs {
             int rowsCount = 1;
 
 
-            var missionTable = tableParagraph
+            var noteTable = tableParagraph
                 .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
             for (var i = 1; i <= rowsCount; i++) {
                 for (var j = 1; j <= columnsCount; j++) {
-                    var c = missionTable.Cell(i, j);
+                    var c = noteTable.Cell(i, j);
 
                     if (i == 1 && j == 1) {
                         TableParagraph(c, _letterData.Name, "times new roman", 14);
@@ -133,7 +133,7 @@ namespace GeneralDepartmentOfLawAffairs {
                 }
             }
 
-            missionTable.Range.ParagraphFormat.SpaceAfter = 0;
+            noteTable.Range.ParagraphFormat.SpaceAfter = 0;
 
             Paragraph separatorParagraph = new Paragraph(_doc);
             separatorParagraph.AddFormatted("", "Times New Roman", 1);
@@ -267,31 +267,100 @@ namespace GeneralDepartmentOfLawAffairs {
                 draftResParagraph7.AddFormatted(draftResStr7, "Times New Roman", 14, false, true);
                 draftResParagraph7.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr8 = "";
+                string draftResStr8 = LetterSentences.DraftResolution10 + " "
+                                                                        + _letterData.DepartmentName;
                 var draftResParagraph8 = new Paragraph(_doc);
                 draftResParagraph8.AddFormatted(draftResStr8, "Times New Roman", 14, false, true);
                 draftResParagraph8.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr9 = string.Empty;
+                string draftResStr9 = LetterSentences.DraftResolution11;
                 var draftResParagraph9 = new Paragraph(_doc);
+                draftResParagraph9.AddFormatted(draftResStr9, "pt bold heading", 12);
 
-                string draftResStr10 = string.Empty;
+                string draftResStr10 = LetterSentences.DraftResolution12;
                 var draftResParagraph10 = new Paragraph(_doc);
+                draftResParagraph10.AddFormatted(draftResStr10, "pt bold heading", 12, true, true, true);
 
-                string draftResStr11 = string.Empty;
+
+
+                
+
+
+
+                string draftResStr11 = LetterSentences.CeaseNote14;
                 var draftResParagraph11 = new Paragraph(_doc);
+                draftResParagraph11.AddFormatted(draftResStr11, "Times New Roman", 14, false, true);
+                draftResParagraph11.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr12 = string.Empty;
+                string str12 = LetterSentences.CeaseNote15;
+                var noteParagraph12 = new Paragraph(_doc);
+                noteParagraph12.AddFormatted(str12, "pt bold heading", 12, true, true, true);
+
+                var tableParagraph = _doc.Paragraphs.Add();
+                int columnsCount = 2;
+                int rowsCount = 1;
+
+
+                var noteTable = tableParagraph
+                    .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
+
+                for (var i = 1; i <= rowsCount; i++)
+                {
+                    for (var j = 1; j <= columnsCount; j++)
+                    {
+                        var c = noteTable.Cell(i, j);
+
+                        if (i == 1 && j == 1)
+                        {
+                            TableParagraph(c, _letterData.Name, "times new roman", 14);
+                        }
+                        else if (i == 1 && j == 2)
+                        {
+                            TableParagraph(c, "", "times new roman", 14);
+                        }
+                    }
+                }
+
+                noteTable.Range.ParagraphFormat.SpaceAfter = 0;
+
+                Paragraph separatorParagraph1 = new Paragraph(_doc);
+                separatorParagraph1.AddFormatted("", "Times New Roman", 1);
+
+                string str13 = LetterSentences.CeaseNote16 + " "
+                                                           + LetterSentences.CeaseNote17 + " "
+                                                           + LetterSentences.CeaseNote26 + " "
+                                                           + _letterData.CeaseDays + " "
+                                                           + LetterSentences.CeaseNote8 + " "
+                                                           + LetterSentences.CeaseNote18;
+                var noteParagraph13 = new Paragraph(_doc);
+                noteParagraph13.AddFormatted(str13, "Times New Roman", 14, false, true);
+
+                string draftResStr12 = LetterSentences.DraftResolution13;
                 var draftResParagraph12 = new Paragraph(_doc);
+                draftResParagraph12.AddFormatted(draftResStr12, "pt bold heading", 12, true, true, true);
 
                 string draftResStr13 = string.Empty;
                 var draftResParagraph13 = new Paragraph(_doc);
+                draftResParagraph13.AddFormatted(draftResStr13, "Times New Roman", 14, false, true);
+                draftResParagraph13.GetRange().ListFormat.ApplyBulletDefault();
 
-                string draftResStr14 = string.Empty;
+                string draftResStr14 = LetterSentences.DraftResolution14;
                 var draftResParagraph14 = new Paragraph(_doc);
+                draftResParagraph14.AddFormatted(draftResStr14, "pt bold heading", 12, true, true, true);
 
                 string draftResStr15 = string.Empty;
                 var draftResParagraph15 = new Paragraph(_doc);
+                draftResParagraph15.AddFormatted(draftResStr15, "Times New Roman", 14, false, true);
+                draftResParagraph15.GetRange().ListFormat.ApplyBulletDefault();
+
+                string draftResStr16 = LetterSentences.DraftResolution15;
+                var draftResParagraph16 = new Paragraph(_doc);
+                draftResParagraph16.AddFormatted(draftResStr16, "pt bold heading", 12, true, true, true);
+
+                string draftResStr17 = LetterSentences.DraftResolution22;
+                var draftResParagraph17 = new Paragraph(_doc);
+                draftResParagraph17.AddFormatted(draftResStr17, "Times New Roman", 14, false, true);
+                draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
             }
         }
     }
