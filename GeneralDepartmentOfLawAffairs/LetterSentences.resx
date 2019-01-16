@@ -855,4 +855,10 @@
   <data name="DraftResolution9" xml:space="preserve">
     <value>في الموضوع الموضح فيما بعد.</value>
   </data>
+  <data name="DraftResolution23" xml:space="preserve">
+    <value>مجازاة المذكور إداريا لما نسب إليه بخصم          </value>
+  </data>
+  <data name="DraftResolution24" xml:space="preserve">
+    <value>من الراتب.</value>
+  </data>
 </root>

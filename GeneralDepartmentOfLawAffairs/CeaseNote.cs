@@ -290,7 +290,7 @@ namespace GeneralDepartmentOfLawAffairs {
                 string draftResStr11 = LetterSentences.CeaseNote14;
                 var draftResParagraph11 = new Paragraph(_doc);
                 draftResParagraph11.AddFormatted(draftResStr11, "Times New Roman", 14, false, true);
-                draftResParagraph11.GetRange().ListFormat.ApplyBulletDefault();
+                //draftResParagraph11.GetRange().ListFormat.ApplyBulletDefault();
 
                 string str12 = LetterSentences.CeaseNote15;
                 var noteParagraph12 = new Paragraph(_doc);
@@ -339,19 +339,22 @@ namespace GeneralDepartmentOfLawAffairs {
                 var draftResParagraph12 = new Paragraph(_doc);
                 draftResParagraph12.AddFormatted(draftResStr12, "pt bold heading", 12, true, true, true);
 
-                string draftResStr13 = string.Empty;
+                string draftResStr13 = LetterSentences.DraftResolution23
+                                       + LetterSentences.DraftResolution24;
                 var draftResParagraph13 = new Paragraph(_doc);
                 draftResParagraph13.AddFormatted(draftResStr13, "Times New Roman", 14, false, true);
-                draftResParagraph13.GetRange().ListFormat.ApplyBulletDefault();
+                //draftResParagraph13.GetRange().ListFormat.ApplyBulletDefault();
 
                 string draftResStr14 = LetterSentences.DraftResolution14;
                 var draftResParagraph14 = new Paragraph(_doc);
                 draftResParagraph14.AddFormatted(draftResStr14, "pt bold heading", 12, true, true, true);
 
-                string draftResStr15 = string.Empty;
+                string draftResStr15 = LetterSentences.CeaseNote20 + " "
+                                                                   + _letterData.CeaseDays 
+                                                                   + LetterSentences.CeaseNote21;
                 var draftResParagraph15 = new Paragraph(_doc);
                 draftResParagraph15.AddFormatted(draftResStr15, "Times New Roman", 14, false, true);
-                draftResParagraph15.GetRange().ListFormat.ApplyBulletDefault();
+                //draftResParagraph15.GetRange().ListFormat.ApplyBulletDefault();
 
                 string draftResStr16 = LetterSentences.DraftResolution15;
                 var draftResParagraph16 = new Paragraph(_doc);
@@ -360,7 +363,7 @@ namespace GeneralDepartmentOfLawAffairs {
                 string draftResStr17 = LetterSentences.DraftResolution22;
                 var draftResParagraph17 = new Paragraph(_doc);
                 draftResParagraph17.AddFormatted(draftResStr17, "Times New Roman", 14, false, true);
-                draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
+                //draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
             }
         }
     }

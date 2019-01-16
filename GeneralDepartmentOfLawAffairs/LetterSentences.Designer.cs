@@ -763,6 +763,24 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مجازاة المذكور إداريا لما نسب إليه بخصم          .
+        /// </summary>
+        public static string DraftResolution23 {
+            get {
+                return ResourceManager.GetString("DraftResolution23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to من الراتب..
+        /// </summary>
+        public static string DraftResolution24 {
+            get {
+                return ResourceManager.GetString("DraftResolution24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to وعلى قرار رئيس الجمهورية.
         /// </summary>
         public static string DraftResolution3 {
