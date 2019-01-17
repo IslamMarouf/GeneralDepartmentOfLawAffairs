@@ -139,6 +139,7 @@ namespace GeneralDepartmentOfLawAffairs
         public string Guilty { get; set; }
         public string Name { get; set; }
         public string CDptName { get; set; }
+        public string HeadName { get; set; }
         public string DepartmentName { get; set; }
         public string CeaseDays { get; set; }
         public string ApLetterNum { get; set; }

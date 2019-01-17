@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using GeneralDepartmentOfLawAffairs.Properties;
 using Microsoft.Office.Interop.Word;
 
 namespace GeneralDepartmentOfLawAffairs {
@@ -281,12 +282,6 @@ namespace GeneralDepartmentOfLawAffairs {
                 var draftResParagraph10 = new Paragraph(_doc);
                 draftResParagraph10.AddFormatted(draftResStr10, "pt bold heading", 12, true, true, true);
 
-
-
-                
-
-
-
                 string draftResStr11 = LetterSentences.CeaseNote14;
                 var draftResParagraph11 = new Paragraph(_doc);
                 draftResParagraph11.AddFormatted(draftResStr11, "Times New Roman", 14, false, true);
@@ -365,6 +360,9 @@ namespace GeneralDepartmentOfLawAffairs {
                 draftResParagraph17.AddFormatted(draftResStr17, "Times New Roman", 14, false, true);
                 //draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
 
+                Paragraph separatorParagraph2 = new Paragraph(_doc);
+                separatorParagraph2.AddFormatted(string.Empty, "Times New Roman", 1);
+
                 var dateTaable = _doc.Paragraphs.Add();
                 int rCount = 1;
                 int clCount = 2;
@@ -394,9 +392,39 @@ namespace GeneralDepartmentOfLawAffairs {
 
                 dateTable.Columns.AutoFit();
 
-                Paragraph separatorParagraph2 = new Paragraph(_doc);
-                separatorParagraph2.AddFormatted(string.Empty, "Times New Roman", 1);
+                Paragraph separatorParagraph3 = new Paragraph(_doc);
+                separatorParagraph3.AddFormatted(string.Empty, "Times New Roman", 1);
+
+                var singTable = _doc.Paragraphs.Add();
+                int clsCount = 3;
+                int rsCount = 3;
+
+
+                var singParagraph = singTable
+                    .Range.Tables.Add(singTable.Range, rsCount, clsCount);
+
+                for (var i = 1; i <= rsCount; i++)
+                {
+                    for (var j = 1; j <= clsCount; j++)
+                    {
+                        var c = singParagraph.Cell(i, j);
+
+                        if ((i == 1) && (j == 3))
+                        {
+                            TableParagraph(c, LetterSentences.Head + " " + _letterData.CDptName, "pt bold heading", 12);
+                        }
+                        else if ((i == 3) && (j == 3))
+                        {
+                            TableParagraph(c, _letterData.HeadName, "pt bold heading", 12);
+                        }
+                    }
+                }
+
+                singParagraph.Range.ParagraphFormat.SpaceAfter = 0;
+                singParagraph.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
             }
         }
+
+
     }
 }
