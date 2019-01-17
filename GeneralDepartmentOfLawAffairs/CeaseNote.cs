@@ -364,6 +364,38 @@ namespace GeneralDepartmentOfLawAffairs {
                 var draftResParagraph17 = new Paragraph(_doc);
                 draftResParagraph17.AddFormatted(draftResStr17, "Times New Roman", 14, false, true);
                 //draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
+
+                var dateTaable = _doc.Paragraphs.Add();
+                int rCount = 1;
+                int clCount = 2;
+
+                var dateTable = dateTaable
+                    .Range.Tables.Add(dateTaable.Range, rCount, clCount);
+
+                //var cResearcher = dateTable.Cell(1, 1);
+                //TableParagraph(cResearcher, LetterSentences.Researcher, "pt bold heading", 8);
+
+                //var cName = dateTable.Cell(2, 1);
+                //TableParagraph(cName, Properties.Settings.Default.ResearcherName, "pt bold heading", 8);
+
+                var cDate = dateTable.Cell(1, 1);
+                cDate.Range.Text = LetterSentences.EditedIn + " " + DateTime.Today.ToShortDateString();
+                cDate.Range.Font.NameBi = "PT Bold Heading";
+                cDate.Range.Font.SizeBi = 8;
+                cDate.Range.ParagraphFormat.SpaceAfter = 0;
+                cDate.Range.ParagraphFormat.SpaceBefore = 0;
+
+                var cName = dateTable.Cell(1, 2);
+                cName.Range.Text = Properties.Settings.Default.researcherSign;
+                cName.Range.Font.NameBi = "PT Bold Heading";
+                cName.Range.Font.SizeBi = 8;
+                cName.Range.ParagraphFormat.SpaceAfter = 0;
+                cName.Range.ParagraphFormat.SpaceBefore = 0;
+
+                dateTable.Columns.AutoFit();
+
+                Paragraph separatorParagraph2 = new Paragraph(_doc);
+                separatorParagraph2.AddFormatted(string.Empty, "Times New Roman", 1);
             }
         }
     }
