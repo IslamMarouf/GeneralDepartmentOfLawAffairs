@@ -21,5 +21,10 @@ namespace GeneralDepartmentOfLawAffairs
             FrmLetterData = new LetterData();
             FormHasEmptyFields = false;
         }
+
+        private void FrmDraftResolution_Load(object sender, EventArgs e) {
+            cmbxCompetentAuthority.SelectedIndex = 1;
+            cmbxArticlesNum.SelectedIndex = 2;
+        }
     }
 }

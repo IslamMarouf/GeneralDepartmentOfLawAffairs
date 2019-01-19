@@ -197,7 +197,7 @@
             this.pnlButtons.Controls.Add(this.lblMessage);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 210);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 218);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(656, 34);
             this.pnlButtons.TabIndex = 93;
@@ -377,6 +377,7 @@
             // 
             // cmbxCompetentAuthority
             // 
+            this.cmbxCompetentAuthority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxCompetentAuthority.FormattingEnabled = true;
             this.cmbxCompetentAuthority.Items.AddRange(new object[] {
             "الوزيرة",
@@ -391,22 +392,34 @@
             "رئيس الادارة المركزية للتنمية البشرية"});
             this.cmbxCompetentAuthority.Location = new System.Drawing.Point(200, 21);
             this.cmbxCompetentAuthority.Name = "cmbxCompetentAuthority";
-            this.cmbxCompetentAuthority.Size = new System.Drawing.Size(255, 27);
+            this.cmbxCompetentAuthority.Size = new System.Drawing.Size(275, 27);
             this.cmbxCompetentAuthority.TabIndex = 100;
             // 
             // cmbxArticlesNum
             // 
+            this.cmbxArticlesNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxArticlesNum.FormattingEnabled = true;
-            this.cmbxArticlesNum.Location = new System.Drawing.Point(127, 185);
+            this.cmbxArticlesNum.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cmbxArticlesNum.Location = new System.Drawing.Point(122, 185);
             this.cmbxArticlesNum.Name = "cmbxArticlesNum";
-            this.cmbxArticlesNum.Size = new System.Drawing.Size(76, 27);
+            this.cmbxArticlesNum.Size = new System.Drawing.Size(45, 27);
             this.cmbxArticlesNum.TabIndex = 101;
             // 
             // FrmDraftResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 254);
+            this.ClientSize = new System.Drawing.Size(678, 264);
             this.Controls.Add(this.cmbxArticlesNum);
             this.Controls.Add(this.cmbxCompetentAuthority);
             this.Controls.Add(this.txtGuilty);
@@ -427,6 +440,7 @@
             this.Controls.Add(this.lblDirection);
             this.Name = "FrmDraftResolution";
             this.Text = "FrmDraftResolution";
+            this.Load += new System.EventHandler(this.FrmDraftResolution_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnlButtons.ResumeLayout(false);
