@@ -54,6 +54,8 @@
             this.lblInspectionNum = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDirection = new System.Windows.Forms.Label();
+            this.cmbxCompetentAuthority = new System.Windows.Forms.ComboBox();
+            this.cmbxArticlesNum = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).BeginInit();
@@ -373,11 +375,40 @@
             this.lblDirection.TabIndex = 82;
             this.lblDirection.Text = "السلطة المختصة باصدار القرار :";
             // 
+            // cmbxCompetentAuthority
+            // 
+            this.cmbxCompetentAuthority.FormattingEnabled = true;
+            this.cmbxCompetentAuthority.Items.AddRange(new object[] {
+            "الوزيرة",
+            "رئيس القطاع",
+            "رئيس الإدارة المركزية لشئون مكتب الوزير",
+            "رئيس الإدارة المركزية للرعاية الاجتماعية",
+            "رئيس الإدارة المركزية للشئون المالية والإدارية",
+            "رئيس الادارة المركزية للتنمية الاجتماعية",
+            "رئيس الادارة المركزية للحماية الاجتماعية",
+            "رئيس الادارة المركزية للجمعيات والاتحادات",
+            "رئيس الادارة المركزية لشئون المديريات",
+            "رئيس الادارة المركزية للتنمية البشرية"});
+            this.cmbxCompetentAuthority.Location = new System.Drawing.Point(200, 21);
+            this.cmbxCompetentAuthority.Name = "cmbxCompetentAuthority";
+            this.cmbxCompetentAuthority.Size = new System.Drawing.Size(255, 27);
+            this.cmbxCompetentAuthority.TabIndex = 100;
+            // 
+            // cmbxArticlesNum
+            // 
+            this.cmbxArticlesNum.FormattingEnabled = true;
+            this.cmbxArticlesNum.Location = new System.Drawing.Point(127, 185);
+            this.cmbxArticlesNum.Name = "cmbxArticlesNum";
+            this.cmbxArticlesNum.Size = new System.Drawing.Size(76, 27);
+            this.cmbxArticlesNum.TabIndex = 101;
+            // 
             // FrmDraftResolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 254);
+            this.Controls.Add(this.cmbxArticlesNum);
+            this.Controls.Add(this.cmbxCompetentAuthority);
             this.Controls.Add(this.txtGuilty);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbxAPList);
@@ -434,5 +465,7 @@
         private System.Windows.Forms.Label lblInspectionNum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDirection;
+        private System.Windows.Forms.ComboBox cmbxCompetentAuthority;
+        private System.Windows.Forms.ComboBox cmbxArticlesNum;
     }
 }
