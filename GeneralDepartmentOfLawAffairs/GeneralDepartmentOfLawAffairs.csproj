@@ -358,6 +358,9 @@
     <EmbeddedResource Include="FrmCeaseNote.resx">
       <DependentUpon>FrmCeaseNote.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDraftResolution.resx">
+      <DependentUpon>FrmDraftResolution.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEmptyLetter.resx">
       <DependentUpon>FrmEmptyLetter.cs</DependentUpon>
     </EmbeddedResource>
