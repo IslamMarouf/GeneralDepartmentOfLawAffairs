@@ -5,6 +5,8 @@ using GeneralDepartmentOfLawAffairs.Properties;
 namespace GeneralDepartmentOfLawAffairs
 {
     public abstract class Letter {
+        private const string CentralDepartmentName = "الإدارة المركزية لشئون مكتب الوزير";
+
         private readonly Document _doc;
 
         protected Letter(Document doc) {
@@ -76,7 +78,7 @@ namespace GeneralDepartmentOfLawAffairs
             c.Range.ParagraphFormat.SpaceBefore = 0;
         }
 
-        protected void Signature(SignType sign) {
+        protected void Signature(SignType sign, string cDptName = CentralDepartmentName, string hName = "") {
             Greeting();
 
             // Table.
@@ -181,12 +183,36 @@ namespace GeneralDepartmentOfLawAffairs
                         }
 
                     break;
+
+                case SignType.HAC:
+                    columnsCount = 3;
+                    rowsCount = 3;
+                    table = tableParagraph
+                        .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
+
+                    for (var i = 1; i <= rowsCount; i++)
+                        for (var j = 1; j <= columnsCount; j++)
+                        {
+                            var c = table.Cell(i, j);
+                            if ((i == 1) && (j == 3))
+                            {
+                                TableParagraph(c, cDptName, 12);
+                            }
+                            else if ((i == 3) && (j == 3))
+                            {
+                                TableParagraph(c,hName , 12);
+                            }
+
+                        }
+
+                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(sign), sign, null);
             }
         }
 
-        private const string CentralDepartmentName = "الإدارة المركزية لشئون مكتب الوزير";
+        
 
         protected void Heading(HeadingType hType, string attachmentsStr = "", string cDptName = CentralDepartmentName) {
             // Table.
@@ -462,7 +488,8 @@ namespace GeneralDepartmentOfLawAffairs
             GmAndHca,
             ResearcherSign,
             GeneralManager,
-            RegularSign
+            RegularSign,
+            HAC
         }
 
         protected enum HeadingType {

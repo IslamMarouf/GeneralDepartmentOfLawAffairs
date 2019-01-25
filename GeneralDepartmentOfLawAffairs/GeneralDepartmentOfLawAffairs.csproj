@@ -106,6 +106,7 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -366,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHurryLetters.resx">
       <DependentUpon>FrmHurryLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInspecInquiry.resx">
+      <DependentUpon>FrmInspecInquiry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInspectionLetter.resx">
       <DependentUpon>frmInspectionLetter.cs</DependentUpon>

@@ -132,6 +132,7 @@
             this.rdbtnYear.TabStop = true;
             this.rdbtnYear.Text = "لسنة :";
             this.rdbtnYear.UseVisualStyleBackColor = true;
+            this.rdbtnYear.CheckedChanged += new System.EventHandler(this.DateType_CheckedChanged);
             // 
             // rdbtnDate
             // 
@@ -144,6 +145,7 @@
             this.rdbtnDate.TabStop = true;
             this.rdbtnDate.Text = "بتاريخ :";
             this.rdbtnDate.UseVisualStyleBackColor = true;
+            this.rdbtnDate.CheckedChanged += new System.EventHandler(this.DateType_CheckedChanged);
             // 
             // label3
             // 
@@ -237,6 +239,7 @@
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "إلغاء";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOK
             // 
@@ -251,6 +254,7 @@
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "موافق";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // dtCase
             // 
@@ -417,6 +421,7 @@
             // 
             // FrmDraftResolution
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 264);
@@ -439,7 +444,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblDirection);
             this.Name = "FrmDraftResolution";
-            this.Text = "FrmDraftResolution";
+            this.Text = "مشروع قرار";
             this.Load += new System.EventHandler(this.FrmDraftResolution_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

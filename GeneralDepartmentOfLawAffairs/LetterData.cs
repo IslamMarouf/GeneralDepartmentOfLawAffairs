@@ -160,7 +160,7 @@ namespace GeneralDepartmentOfLawAffairs
         public string WantedDocuments { get; set; }
         public string ApVal { get; set; }
         public int Index { get; set; }
-
+        public int ArticlesNum { get; set; }
         
         // regional 
         public List<string> EmptyFields { get; }
