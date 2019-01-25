@@ -8,21 +8,21 @@ namespace GeneralDepartmentOfLawAffairs {
         private readonly Document _doc;
         private DialogResult _dialogResult;
         private LetterData _letterData;
-        private List<string> _ariclesList;
+        private readonly List<string> _articlesList;
 
         public DraftResolution(Document doc) : base(doc) {
             _doc = doc;
-            _ariclesList = new List<string>();
-            _ariclesList.Add(LetterSentences.DraftResolution12);
-            _ariclesList.Add(LetterSentences.DraftResolution13);
-            _ariclesList.Add(LetterSentences.DraftResolution14);
-            _ariclesList.Add(LetterSentences.DraftResolution15);
-            _ariclesList.Add(LetterSentences.DraftResolution16);
-            _ariclesList.Add(LetterSentences.DraftResolution17);
-            _ariclesList.Add(LetterSentences.DraftResolution18);
-            _ariclesList.Add(LetterSentences.DraftResolution19);
-            _ariclesList.Add(LetterSentences.DraftResolution20);
-            _ariclesList.Add(LetterSentences.DraftResolution21);
+            _articlesList = new List<string>();
+            _articlesList.Add(LetterSentences.DraftResolution12);
+            _articlesList.Add(LetterSentences.DraftResolution13);
+            _articlesList.Add(LetterSentences.DraftResolution14);
+            _articlesList.Add(LetterSentences.DraftResolution15);
+            _articlesList.Add(LetterSentences.DraftResolution16);
+            _articlesList.Add(LetterSentences.DraftResolution17);
+            _articlesList.Add(LetterSentences.DraftResolution18);
+            _articlesList.Add(LetterSentences.DraftResolution19);
+            _articlesList.Add(LetterSentences.DraftResolution20);
+            _articlesList.Add(LetterSentences.DraftResolution21);
         }
 
         public override void Write() {
@@ -110,7 +110,7 @@ namespace GeneralDepartmentOfLawAffairs {
 
             for (int i = 0; i < _letterData.ArticlesNum; i++) {
                 if (i == _letterData.ArticlesNum - 1) {
-                    string draftResStr10 = _ariclesList[i];
+                    string draftResStr10 = _articlesList[i];
                     var draftResParagraph10 = new Paragraph(_doc);
                     draftResParagraph10.AddFormatted(draftResStr10, "pt bold heading", 12, true, true, true);
 
@@ -120,7 +120,7 @@ namespace GeneralDepartmentOfLawAffairs {
                     //draftResParagraph17.GetRange().ListFormat.ApplyBulletDefault();
                 }
                 else {
-                    string draftResStr10 = _ariclesList[i];
+                    string draftResStr10 = _articlesList[i];
                     var draftResParagraph10 = new Paragraph(_doc);
                     draftResParagraph10.AddFormatted(draftResStr10, "pt bold heading", 12, true, true, true);
 
@@ -136,12 +136,12 @@ namespace GeneralDepartmentOfLawAffairs {
         }
 
         protected override void Greeting() {
-            var dateTaable = _doc.Paragraphs.Add();
+            var dateTableParagraph = _doc.Paragraphs.Add();
             int rCount = 1;
             int clCount = 2;
 
-            var dateTable = dateTaable
-                .Range.Tables.Add(dateTaable.Range, rCount, clCount);
+            var dateTable = dateTableParagraph
+                .Range.Tables.Add(dateTableParagraph.Range, rCount, clCount);
 
             //var cResearcher = dateTable.Cell(1, 1);
             //TableParagraph(cResearcher, LetterSentences.Researcher, "pt bold heading", 8);

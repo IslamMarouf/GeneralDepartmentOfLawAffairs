@@ -37,6 +37,9 @@ namespace GeneralDepartmentOfLawAffairs {
             ctrlDirection.cmbxRecipient.SelectedIndex = 1;
             cmbxAPList.SelectedIndex = 0;
 
+            cmbxCompetentAuthority.SelectedIndex = 1;
+            cmbxArticlesNum.SelectedIndex = 2;
+
             ValidateFields();
         }
 
@@ -136,6 +139,8 @@ namespace GeneralDepartmentOfLawAffairs {
             FrmLetterData.SentPhotoCopyReceiverDptName = direction1.DeptNameVal;
             FrmLetterData.SentPhotoCopyApNames = direction1.ApNames;
             FrmLetterData.SentPhotoCopyApAddresses = direction1.ApAddresses;
+
+            FrmLetterData.ArticlesNum = cmbxArticlesNum.SelectedIndex + 1;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

@@ -57,6 +57,10 @@
             this.cmbxAPList = new System.Windows.Forms.ComboBox();
             this.txtGuilty = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cmbxCompetentAuthority = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbxArticlesNum = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).BeginInit();
             this.panel1.SuspendLayout();
@@ -245,7 +249,7 @@
             this.pnlButtons.Controls.Add(this.lblMessage);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(12, 247);
+            this.pnlButtons.Location = new System.Drawing.Point(12, 274);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(656, 34);
             this.pnlButtons.TabIndex = 55;
@@ -310,7 +314,7 @@
             this.direction1.DeptNameVal = "";
             this.direction1.Filled = false;
             this.direction1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.direction1.Location = new System.Drawing.Point(140, 208);
+            this.direction1.Location = new System.Drawing.Point(140, 235);
             this.direction1.MrMrsVal = "";
             this.direction1.Name = "direction1";
             this.direction1.RecipientVal = "";
@@ -322,7 +326,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.Info;
-            this.label7.Location = new System.Drawing.Point(13, 186);
+            this.label7.Location = new System.Drawing.Point(13, 213);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 19);
@@ -416,11 +420,79 @@
             this.label8.TabIndex = 80;
             this.label8.Text = "والمقيدة ضد  : ";
             // 
+            // cmbxCompetentAuthority
+            // 
+            this.cmbxCompetentAuthority.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxCompetentAuthority.FormattingEnabled = true;
+            this.cmbxCompetentAuthority.Items.AddRange(new object[] {
+            "الوزيرة",
+            "رئيس القطاع",
+            "رئيس الإدارة المركزية لشئون مكتب الوزير",
+            "رئيس الإدارة المركزية للرعاية الاجتماعية",
+            "رئيس الإدارة المركزية للشئون المالية والإدارية",
+            "رئيس الادارة المركزية للتنمية الاجتماعية",
+            "رئيس الادارة المركزية للحماية الاجتماعية",
+            "رئيس الادارة المركزية للجمعيات والاتحادات",
+            "رئيس الادارة المركزية لشئون المديريات",
+            "رئيس الادارة المركزية للتنمية البشرية"});
+            this.cmbxCompetentAuthority.Location = new System.Drawing.Point(200, 176);
+            this.cmbxCompetentAuthority.Name = "cmbxCompetentAuthority";
+            this.cmbxCompetentAuthority.Size = new System.Drawing.Size(275, 27);
+            this.cmbxCompetentAuthority.TabIndex = 102;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(13, 179);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 19);
+            this.label2.TabIndex = 101;
+            this.label2.Text = "السلطة المختصة باصدار القرار :";
+            // 
+            // cmbxArticlesNum
+            // 
+            this.cmbxArticlesNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxArticlesNum.FormattingEnabled = true;
+            this.cmbxArticlesNum.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.cmbxArticlesNum.Location = new System.Drawing.Point(591, 176);
+            this.cmbxArticlesNum.Name = "cmbxArticlesNum";
+            this.cmbxArticlesNum.Size = new System.Drawing.Size(45, 27);
+            this.cmbxArticlesNum.TabIndex = 104;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.Info;
+            this.label9.Location = new System.Drawing.Point(482, 179);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(107, 19);
+            this.label9.TabIndex = 103;
+            this.label9.Text = "عدد مواد القرار  : ";
+            // 
             // FrmIssuanceRescriptLetter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 290);
+            this.ClientSize = new System.Drawing.Size(679, 317);
+            this.Controls.Add(this.cmbxArticlesNum);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.cmbxCompetentAuthority);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtGuilty);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cmbxAPList);
@@ -482,5 +554,9 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pbxStatus;
         private System.Windows.Forms.Label lblMessage;
+        private System.Windows.Forms.ComboBox cmbxCompetentAuthority;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbxArticlesNum;
+        private System.Windows.Forms.Label label9;
     }
 }
