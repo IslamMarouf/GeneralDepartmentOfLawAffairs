@@ -844,7 +844,7 @@
     <value>وعلى القرار الوزاري رقم 252 / 96 بشأن لائحة الجزاءات التأديبية للعاملين بديوان عام الوزارة.</value>
   </data>
   <data name="DraftResolution6" xml:space="preserve">
-    <value>وعلي كتاب</value>
+    <value>وعلى كتاب</value>
   </data>
   <data name="DraftResolution7" xml:space="preserve">
     <value>والمرفق به مذكرة التحقيق الإداري</value>
@@ -860,5 +860,8 @@
   </data>
   <data name="DraftResolution24" xml:space="preserve">
     <value>من الراتب.</value>
+  </data>
+  <data name="Organisation" xml:space="preserve">
+    <value>هيئة</value>
   </data>
 </root>

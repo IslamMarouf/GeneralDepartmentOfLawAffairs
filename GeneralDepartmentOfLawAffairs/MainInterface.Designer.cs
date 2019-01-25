@@ -51,7 +51,6 @@
             this.btnCeaseNote = this.Factory.CreateRibbonButton();
             this.btnRegularNote = this.Factory.CreateRibbonButton();
             this.btnTableNote = this.Factory.CreateRibbonButton();
-            this.btnDraftResolution = this.Factory.CreateRibbonButton();
             this.btnInvestigationRefererringLetter = this.Factory.CreateRibbonButton();
             this.separator1 = this.Factory.CreateRibbonSeparator();
             this.mnuInspection = this.Factory.CreateRibbonMenu();
@@ -150,7 +149,6 @@
             this.mnuInvestigation.Items.Add(this.mnuNotification);
             this.mnuInvestigation.Items.Add(this.btnInvestInquiry);
             this.mnuInvestigation.Items.Add(this.mnuInvestigationNote);
-            this.mnuInvestigation.Items.Add(this.btnDraftResolution);
             this.mnuInvestigation.Items.Add(this.btnInvestigationRefererringLetter);
             this.mnuInvestigation.Label = "تحقيق";
             this.mnuInvestigation.Name = "mnuInvestigation";
@@ -222,13 +220,6 @@
             this.btnTableNote.Name = "btnTableNote";
             this.btnTableNote.ShowImage = true;
             this.btnTableNote.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTableNote_Click);
-            // 
-            // btnDraftResolution
-            // 
-            this.btnDraftResolution.Label = "مشروع قرار";
-            this.btnDraftResolution.Name = "btnDraftResolution";
-            this.btnDraftResolution.ShowImage = true;
-            this.btnDraftResolution.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnDraftResolution_Click);
             // 
             // btnInvestigationRefererringLetter
             // 
@@ -451,7 +442,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGeneralLetter;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnMission;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInspctionRefererringLetter;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDraftResolution;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator4;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu mnuAddSubject;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddCeaseInvestigation;

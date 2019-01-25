@@ -180,6 +180,8 @@ namespace GeneralDepartmentOfLawAffairs {
 
             string draftResStr7 =
                 LetterSentences.DraftResolution6 + " "
+                                                 + LetterSentences.Organisation + " "
+                                                 + LetterSentences.AdministrativeProsecution
                                                  + _letterData.ApVal + " "
                                                  + LetterSentences.Num + " "
                                                  + _letterData.ApLetterNum + " "

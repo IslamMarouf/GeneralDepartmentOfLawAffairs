@@ -49,12 +49,6 @@ namespace GeneralDepartmentOfLawAffairs {
             tnl.Write();
         }
 
-        private void btnDraftResolution_Click(object sender, RibbonControlEventArgs e) {
-            var document = Globals.ThisAddIn.Application.ActiveDocument;
-            DraftResolution drl = new DraftResolution(document);
-            drl.Write();
-        }
-
         private void btnInvestigationReferringLetter_Click(object sender, RibbonControlEventArgs e) {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             ReferringLetter rl = new ReferringLetter(document);

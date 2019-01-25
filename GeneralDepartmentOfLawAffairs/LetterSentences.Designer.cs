@@ -808,7 +808,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to وعلي كتاب.
+        ///   Looks up a localized string similar to وعلى كتاب.
         /// </summary>
         public static string DraftResolution6 {
             get {
@@ -1884,6 +1884,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Openion {
             get {
                 return ResourceManager.GetString("Openion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to هيئة.
+        /// </summary>
+        public static string Organisation {
+            get {
+                return ResourceManager.GetString("Organisation", resourceCulture);
             }
         }
         

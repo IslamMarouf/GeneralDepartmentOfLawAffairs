@@ -171,7 +171,7 @@ namespace GeneralDepartmentOfLawAffairs {
 
         protected override void SignSection() {
             //Greeting();
-            Signature(SignType.HAC, LetterSentences.Head + " " + _letterData.CDptName, _letterData.HeadName);
+            Signature(SignType.Hac, LetterSentences.Head + " " + _letterData.CDptName, _letterData.HeadName);
         }
     }
 }
