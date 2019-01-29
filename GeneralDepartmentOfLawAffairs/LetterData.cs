@@ -15,7 +15,7 @@ namespace GeneralDepartmentOfLawAffairs
 //            RegonalsNames = new List<string>();
             SentPhotoCopyCount = 0;
 
-//            CDeptNamesList = new List<string>();
+//            CDeptNamesList = new List<string>(); 
 //            GDeptNamesList = new List<string>();
 //            ApNames = new List<string>();
 //            ApAddresses = new List<string>();

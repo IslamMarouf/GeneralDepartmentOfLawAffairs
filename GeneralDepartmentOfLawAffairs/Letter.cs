@@ -2,8 +2,7 @@
 using Microsoft.Office.Interop.Word;
 using GeneralDepartmentOfLawAffairs.Properties;
 
-namespace GeneralDepartmentOfLawAffairs
-{
+namespace GeneralDepartmentOfLawAffairs {
     public abstract class Letter {
         private const string CentralDepartmentName = "الإدارة المركزية لشئون مكتب الوزير";
 
@@ -119,7 +118,7 @@ namespace GeneralDepartmentOfLawAffairs
                     table.Range.ParagraphFormat.Alignment =
                         WdParagraphAlignment.wdAlignParagraphCenter;
                     table.Rows.HorizontalPosition = 0;
-                    table.Rows.RelativeHorizontalPosition = 
+                    table.Rows.RelativeHorizontalPosition =
                         WdRelativeHorizontalPosition.wdRelativeHorizontalPositionMargin;
                     // 1 Centimeter = 28.34 Points so -1.42 cm = -40.251969 points.
                     // For an approximate result, divide the length value (in Points)
@@ -129,7 +128,7 @@ namespace GeneralDepartmentOfLawAffairs
                      1 pixel (X) = 0.0264583333 cm
                      1 cm = 37.7952755906 pixel (X)
                     */
-                    table.Rows.VerticalPosition = -40.251969f; 
+                    table.Rows.VerticalPosition = -40.251969f;
                     table.Rows.RelativeVerticalPosition =
                         WdRelativeVerticalPosition.wdRelativeVerticalPositionParagraph;
 
@@ -184,25 +183,21 @@ namespace GeneralDepartmentOfLawAffairs
 
                     break;
 
-                case SignType.HAC:
+                case SignType.Hac:
                     columnsCount = 3;
                     rowsCount = 3;
                     table = tableParagraph
                         .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
                     for (var i = 1; i <= rowsCount; i++)
-                        for (var j = 1; j <= columnsCount; j++)
-                        {
+                        for (var j = 1; j <= columnsCount; j++) {
                             var c = table.Cell(i, j);
-                            if ((i == 1) && (j == 3))
-                            {
+                            if ((i == 1) && (j == 3)) {
                                 TableParagraph(c, cDptName, 12);
                             }
-                            else if ((i == 3) && (j == 3))
-                            {
-                                TableParagraph(c,hName , 12);
+                            else if ((i == 3) && (j == 3)) {
+                                TableParagraph(c, hName, 12);
                             }
-
                         }
 
                     break;
@@ -212,7 +207,6 @@ namespace GeneralDepartmentOfLawAffairs
             }
         }
 
-        
 
         protected void Heading(HeadingType hType, string attachmentsStr = "", string cDptName = CentralDepartmentName) {
             // Table.
@@ -284,33 +278,27 @@ namespace GeneralDepartmentOfLawAffairs
                         .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
                     for (var i = 1; i <= rowsCount; i++)
-                        for (var j = 1; j <= columnsCount; j++)
-                        {
+                        for (var j = 1; j <= columnsCount; j++) {
                             var c = table.Cell(i, j);
 
-                            if ((i == 1) && (j == 1))
-                            {
+                            if ((i == 1) && (j == 1)) {
                                 c.Range.InlineShapes.AddPicture(@"C:\Windows\Temp\eagle.png");
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                                 c.Range.ParagraphFormat.SpaceAfter = 0;
                             }
-                            else if ((i == 2) && (j == 1))
-                            {
+                            else if ((i == 2) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.MinistryMame, 9);
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
-                            else if ((i == 3) && (j == 1))
-                            {
+                            else if ((i == 3) && (j == 1)) {
                                 TableParagraph(c, cDptName, 8);
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
-                            else if ((i == 4) && (j == 1))
-                            {
+                            else if ((i == 4) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.GeneralDepartName, 8);
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                             }
-                            else if ((i == 5) && (j == 1))
-                            {
+                            else if ((i == 5) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.DepartmentName, 8);
                                 c.Range.Font.Underline = WdUnderline.wdUnderlineSingle;
                                 c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
@@ -329,28 +317,22 @@ namespace GeneralDepartmentOfLawAffairs
                         .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
                     for (var i = 1; i <= rowsCount; i++)
-                        for (var j = 1; j <= columnsCount; j++)
-                        {
+                        for (var j = 1; j <= columnsCount; j++) {
                             var c = table.Cell(i, j);
 
-                            if ((i == 1) && (j == 1))
-                            {
+                            if ((i == 1) && (j == 1)) {
                                 c.Range.InlineShapes.AddPicture(@"C:\Windows\Temp\eagle.png");
                             }
-                            else if ((i == 2) && (j == 1))
-                            {
+                            else if ((i == 2) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.arabRepublicOfEgypt, 9);
                             }
-                            else if ((i == 3) && (j == 1))
-                            {
+                            else if ((i == 3) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.MinistryMame, 9);
                             }
-                            else if ((i == 4) && (j == 1))
-                            {
+                            else if ((i == 4) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.AffairsSector, 8);
                             }
-                            else if ((i == 5) && (j == 1))
-                            {
+                            else if ((i == 5) && (j == 1)) {
                                 TableParagraph(c, cDptName, 8);
                                 c.Range.Font.Underline = WdUnderline.wdUnderlineSingle;
                             }
@@ -489,7 +471,7 @@ namespace GeneralDepartmentOfLawAffairs
             ResearcherSign,
             GeneralManager,
             RegularSign,
-            HAC
+            Hac
         }
 
         protected enum HeadingType {
