@@ -470,7 +470,10 @@
     <ManifestKeyFile>GeneralDepartmentOfLawAffairs_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>12EBD03399E974F9497135466F2A567DAD65F8A9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CF480BFC976C05B04A285ED4A75C989E651A47A0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
