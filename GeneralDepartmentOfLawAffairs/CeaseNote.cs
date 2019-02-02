@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using GeneralDepartmentOfLawAffairs.Properties;
 using Microsoft.Office.Interop.Word;
 
 namespace GeneralDepartmentOfLawAffairs {
