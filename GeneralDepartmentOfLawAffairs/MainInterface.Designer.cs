@@ -66,7 +66,6 @@
             this.btnNominationLetters = this.Factory.CreateRibbonButton();
             this.btnMission = this.Factory.CreateRibbonButton();
             this.separator3 = this.Factory.CreateRibbonSeparator();
-            this.btnHurry = this.Factory.CreateRibbonButton();
             this.separator5 = this.Factory.CreateRibbonSeparator();
             this.btn_report = this.Factory.CreateRibbonButton();
             this.separator7 = this.Factory.CreateRibbonSeparator();
@@ -75,6 +74,7 @@
             this.menu_help = this.Factory.CreateRibbonMenu();
             this.btnHelp = this.Factory.CreateRibbonButton();
             this.btnAbout = this.Factory.CreateRibbonButton();
+            this.mnuRush = this.Factory.CreateRibbonMenu();
             this.tab_lawAffairs.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             this.group1.Items.Add(this.separator2);
             this.group1.Items.Add(this.mnuMescLetters);
             this.group1.Items.Add(this.separator3);
-            this.group1.Items.Add(this.btnHurry);
+            this.group1.Items.Add(this.mnuRush);
             this.group1.Items.Add(this.separator5);
             this.group1.Items.Add(this.btn_report);
             this.group1.Items.Add(this.separator7);
@@ -328,14 +328,6 @@
             // 
             this.separator3.Name = "separator3";
             // 
-            // btnHurry
-            // 
-            this.btnHurry.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.btnHurry.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.AlarmLetters;
-            this.btnHurry.Label = "استعجالات";
-            this.btnHurry.Name = "btnHurry";
-            this.btnHurry.ShowImage = true;
-            // 
             // separator5
             // 
             this.separator5.Name = "separator5";
@@ -390,6 +382,15 @@
             this.btnAbout.ShowImage = true;
             this.btnAbout.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAbout_Click);
             // 
+            // mnuRush
+            // 
+            this.mnuRush.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.mnuRush.Dynamic = true;
+            this.mnuRush.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.AlarmLetters;
+            this.mnuRush.Label = "menu1";
+            this.mnuRush.Name = "mnuRush";
+            this.mnuRush.ShowImage = true;
+            // 
             // MainInterface
             // 
             this.Name = "MainInterface";
@@ -414,7 +415,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator2;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu mnuMescLetters;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator3;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHurry;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator5;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_report;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator6;
@@ -447,6 +447,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddCeaseInvestigation;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddInvestigation;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddInspection;
+        internal Microsoft.Office.Tools.Ribbon.RibbonMenu mnuRush;
     }
 
     partial class ThisRibbonCollection

@@ -1,10 +1,49 @@
-﻿using Microsoft.Office.Tools.Ribbon;
+﻿using System.Data;
+using System.Data.OleDb;
+using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Tools.Ribbon;
 
 namespace GeneralDepartmentOfLawAffairs {
     public partial class MainInterface {
         private void MainInterface_Load(object sender, RibbonUIEventArgs e) {
-            btnHurry.Enabled = false;
+            
             btn_report.Enabled = false;
+
+            string conString = "SELECT * FROM tblSubjects";
+            OleDbDataAdapter subjectsDataAdapter = new OleDbDataAdapter();
+            OleDbCommand odbCommand = new OleDbCommand();
+            DataSet ds = new DataSet();
+            odbCommand.Connection = Globals.ThisAddIn.SubjectsConnection;
+            odbCommand.CommandType = CommandType.Text;
+            odbCommand.CommandText = conString;
+            subjectsDataAdapter.SelectCommand = odbCommand;
+            subjectsDataAdapter.Fill(ds, "tblSubjects");
+
+            var investigations = from sb in ds.Tables["tblSubjects"].AsEnumerable()
+                where sb.Field<string>("subject_type").Equals("تحقيق")
+                
+                select sb;
+
+            foreach (var invesRow in investigations)
+            {
+                RibbonButton btnItem = Factory.CreateRibbonButton();
+                btnItem.Label = $"{invesRow.Field<string>("subject_type") + invesRow.Field<string>("subject_num") + "لسنة" + invesRow.Field<string>("subject_year")} استعجال في ";
+                btnItem.Name = "btn" + invesRow.Field<string>("subject_num");
+                mnuRush.Items.Add(btnItem);
+            }
+
+            /*
+               If the user selected the LINQ to Object method, we must fi rst build a DataSet and fill it
+               with our Faculty data table. The reason for that is because there is no direct relationship
+               between the LINQ and the Microsoft Access database, but we can set up an indirect
+               relationship between them using the LINQ to ADO.NET since ADO.NET covers any
+               kinds of database including the Microsoft Access 2007. In order to set up this relationship,
+               a DataSet must be built by fi lling it with the desired data table such as Faculty in this
+               case. One point to note is that this DataSet is a nontyped DataSet if it is built in this way,
+               and you must use the fi eld location, not fi eld name, to identify each column in the data
+               table.
+             */
+
         }
 
         private void btnNormalNotification_Click(object sender, RibbonControlEventArgs e) {

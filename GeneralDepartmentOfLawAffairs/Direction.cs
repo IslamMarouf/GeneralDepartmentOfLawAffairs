@@ -125,7 +125,7 @@ namespace GeneralDepartmentOfLawAffairs
             cmbxRecipientDeptName.Text = "";
 
             string strAddressesCon = "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                                     "Data Source=C:\\Users\\soli\\Documents\\administrativeProsecutionAddresses.accdb;";
+                                     "Data Source=C:\\Users\\manno\\Documents\\administrativeProsecutionAddresses.accdb;";
             _apAddressesConnection.ConnectionString = strAddressesCon;
 
             try
