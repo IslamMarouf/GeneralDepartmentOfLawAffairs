@@ -19,7 +19,7 @@ namespace GeneralDepartmentOfLawAffairs {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class LetterSentences {
@@ -1393,6 +1393,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to فحص.
+        /// </summary>
+        public static string Inspection {
+            get {
+                return ResourceManager.GetString("Inspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو فحص الشكوى المشار إليها وموافاتنا بنتيجة الفحص مدعمة بالمستندات حتى يتسنى لنا اتخاذ اللازم..
         /// </summary>
         public static string inspectionRequest {
@@ -1425,6 +1434,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string intensive_2 {
             get {
                 return ResourceManager.GetString("intensive_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تحقيق.
+        /// </summary>
+        public static string Investigation {
+            get {
+                return ResourceManager.GetString("Investigation", resourceCulture);
             }
         }
         
@@ -2028,6 +2046,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Researcher {
             get {
                 return ResourceManager.GetString("Researcher", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إستعجال في ال.
+        /// </summary>
+        public static string Rush {
+            get {
+                return ResourceManager.GetString("Rush", resourceCulture);
             }
         }
         

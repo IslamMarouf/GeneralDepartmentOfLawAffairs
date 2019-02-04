@@ -1,12 +1,16 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.OleDb;
+using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Ribbon;
 
-namespace GeneralDepartmentOfLawAffairs {
-    public partial class MainInterface {
-        private void MainInterface_Load(object sender, RibbonUIEventArgs e) {
-            
+namespace GeneralDepartmentOfLawAffairs
+{
+    public partial class MainInterface
+    {
+        private void MainInterface_Load(object sender, RibbonUIEventArgs e)
+        {
             btn_report.Enabled = false;
 
             string conString = "SELECT * FROM tblSubjects";
@@ -20,15 +24,16 @@ namespace GeneralDepartmentOfLawAffairs {
             subjectsDataAdapter.Fill(ds, "tblSubjects");
 
             var investigations = from sb in ds.Tables["tblSubjects"].AsEnumerable()
-                where sb.Field<string>("subject_type").Equals("تحقيق")
                 
                 select sb;
 
             foreach (var invesRow in investigations)
             {
                 RibbonButton btnItem = Factory.CreateRibbonButton();
-                btnItem.Label = $"{invesRow.Field<string>("subject_type") + invesRow.Field<string>("subject_num") + "لسنة" + invesRow.Field<string>("subject_year")} استعجال في ";
+                btnItem.Label =
+                    $"{LetterSentences.Rush + invesRow.Field<string>("subject_type") + " " + LetterSentences.Num + " [" + invesRow.Field<string>("subject_num") + "] " + LetterSentences.ForYear + " " + invesRow.Field<string>("subject_year")}";
                 btnItem.Name = "btn" + invesRow.Field<string>("subject_num");
+                btnItem.Click += new RibbonControlEventHandler(MnuRush_Click);
                 mnuRush.Items.Add(btnItem);
             }
 
@@ -43,112 +48,139 @@ namespace GeneralDepartmentOfLawAffairs {
                and you must use the fi eld location, not fi eld name, to identify each column in the data
                table.
              */
-
         }
 
-        private void btnNormalNotification_Click(object sender, RibbonControlEventArgs e) {
+
+        private void MnuRush_Click(object sender, RibbonControlEventArgs e)
+        {
+            if (!(sender is RibbonButton clickedItem)) return;
+            var text = clickedItem.Label;
+            var subjectNum = text.Substring(text.IndexOf('[') + 1, (text.IndexOf(']') - text.IndexOf('[')) - 1);
+            var subjectType = text.Substring(13, text.IndexOf('ر') - 14);
+            MessageBox.Show(subjectType);
+        }
+
+        private void btnNormalNotification_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             RegularNotificationLetter rnl = new RegularNotificationLetter(document);
             rnl.Write();
         }
 
-        private void btnConfNotification_Click(object sender, RibbonControlEventArgs e) {
+        private void btnConfNotification_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             IntensiveNotificationLetter inl = new IntensiveNotificationLetter(document);
             inl.Write();
         }
 
-        private void btnSpecialNotification_Click(object sender, RibbonControlEventArgs e) {
+        private void btnSpecialNotification_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             SpecialNotificationLetter snl = new SpecialNotificationLetter(document);
             snl.Write();
         }
 
-        private void btnInvestInquiry_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInvestInquiry_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             InvestInquiryLetter iql = new InvestInquiryLetter(document);
             iql.Write();
         }
 
-        private void btnCeaseNote_Click(object sender, RibbonControlEventArgs e) {
+        private void btnCeaseNote_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             CeaseNote cnl = new CeaseNote(document);
             cnl.Write();
         }
 
-        private void btnRegularNote_Click(object sender, RibbonControlEventArgs e) {
+        private void btnRegularNote_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             RegularNote rnl = new RegularNote(document);
             rnl.Write();
         }
 
-        private void btnTableNote_Click(object sender, RibbonControlEventArgs e) {
+        private void btnTableNote_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             TableNote tnl = new TableNote(document);
             tnl.Write();
         }
 
-        private void btnInvestigationReferringLetter_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInvestigationReferringLetter_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             ReferringLetter rl = new ReferringLetter(document);
             rl.Write();
         }
 
-        private void btnInspectionLetter_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInspectionLetter_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             InspectionLetter inspectionLetter = new InspectionLetter(document);
             inspectionLetter.Write();
         }
 
-        private void btnInspecInquiry_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInspecInquiry_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             InspecInquiryLetter inspecl = new InspecInquiryLetter(document);
             inspecl.Write();
         }
 
-        private void btnInspectionNote_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInspectionNote_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             InspectionNote inl = new InspectionNote(document);
             inl.Write();
         }
 
-        private void btnInspectionReferringLetter_Click(object sender, RibbonControlEventArgs e) {
+        private void btnInspectionReferringLetter_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             InspectionRefLetter irl = new InspectionRefLetter(document);
             irl.Write();
         }
 
-        private void btnGeneralLetter_Click(object sender, RibbonControlEventArgs e) {
+        private void btnGeneralLetter_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             EmptyLetter el = new EmptyLetter(document);
             el.Write();
         }
 
-        private void btnIssuanceRescript_Click(object sender, RibbonControlEventArgs e) {
+        private void btnIssuanceRescript_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             IssuanceRescriptLetter irl = new IssuanceRescriptLetter(document);
             irl.Write();
         }
 
-        private void btnRescriptSent_Click(object sender, RibbonControlEventArgs e) {
+        private void btnRescriptSent_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             RescriptSentLetter rsl = new RescriptSentLetter(document);
             rsl.Write();
         }
 
-        private void btnNominationLetter_Click(object sender, RibbonControlEventArgs e) {
+        private void btnNominationLetter_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             NominationLetter nl = new NominationLetter(document);
             nl.Write();
         }
 
-        private void btnMission_Click(object sender, RibbonControlEventArgs e) {
+        private void btnMission_Click(object sender, RibbonControlEventArgs e)
+        {
             var document = Globals.ThisAddIn.Application.ActiveDocument;
             MissionLetter missionLetter = new MissionLetter(document);
             missionLetter.Write();
         }
 
-        private void btnAbout_Click(object sender, RibbonControlEventArgs e) {
+        private void btnAbout_Click(object sender, RibbonControlEventArgs e)
+        {
             var formAbout = new FrmAbout();
             formAbout.ShowDialog();
         }

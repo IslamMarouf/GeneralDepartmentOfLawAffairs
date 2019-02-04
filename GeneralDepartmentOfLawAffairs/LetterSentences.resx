@@ -864,4 +864,13 @@
   <data name="Organisation" xml:space="preserve">
     <value>هيئة</value>
   </data>
+  <data name="Inspection" xml:space="preserve">
+    <value>فحص</value>
+  </data>
+  <data name="Investigation" xml:space="preserve">
+    <value>تحقيق</value>
+  </data>
+  <data name="Rush" xml:space="preserve">
+    <value>إستعجال في ال</value>
+  </data>
 </root>
