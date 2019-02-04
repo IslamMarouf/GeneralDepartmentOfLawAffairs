@@ -60,7 +60,7 @@
             this.lblNo2 = new System.Windows.Forms.Label();
             this.txt_2 = new System.Windows.Forms.TextBox();
             this.lblHistory = new System.Windows.Forms.Label();
-            this.dTPickerIncomDate = new System.Windows.Forms.DateTimePicker();
+            this.dTPickerAssignmentDate = new System.Windows.Forms.DateTimePicker();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).BeginInit();
             this.pnlSummon.SuspendLayout();
@@ -476,16 +476,16 @@
             this.lblHistory.TabIndex = 55;
             this.lblHistory.Text = "تاريخ الأحالة: ";
             // 
-            // dTPickerIncomDate
+            // dTPickerAssignmentDate
             // 
-            this.dTPickerIncomDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(108)))), ((int)(((byte)(86)))));
-            this.dTPickerIncomDate.Location = new System.Drawing.Point(358, 14);
-            this.dTPickerIncomDate.Name = "dTPickerIncomDate";
-            this.dTPickerIncomDate.RightToLeftLayout = true;
-            this.dTPickerIncomDate.Size = new System.Drawing.Size(134, 26);
-            this.dTPickerIncomDate.TabIndex = 53;
-            this.dTPickerIncomDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
-            this.dTPickerIncomDate.ValueChanged += new System.EventHandler(this.dTPickerIncomDate_ValueChanged);
+            this.dTPickerAssignmentDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(108)))), ((int)(((byte)(86)))));
+            this.dTPickerAssignmentDate.Location = new System.Drawing.Point(358, 14);
+            this.dTPickerAssignmentDate.Name = "dTPickerAssignmentDate";
+            this.dTPickerAssignmentDate.RightToLeftLayout = true;
+            this.dTPickerAssignmentDate.Size = new System.Drawing.Size(134, 26);
+            this.dTPickerAssignmentDate.TabIndex = 53;
+            this.dTPickerAssignmentDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
+            this.dTPickerAssignmentDate.ValueChanged += new System.EventHandler(this.dTPickerIncomDate_ValueChanged);
             // 
             // FrmRegularNotification
             // 
@@ -495,7 +495,7 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(626, 423);
             this.Controls.Add(this.lblHistory);
-            this.Controls.Add(this.dTPickerIncomDate);
+            this.Controls.Add(this.dTPickerAssignmentDate);
             this.Controls.Add(this.cmbxInvestigationNum);
             this.Controls.Add(this.pnlSummon);
             this.Controls.Add(this.pnlButtons);
@@ -555,7 +555,7 @@
         private System.Windows.Forms.Label lblMessage_1;
         private System.Windows.Forms.PictureBox pbxStatus;
         private System.Windows.Forms.Label lblHistory;
-        private System.Windows.Forms.DateTimePicker dTPickerIncomDate;
+        private System.Windows.Forms.DateTimePicker dTPickerAssignmentDate;
         private System.Windows.Forms.Label lblMessage_4;
     }
 }

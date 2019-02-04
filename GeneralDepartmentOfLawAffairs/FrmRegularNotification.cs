@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Data;
+using System.Data.OleDb;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml;
 using GeneralDepartmentOfLawAffairs.Properties;
 
 namespace GeneralDepartmentOfLawAffairs
@@ -9,12 +13,58 @@ namespace GeneralDepartmentOfLawAffairs
         public FrmRegularNotification() {
             InitializeComponent();
             FrmLetterData = new LetterData();
+
+            /*
+             * Globals.ThisAddIn.SubjectsConnection used to access and get the original
+             * Connection object in the add-in and we need to use that connection here.
+             * The Command instance is initialized with the Connection object that is
+             * created in the ThisAddIn_Startup event.
+             */
+            odbCommand.Connection = Globals.ThisAddIn.SubjectsConnection;
+            odbCommand.CommandType = CommandType.Text;
+            odbCommand.CommandText = conString;
+            subjectsDataAdapter.SelectCommand = odbCommand;
+            subjectsDataAdapter.Fill(ds, "tblSubjects");
         }
 
         public LetterData FrmLetterData { get; }
         public bool FormHasEmptyFields { get; set; }
 
+        /*
+               In LINQ to Object method, we must first build a DataSet and fill it with
+               our Subjects data table. The reason for that is because there is no direct
+               relationship between the LINQ and the Microsoft Access database, but we
+               can set up an indirect relationship between them using the LINQ to ADO.NET
+               since ADO.NET covers any kinds of database including the Microsoft Access
+               20016. In order to set up this relationship, a DataSet must be built by
+               filling it with the desired data table such as Subjects in this case.
+               One point to note is that this DataSet is a nontyped DataSet if it is 
+               built in this way, and you must use the field location, not field name,
+               to identify each column in the data table.
+             */
+
+        string conString = "SELECT * FROM tblSubjects";
+        OleDbDataAdapter subjectsDataAdapter = new OleDbDataAdapter();
+        OleDbCommand odbCommand = new OleDbCommand();
+
+        /*
+           The DataSet is used to query data using the LINQ to DataSet method since
+           there is no direct way to connect LINQ to the Microsoft Access database.
+         */
+        DataSet ds = new DataSet();
+
+
         private void FrmRegularNotification_Load(object sender, EventArgs e) {
+            var ivestigationsNums = from sb in ds.Tables["tblSubjects"].AsEnumerable()
+                                    where sb.Field<string>("subject_type").Equals(LetterSentences.Investigation)
+                                    select sb;
+
+            foreach (var numRow in ivestigationsNums)
+            {
+                cmbxInvestigationNum.Items.Add(numRow.Field<string>("subject_num"));
+            }
+
+
             if (cmbxInvestigationNum.Text.Equals("")) {
                 lblMessage.Text = LetterSentences.LblMessage;
                 ValidateNotification();
@@ -34,7 +84,7 @@ namespace GeneralDepartmentOfLawAffairs
             ctrlDirection.cmbxRecipient.SelectedIndex = 1;
 
             dTPicker.Value = DateTime.Today;
-            dTPickerIncomDate.Value = DateTime.Today;
+            dTPickerAssignmentDate.Value = DateTime.Today;
         }
 
         private void btnOK_Click(object sender, EventArgs e) {
@@ -61,7 +111,7 @@ namespace GeneralDepartmentOfLawAffairs
             if (dTPicker.Value.ToShortDateString() == DateTime.Now.ToShortDateString())
                 FrmLetterData.EmptyFields.Add(LetterSentences.LblMessage_4);
 
-            if (dTPickerIncomDate.Value.CompareTo(DateTime.Today) > 0) {
+            if (dTPickerAssignmentDate.Value.CompareTo(DateTime.Today) > 0) {
                 FrmLetterData.EmptyFields.Add(LetterSentences.LblMessage_5);
             }
 
@@ -139,6 +189,16 @@ namespace GeneralDepartmentOfLawAffairs
         }
 
         private void cmbxInvestigationNum_SelectedIndexChanged(object sender, EventArgs e) {
+            
+            var investigationInfo = from sb in ds.Tables["tblSubjects"].AsEnumerable()
+                where sb.Field<string>("subject_num").Equals(cmbxInvestigationNum.SelectedItem.ToString())
+                select sb;
+
+            foreach (var investInfoRow in investigationInfo)
+            {
+                txtSubject.Text = investInfoRow.Field<string>("subject_about");
+                dTPickerAssignmentDate.Value = investInfoRow.Field<DateTime>("subject_assignmentDate");
+            }
         }
 
         private void cmbxInvestigationNum_TextChanged(object sender, EventArgs e) {
@@ -173,14 +233,14 @@ namespace GeneralDepartmentOfLawAffairs
 
         private void dTPickerIncomDate_ValueChanged(object sender, EventArgs e)
         {
-            if (dTPickerIncomDate.Value.CompareTo(DateTime.Today) > 0)
+            if (dTPickerAssignmentDate.Value.CompareTo(DateTime.Today) > 0)
             {
                 lblMessage_4.Text = LetterSentences.LblMessage_5;
                 ValidateNotification();
             }
             else
             {
-                FrmLetterData.InvestigationIncomDate = dTPickerIncomDate.Value;
+                FrmLetterData.InvestigationIncomDate = dTPickerAssignmentDate.Value;
                 lblMessage_4.Text = "";
                 ValidateNotification();
             }
