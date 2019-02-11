@@ -66,6 +66,7 @@
             this.btnNominationLetters = this.Factory.CreateRibbonButton();
             this.btnMission = this.Factory.CreateRibbonButton();
             this.separator3 = this.Factory.CreateRibbonSeparator();
+            this.mnuRush = this.Factory.CreateRibbonMenu();
             this.separator5 = this.Factory.CreateRibbonSeparator();
             this.btn_report = this.Factory.CreateRibbonButton();
             this.separator7 = this.Factory.CreateRibbonSeparator();
@@ -74,7 +75,6 @@
             this.menu_help = this.Factory.CreateRibbonMenu();
             this.btnHelp = this.Factory.CreateRibbonButton();
             this.btnAbout = this.Factory.CreateRibbonButton();
-            this.mnuRush = this.Factory.CreateRibbonMenu();
             this.tab_lawAffairs.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -328,6 +328,15 @@
             // 
             this.separator3.Name = "separator3";
             // 
+            // mnuRush
+            // 
+            this.mnuRush.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.mnuRush.Dynamic = true;
+            this.mnuRush.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.AlarmLetters;
+            this.mnuRush.Label = "menu1";
+            this.mnuRush.Name = "mnuRush";
+            this.mnuRush.ShowImage = true;
+            // 
             // separator5
             // 
             this.separator5.Name = "separator5";
@@ -382,20 +391,12 @@
             this.btnAbout.ShowImage = true;
             this.btnAbout.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAbout_Click);
             // 
-            // mnuRush
-            // 
-            this.mnuRush.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.mnuRush.Dynamic = true;
-            this.mnuRush.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.AlarmLetters;
-            this.mnuRush.Label = "menu1";
-            this.mnuRush.Name = "mnuRush";
-            this.mnuRush.ShowImage = true;
-            // 
             // MainInterface
             // 
             this.Name = "MainInterface";
             this.RibbonType = "Microsoft.Word.Document";
             this.Tabs.Add(this.tab_lawAffairs);
+            this.Close += new System.EventHandler(this.MainInterface_Close);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.MainInterface_Load);
             this.tab_lawAffairs.ResumeLayout(false);
             this.tab_lawAffairs.PerformLayout();

@@ -263,6 +263,12 @@
     <Compile Include="FrmNominationLetter.Designer.cs">
       <DependentUpon>FrmNominationLetter.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProcedure.Designer.cs">
+      <DependentUpon>FrmProcedure.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegularNote.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmNominationLetter.resx">
       <DependentUpon>FrmNominationLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProcedure.resx">
+      <DependentUpon>FrmProcedure.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegularNotification.resx">
       <DependentUpon>FrmRegularNotification.cs</DependentUpon>

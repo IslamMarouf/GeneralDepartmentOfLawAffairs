@@ -10,7 +10,7 @@ namespace GeneralDepartmentOfLawAffairs
     public partial class ThisAddIn
     {
         public readonly OleDbConnection ApAddressesConnection = new OleDbConnection();
-        public readonly OleDbConnection InspectionSubjectConnection = new OleDbConnection();
+        public readonly OleDbConnection DepartmentsConnection = new OleDbConnection();
         public readonly OleDbConnection SubjectsConnection = new OleDbConnection();
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
@@ -18,8 +18,9 @@ namespace GeneralDepartmentOfLawAffairs
             const string strAddressesCon = "Provider=Microsoft.ACE.OLEDB.12.0;" +
                                            "Data Source=C:\\Users\\manno\\Documents\\administrativeProsecutionAddresses.accdb;";
 
-            const string strInsSubjectCon = "Provider=Microsoft.ACE.OLEDB.12.0;" +
-                                            "Data Source=C:\\Users\\manno\\Documents\\InspectionSubjects.accdb;";
+            const string strDepartmentsCon = "Provider=Microsoft.ACE.OLEDB.12.0;" +
+                                             "Data Source=C:\\Users\\manno\\Documents\\Departments.accdb;" +
+                                             "Jet OLEDB:Database Password=0163575879";
 
 
             /*
@@ -44,7 +45,7 @@ namespace GeneralDepartmentOfLawAffairs
                 "Jet OLEDB:Database Password=0163575879";
 
             ApAddressesConnection.ConnectionString = strAddressesCon;
-            InspectionSubjectConnection.ConnectionString = strInsSubjectCon;
+            DepartmentsConnection.ConnectionString = strDepartmentsCon;
             SubjectsConnection.ConnectionString = strSubjectsCon;
 
             try
@@ -70,8 +71,8 @@ namespace GeneralDepartmentOfLawAffairs
 
             try
             {
-                InspectionSubjectConnection.Open();
-                MessageBox.Show("InspectionSubjects Database connection is successful.");
+                DepartmentsConnection.Open();
+                MessageBox.Show("Departments Database connection is successful.");
             }
             catch (OleDbException oleDbEx)
             {
@@ -84,9 +85,9 @@ namespace GeneralDepartmentOfLawAffairs
                 MessageBox.Show("Invalid Message = " + invOpEx.Message);
             }
 
-            if (InspectionSubjectConnection.State != ConnectionState.Open)
+            if (DepartmentsConnection.State != ConnectionState.Open)
             {
-                MessageBox.Show("InspectionSubjects Database connection is failed.");
+                MessageBox.Show("Departments Database connection is failed.");
             }
 
             
@@ -131,8 +132,8 @@ namespace GeneralDepartmentOfLawAffairs
             ApAddressesConnection?.Close();
             ApAddressesConnection?.Dispose();
 
-            InspectionSubjectConnection?.Close();
-            InspectionSubjectConnection?.Dispose();
+            DepartmentsConnection?.Close();
+            DepartmentsConnection?.Dispose();
 
             SubjectsConnection?.Close();
             SubjectsConnection?.Dispose();

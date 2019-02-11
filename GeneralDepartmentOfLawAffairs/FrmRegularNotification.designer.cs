@@ -257,6 +257,8 @@
             this.txtSubject.Size = new System.Drawing.Size(527, 53);
             this.txtSubject.TabIndex = 1;
             this.txtSubject.TextChanged += new System.EventHandler(this.txtSubject_TextChanged);
+            this.txtSubject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSubject_KeyDown);
+            this.txtSubject.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSubject_KeyUp);
             // 
             // lblSubject
             // 

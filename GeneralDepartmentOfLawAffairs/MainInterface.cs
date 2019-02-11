@@ -50,6 +50,7 @@ namespace GeneralDepartmentOfLawAffairs
 
             var investigations = from sb in ds.Tables["tblSubjects"].AsEnumerable()
                                 select sb;
+            
 
             foreach (var invesRow in investigations)
             {
@@ -71,7 +72,10 @@ namespace GeneralDepartmentOfLawAffairs
             var text = clickedItem.Label;
             var subjectNum = text.Substring(text.IndexOf('[') + 1, (text.IndexOf(']') - text.IndexOf('[')) - 1);
             var subjectType = text.Substring(13, text.IndexOf('ر') - 14);
-            MessageBox.Show(subjectType);
+            FrmProcedure frmProc = new FrmProcedure();
+            frmProc.Text = text;
+            frmProc._LetterData.Subject = text;
+            frmProc.Show();
         }
 
         private void btnNormalNotification_Click(object sender, RibbonControlEventArgs e)
@@ -221,6 +225,11 @@ namespace GeneralDepartmentOfLawAffairs
         {
             FrmAddInspection frmAddInspection = new FrmAddInspection();
             frmAddInspection.ShowDialog();
+        }
+
+        private void MainInterface_Close(object sender, EventArgs e)
+        {
+
         }
     }
 }

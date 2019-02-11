@@ -250,5 +250,19 @@ namespace GeneralDepartmentOfLawAffairs
         {
             FormHasEmptyFields = false;
         }
+
+        private void txtSubject_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Shift && e.KeyCode == Keys.Divide)
+            {
+                SendKeys.Send("{BACKSPACE}");
+
+            }
+        }
+
+        private void txtSubject_KeyUp(object sender, KeyEventArgs e)
+        {
+            
+        }
     }
 }
