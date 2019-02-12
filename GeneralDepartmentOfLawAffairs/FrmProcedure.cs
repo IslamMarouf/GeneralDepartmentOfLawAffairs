@@ -13,16 +13,19 @@ namespace GeneralDepartmentOfLawAffairs
     public partial class FrmProcedure : GeneralForm
     {
         
-        public LetterData _LetterData;
+        public LetterData LetterData;
         public FrmProcedure()
         {
             InitializeComponent();
-            _LetterData = new LetterData();
+            LetterData = new LetterData();
         }
 
         private void FrmProcedure_Load(object sender, EventArgs e)
         {
-            label1.Text = _LetterData.Subject;
+            dtpassignmentDate.Enabled = false;
+            dtpassignmentDate.Value = LetterData.AssignmentDate;
+            txt_about.Text = LetterData.Subject;
+            lbl_procedureName.Text = LetterData.ProcedureName;
         }
     }
 }

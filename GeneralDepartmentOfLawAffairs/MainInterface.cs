@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
+using System.Drawing;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Ribbon;
@@ -49,8 +50,7 @@ namespace GeneralDepartmentOfLawAffairs
             subjectsDataAdapter.Fill(ds, "tblSubjects");
 
             var investigations = from sb in ds.Tables["tblSubjects"].AsEnumerable()
-                                select sb;
-            
+                                select sb;          
 
             foreach (var invesRow in investigations)
             {
@@ -59,6 +59,16 @@ namespace GeneralDepartmentOfLawAffairs
                     $"{LetterSentences.Rush + invesRow.Field<string>("subject_type") + " " + LetterSentences.Num + " [" + invesRow.Field<string>("subject_num") + "] " + LetterSentences.ForYear + " " + invesRow.Field<string>("subject_year")}";
                 btnItem.Name = "btn" + invesRow.Field<string>("subject_num");
                 btnItem.Click += MnuRush_Click;
+                LetterData _letterData = new LetterData();
+
+                _letterData.SubjectType = invesRow.Field<string>("subject_type");
+                _letterData.AssignmentDate = invesRow.Field<DateTime>("subject_assignmentDate");
+                _letterData.Subject = invesRow.Field<string>("subject_about");
+                _letterData.ProcedureName = invesRow.Field<string>("Subject_procedureName");
+                _letterData.ProcedureDate = invesRow.Field<DateTime>("Subject_procedureDate");
+                _letterData.ProcedureOutComDate = invesRow.Field<DateTime>("Subject_procedureOutComDate");
+
+                btnItem.Tag = _letterData;
                 mnuRush.Items.Add(btnItem);
             }
             subjectsDataAdapter?.Dispose();
@@ -74,7 +84,7 @@ namespace GeneralDepartmentOfLawAffairs
             var subjectType = text.Substring(13, text.IndexOf('ر') - 14);
             FrmProcedure frmProc = new FrmProcedure();
             frmProc.Text = text;
-            frmProc._LetterData.Subject = text;
+            frmProc.LetterData = (LetterData) clickedItem.Tag;
             frmProc.Show();
         }
 

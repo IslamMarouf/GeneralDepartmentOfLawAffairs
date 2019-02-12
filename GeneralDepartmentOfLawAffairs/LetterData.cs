@@ -147,6 +147,7 @@ namespace GeneralDepartmentOfLawAffairs
         public string InvestigationNumber { get; set; }
         public string InspectionNumber { get; set; }
         public string Subject { get; set; }
+        public string SubjectType { get; set; }
         public string Receiver { get; set; }
         public string ReceiverDeptName { get; set; }
         public string SentPhotoCopyReceiver { get; set; }
@@ -161,7 +162,11 @@ namespace GeneralDepartmentOfLawAffairs
         public string ApVal { get; set; }
         public int Index { get; set; }
         public int ArticlesNum { get; set; }
-        
+        public DateTime AssignmentDate { get; set; }
+        public DateTime ProcedureDate { get; set; }
+        public DateTime ProcedureOutComDate { get; set; }
+        public string ProcedureName { get; set; }
+
         // regional 
         public List<string> EmptyFields { get; }
         public List<string> CDeptNamesList { get; }
