@@ -51,7 +51,7 @@ namespace GeneralDepartmentOfLawAffairs
             try
             {
                 ApAddressesConnection.Open();
-                MessageBox.Show("administrativeProsecutionAddresses Database connection is successful.");
+                //MessageBox.Show("administrativeProsecutionAddresses Database connection is successful.");
             }
             catch (OleDbException oleDbEx)
             {
@@ -72,7 +72,7 @@ namespace GeneralDepartmentOfLawAffairs
             try
             {
                 DepartmentsConnection.Open();
-                MessageBox.Show("Departments Database connection is successful.");
+                //MessageBox.Show("Departments Database connection is successful.");
             }
             catch (OleDbException oleDbEx)
             {
@@ -90,13 +90,10 @@ namespace GeneralDepartmentOfLawAffairs
                 MessageBox.Show("Departments Database connection is failed.");
             }
 
-            
-
-
             try
             {
                 SubjectsConnection.Open();
-                MessageBox.Show("Subjects Database connection is successful.");
+                //MessageBox.Show("Subjects Database connection is successful.");
             }
             catch (OleDbException oleDbEx)
             {
@@ -113,7 +110,6 @@ namespace GeneralDepartmentOfLawAffairs
             {
                 MessageBox.Show("Subjects Database connection is failed.");
             }
-
 
             if (File.Exists(@"C:\Windows\Temp\eagle.png")) return;
             object obj = Properties.Resources.eagle;

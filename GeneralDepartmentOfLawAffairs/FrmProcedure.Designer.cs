@@ -40,7 +40,7 @@
             // 
             this.lbl_procedureName.AutoSize = true;
             this.lbl_procedureName.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbl_procedureName.Location = new System.Drawing.Point(99, 102);
+            this.lbl_procedureName.Location = new System.Drawing.Point(99, 114);
             this.lbl_procedureName.Name = "lbl_procedureName";
             this.lbl_procedureName.Size = new System.Drawing.Size(33, 19);
             this.lbl_procedureName.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(12, 102);
+            this.label2.Location = new System.Drawing.Point(12, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 5;
@@ -101,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 320);
+            this.ClientSize = new System.Drawing.Size(553, 182);
             this.Controls.Add(this.dtpassignmentDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

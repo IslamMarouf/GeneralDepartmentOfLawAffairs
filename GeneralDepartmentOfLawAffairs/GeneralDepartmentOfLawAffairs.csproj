@@ -385,6 +385,9 @@
     <EmbeddedResource Include="FrmIntensiveNotification.resx">
       <DependentUpon>FrmIntensiveNotification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInvestInquiry.resx">
+      <DependentUpon>FrmInvestInquiry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIssuanceRescriptLetter.resx">
       <DependentUpon>FrmIssuanceRescriptLetter.cs</DependentUpon>
     </EmbeddedResource>
