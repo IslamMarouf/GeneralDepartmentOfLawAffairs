@@ -2,24 +2,30 @@
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 
-namespace GeneralDepartmentOfLawAffairs {
-    public class CeaseNote : Letter {
+namespace GeneralDepartmentOfLawAffairs
+{
+    public class CeaseNote : Letter
+    {
         private readonly Document _doc;
         private DialogResult _dialogResult;
         private LetterData _letterData;
 
-        public CeaseNote(Document doc) : base(doc) {
+        public CeaseNote(Document doc) : base(doc)
+        {
             _doc = doc;
         }
 
-        public override void Write() {
-            if (Initialize()) {
+        public override void Write()
+        {
+            if (Initialize())
+            {
                 LetterSections();
                 DraftResolution();
             }
         }
 
-        protected override bool Initialize() {
+        protected override bool Initialize()
+        {
             FrmCeaseNote frmCeaseNote = new FrmCeaseNote();
             _dialogResult = frmCeaseNote.ShowDialog();
             _letterData = frmCeaseNote.FrmLetterData;
@@ -27,23 +33,26 @@ namespace GeneralDepartmentOfLawAffairs {
             return (_dialogResult == DialogResult.OK) && !frmCeaseNote.FormHasEmptyFields;
         }
 
-        protected override void HeadingSection() {
+        protected override void HeadingSection()
+        {
             Heading(HeadingType.Note);
         }
 
-        protected override void DirectionSection() {
+        protected override void DirectionSection()
+        {
             var noteParagraph1 = new Paragraph(_doc);
             noteParagraph1.AddFormatted(LetterSentences.Note, "pt bold heading", 12);
 
             string str = LetterSentences.CeaseNote1 + " "
                                                     + _letterData.InvestigationNumber + " "
                                                     + LetterSentences.ForYear + " "
-                                                    + _letterData.InvestigationDate;
+                                                    + _letterData.InvYear;
             var noteParagraph2 = new Paragraph(_doc);
             noteParagraph2.AddFormatted(str, "pt bold heading", 12);
         }
 
-        protected override void BodySection() {
+        protected override void BodySection()
+        {
             string str1 = LetterSentences.CeaseNote2 + " "
                                                      + LetterSentences.Num + " "
                                                      + _letterData.IncomingLetterNumber + " "
@@ -58,7 +67,7 @@ namespace GeneralDepartmentOfLawAffairs {
 
             string str2 = LetterSentences.CeaseNote4
                           + _letterData.Name + "-"
-                          + LetterSentences.CeaseNote23 + " "
+                          + LetterSentences.CeaseNote23
                           + _letterData.DepartmentName + "-"
                           + LetterSentences.CeaseNote24 + " "
                           + LetterSentences.CeaseNote7 + " "
@@ -96,7 +105,7 @@ namespace GeneralDepartmentOfLawAffairs {
             var noteParagraph8 = new Paragraph(_doc);
             noteParagraph8.AddFormatted(str8, "pt bold heading", 12, false, true, true);
 
-            string str9 = LetterSentences.CeaseNote12;
+            string str9 = LetterSentences.CeaseNote12 + " " + LetterSentences.Head + _letterData.CDptName;
             var noteParagraph9 = new Paragraph(_doc);
             noteParagraph9.AddFormatted(str9, "Times New Roman", 14, false, true);
 
@@ -107,6 +116,7 @@ namespace GeneralDepartmentOfLawAffairs {
             string str11 = LetterSentences.First + LetterSentences.CeaseNote14;
             var noteParagraph11 = new Paragraph(_doc);
             noteParagraph11.AddFormatted(str11, "Times New Roman", 14, false, true);
+            noteParagraph11.FormattedSentence(LetterSentences.First, "pt bold heading", 12);
 
             string str12 = LetterSentences.CeaseNote15;
             var noteParagraph12 = new Paragraph(_doc);
@@ -120,14 +130,18 @@ namespace GeneralDepartmentOfLawAffairs {
             var noteTable = tableParagraph
                 .Range.Tables.Add(tableParagraph.Range, rowsCount, columnsCount);
 
-            for (var i = 1; i <= rowsCount; i++) {
-                for (var j = 1; j <= columnsCount; j++) {
+            for (var i = 1; i <= rowsCount; i++)
+            {
+                for (var j = 1; j <= columnsCount; j++)
+                {
                     var c = noteTable.Cell(i, j);
 
-                    if (i == 1 && j == 1) {
+                    if (i == 1 && j == 1)
+                    {
                         TableParagraph(c, _letterData.Name, "times new roman", 14);
                     }
-                    else if (i == 1 && j == 2) {
+                    else if (i == 1 && j == 2)
+                    {
                         TableParagraph(c, "", "times new roman", 14);
                     }
                 }
@@ -150,21 +164,27 @@ namespace GeneralDepartmentOfLawAffairs {
             string str14 = LetterSentences.Second + LetterSentences.CeaseNote19;
             var noteParagraph14 = new Paragraph(_doc);
             noteParagraph14.AddFormatted(str14, "Times New Roman", 14, false, true);
+            noteParagraph14.FormattedSentence(LetterSentences.Second, "pt bold heading", 12);
 
             string str15 = LetterSentences.Third + LetterSentences.CeaseNote20 + " "
                            + _letterData.CeaseDays + LetterSentences.CeaseNote21;
             var noteParagraph15 = new Paragraph(_doc);
             noteParagraph15.AddFormatted(str15, "Times New Roman", 14, false, true);
+            noteParagraph15.FormattedSentence(LetterSentences.Third, "pt bold heading", 12);
+
 
             string str16 = LetterSentences.Fourth + LetterSentences.CeaseNote22;
             var noteParagraph16 = new Paragraph(_doc);
             noteParagraph16.AddFormatted(str16, "Times New Roman", 14, false, true);
+            noteParagraph16.FormattedSentence(LetterSentences.Fourth, "pt bold heading", 12);
         }
 
-        protected override void RequestSection() {
+        protected override void RequestSection()
+        {
         }
 
-        private void TableParagraph(Cell c, string text, string fontName, float size, int bold = 1) {
+        private void TableParagraph(Cell c, string text, string fontName, float size, int bold = 1)
+        {
             c.Range.Text = text;
             c.Range.Font.NameBi = fontName;
             c.Range.Font.SizeBi = size;
@@ -173,7 +193,8 @@ namespace GeneralDepartmentOfLawAffairs {
             c.Range.ParagraphFormat.SpaceBefore = 0;
         }
 
-        protected override void Greeting() {
+        protected override void Greeting()
+        {
             var greetingParagraph = new Paragraph(_doc);
             greetingParagraph.AddFormatted(LetterSentences.Thanks, "Bold Italic Art", 8);
 
@@ -210,12 +231,15 @@ namespace GeneralDepartmentOfLawAffairs {
             separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
         }
 
-        protected override void SignSection() {
+        protected override void SignSection()
+        {
             Signature(SignType.ResearcherSign);
         }
 
-        private void DraftResolution() {
-            if (_letterData.HasDraftResolution) {
+        private void DraftResolution()
+        {
+            if (_letterData.HasDraftResolution)
+            {
                 Paragraph separatorParagraph = new Paragraph(_doc);
                 separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
                 separatorParagraph.GetRange().InsertBreak(WdBreakType.wdPageBreak);
@@ -232,7 +256,7 @@ namespace GeneralDepartmentOfLawAffairs {
                 var draftResParagraph2 = new Paragraph(_doc);
                 draftResParagraph2.AddFormatted(draftResStr2, "pt bold heading", 12, true, true, true);
 
-                string draftResStr3 = LetterSentences.Head + " ";
+                string draftResStr3 = LetterSentences.Head + _letterData.CDptName;
                 var draftResParagraph3 = new Paragraph(_doc);
                 draftResParagraph3.AddFormatted(draftResStr3, "pt bold heading", 12, false, true, true);
 
@@ -259,7 +283,8 @@ namespace GeneralDepartmentOfLawAffairs {
                                                                        + LetterSentences.Dated + "  /  /" +
                                                                        DateTime.Now.Year + " "
                                                                        + LetterSentences.DraftResolution7 + " "
-                                                                       + LetterSentences.Num + "   /" + DateTime.Now.Year
+                                                                       + LetterSentences.Num + "   /" +
+                                                                       DateTime.Now.Year
                                                                        + LetterSentences.DraftResolution8 + " "
                                                                        + _letterData.Name + " "
                                                                        + LetterSentences.DraftResolution9;
@@ -344,7 +369,7 @@ namespace GeneralDepartmentOfLawAffairs {
                 draftResParagraph14.AddFormatted(draftResStr14, "pt bold heading", 12, true, true, true);
 
                 string draftResStr15 = LetterSentences.CeaseNote20 + " "
-                                                                   + _letterData.CeaseDays 
+                                                                   + _letterData.CeaseDays
                                                                    + LetterSentences.CeaseNote21;
                 var draftResParagraph15 = new Paragraph(_doc);
                 draftResParagraph15.AddFormatted(draftResStr15, "Times New Roman", 14, false, true);
@@ -410,7 +435,7 @@ namespace GeneralDepartmentOfLawAffairs {
 
                         if ((i == 1) && (j == 3))
                         {
-                            TableParagraph(c, LetterSentences.Head + " " + _letterData.CDptName, "pt bold heading", 12);
+                            TableParagraph(c, LetterSentences.Head + _letterData.CDptName, "pt bold heading", 12);
                         }
                         else if ((i == 3) && (j == 3))
                         {
@@ -423,7 +448,5 @@ namespace GeneralDepartmentOfLawAffairs {
                 singParagraph.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
             }
         }
-
-
     }
 }

@@ -166,6 +166,7 @@ namespace GeneralDepartmentOfLawAffairs
         public DateTime ProcedureDate { get; set; }
         public DateTime ProcedureOutComDate { get; set; }
         public string ProcedureName { get; set; }
+        public string InvYear { get; set; }
 
         // regional 
         public List<string> EmptyFields { get; }

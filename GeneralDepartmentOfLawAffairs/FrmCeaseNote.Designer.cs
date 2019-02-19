@@ -35,13 +35,16 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.txtGuilty = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtPkrInvestigationYear = new System.Windows.Forms.DateTimePicker();
             this.lblInvestigationNum = new System.Windows.Forms.Label();
             this.txtSubject = new System.Windows.Forms.TextBox();
             this.lblSubject = new System.Windows.Forms.Label();
             this.chbxDraftRes = new System.Windows.Forms.CheckBox();
             this.cmbxInvestigationNum = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbxDepartments = new System.Windows.Forms.ComboBox();
+            this.cmbCDept = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.pnlButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxStatus)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +55,7 @@
             this.pnlButtons.Controls.Add(this.lblMessage);
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(17, 194);
+            this.pnlButtons.Location = new System.Drawing.Point(17, 243);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(601, 34);
             this.pnlButtons.TabIndex = 74;
@@ -114,11 +117,11 @@
             this.txtGuilty.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
             this.txtGuilty.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGuilty.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtGuilty.Location = new System.Drawing.Point(204, 121);
+            this.txtGuilty.Location = new System.Drawing.Point(532, 121);
             this.txtGuilty.Margin = new System.Windows.Forms.Padding(4);
             this.txtGuilty.Name = "txtGuilty";
             this.txtGuilty.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtGuilty.Size = new System.Drawing.Size(217, 26);
+            this.txtGuilty.Size = new System.Drawing.Size(82, 26);
             this.txtGuilty.TabIndex = 81;
             // 
             // label8
@@ -129,36 +132,9 @@
             this.label8.Location = new System.Drawing.Point(13, 124);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 19);
+            this.label8.Size = new System.Drawing.Size(147, 19);
             this.label8.TabIndex = 80;
-            this.label8.Text = "الدرجة المالية للمشكو في حقه  : ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(163, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 19);
-            this.label1.TabIndex = 84;
-            this.label1.Text = "لسنة:";
-            // 
-            // dtPkrInvestigationYear
-            // 
-            this.dtPkrInvestigationYear.CalendarFont = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPkrInvestigationYear.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
-            this.dtPkrInvestigationYear.CustomFormat = "yyyy";
-            this.dtPkrInvestigationYear.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.dtPkrInvestigationYear.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPkrInvestigationYear.Location = new System.Drawing.Point(210, 12);
-            this.dtPkrInvestigationYear.Margin = new System.Windows.Forms.Padding(4);
-            this.dtPkrInvestigationYear.Name = "dtPkrInvestigationYear";
-            this.dtPkrInvestigationYear.RightToLeftLayout = true;
-            this.dtPkrInvestigationYear.ShowUpDown = true;
-            this.dtPkrInvestigationYear.Size = new System.Drawing.Size(60, 26);
-            this.dtPkrInvestigationYear.TabIndex = 83;
+            this.label8.Text = "جهة عمل المشكو في حقه:";
             // 
             // lblInvestigationNum
             // 
@@ -193,9 +169,9 @@
             this.lblSubject.Location = new System.Drawing.Point(13, 48);
             this.lblSubject.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(68, 19);
+            this.lblSubject.Size = new System.Drawing.Size(45, 19);
             this.lblSubject.TabIndex = 87;
-            this.lblSubject.Text = "الموضوع :";
+            this.lblSubject.Text = "بشأن :";
             // 
             // chbxDraftRes
             // 
@@ -221,23 +197,83 @@
             this.cmbxInvestigationNum.TabIndex = 89;
             this.cmbxInvestigationNum.SelectedIndexChanged += new System.EventHandler(this.cmbxInvestigationNum_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Info;
+            this.label2.Location = new System.Drawing.Point(437, 124);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 19);
+            this.label2.TabIndex = 90;
+            this.label2.Text = "الدرجة المالية:";
+            // 
+            // cmbxDepartments
+            // 
+            this.cmbxDepartments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxDepartments.FormattingEnabled = true;
+            this.cmbxDepartments.Location = new System.Drawing.Point(168, 121);
+            this.cmbxDepartments.MaxDropDownItems = 4;
+            this.cmbxDepartments.Name = "cmbxDepartments";
+            this.cmbxDepartments.Size = new System.Drawing.Size(262, 27);
+            this.cmbxDepartments.TabIndex = 91;
+            this.cmbxDepartments.SelectedIndexChanged += new System.EventHandler(this.cmbxDepartments_SelectedIndexChanged);
+            // 
+            // cmbCDept
+            // 
+            this.cmbCDept.FormattingEnabled = true;
+            this.cmbCDept.Location = new System.Drawing.Point(168, 193);
+            this.cmbCDept.Name = "cmbCDept";
+            this.cmbCDept.Size = new System.Drawing.Size(262, 27);
+            this.cmbCDept.TabIndex = 92;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Info;
+            this.label3.Location = new System.Drawing.Point(13, 196);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 19);
+            this.label3.TabIndex = 93;
+            this.label3.Text = "جهة اصدار القرار:";
+            // 
+            // txtYear
+            // 
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.txtYear.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtYear.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtYear.Location = new System.Drawing.Point(168, 11);
+            this.txtYear.Margin = new System.Windows.Forms.Padding(4);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.ReadOnly = true;
+            this.txtYear.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtYear.Size = new System.Drawing.Size(82, 26);
+            this.txtYear.TabIndex = 94;
+            // 
             // FrmCeaseNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(620, 241);
+            this.ClientSize = new System.Drawing.Size(620, 289);
+            this.Controls.Add(this.txtYear);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cmbCDept);
+            this.Controls.Add(this.cmbxDepartments);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbxInvestigationNum);
             this.Controls.Add(this.chbxDraftRes);
             this.Controls.Add(this.txtSubject);
             this.Controls.Add(this.lblSubject);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtPkrInvestigationYear);
             this.Controls.Add(this.lblInvestigationNum);
             this.Controls.Add(this.txtGuilty);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pnlButtons);
             this.Name = "FrmCeaseNote";
             this.Text = "مذكرة إنقطاع";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCeaseNote_FormClosing);
             this.Load += new System.EventHandler(this.FrmCeaseNote_Load);
             this.pnlButtons.ResumeLayout(false);
             this.pnlButtons.PerformLayout();
@@ -256,12 +292,15 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.TextBox txtGuilty;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtPkrInvestigationYear;
         private System.Windows.Forms.Label lblInvestigationNum;
         private System.Windows.Forms.TextBox txtSubject;
         private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.CheckBox chbxDraftRes;
         private System.Windows.Forms.ComboBox cmbxInvestigationNum;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbxDepartments;
+        private System.Windows.Forms.ComboBox cmbCDept;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtYear;
     }
 }
