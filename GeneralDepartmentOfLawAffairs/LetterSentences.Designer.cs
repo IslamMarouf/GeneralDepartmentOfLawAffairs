@@ -367,7 +367,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to بوصفه السابق وبدائرة عمله المشار الهيا.
+        ///   Looks up a localized string similar to بوصفه السابق وبدائرة عمله المشار اليها.
         /// </summary>
         public static string CeaseNote17 {
             get {
@@ -475,7 +475,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to وبسؤال /.
+        ///   Looks up a localized string similar to وبسؤال/.
         /// </summary>
         public static string CeaseNote4 {
             get {
@@ -493,7 +493,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to وحيث يبين من العرض السابق للواقعة أنه نسب إلي /.
+        ///   Looks up a localized string similar to وحيث يبين من العرض السابق للواقعة أنه نسب إلى /.
         /// </summary>
         public static string CeaseNote6 {
             get {
@@ -502,7 +502,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to انقطاعه عن العمل  .
+        ///   Looks up a localized string similar to انقطاعه عن العمل .
         /// </summary>
         public static string CeaseNote7 {
             get {

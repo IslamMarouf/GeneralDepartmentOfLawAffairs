@@ -54,6 +54,7 @@ namespace GeneralDepartmentOfLawAffairs
         protected override void BodySection()
         {
             string str1 = LetterSentences.CeaseNote2 + " "
+                                                     + _letterData.DepartmentName + " "
                                                      + LetterSentences.Num + " "
                                                      + _letterData.IncomingLetterNumber + " "
                                                      + LetterSentences.Dated + " "
@@ -65,16 +66,23 @@ namespace GeneralDepartmentOfLawAffairs
             var noteParagraph1 = new Paragraph(_doc);
             noteParagraph1.AddFormatted(str1, "Times New Roman", 14, false, true);
 
-            string str2 = LetterSentences.CeaseNote4
-                          + _letterData.Name + "-"
+            string str2 = LetterSentences.CeaseNote4 + " "
+                          + _letterData.Name + " - "
                           + LetterSentences.CeaseNote23
-                          + _letterData.DepartmentName + "-"
+                          + _letterData.DepartmentName + " - "
                           + LetterSentences.CeaseNote24 + " "
-                          + LetterSentences.CeaseNote7 + " "
+                          + LetterSentences.CeaseNote7
                           + _letterData.CeaseDays + " "
                           + LetterSentences.CeaseNote8;
             var noteParagraph2 = new Paragraph(_doc);
             noteParagraph2.AddFormatted(str2, "Times New Roman", 14, false, true);
+            noteParagraph2.FormattedSentence(
+                LetterSentences.CeaseNote4 
+                + " "
+                + _letterData.Name + " - "
+                + LetterSentences.CeaseNote23
+                + _letterData.DepartmentName + " - ",
+                "pt bold heading", 12);
 
             string str3 = LetterSentences.CeaseNote5;
             var noteParagraph3 = new Paragraph(_doc);
@@ -86,7 +94,7 @@ namespace GeneralDepartmentOfLawAffairs
 
             string str5 = LetterSentences.CeaseNote6 + " "
                                                      + _letterData.Name + " "
-                                                     + LetterSentences.CeaseNote7 + " "
+                                                     + LetterSentences.CeaseNote7
                                                      + _letterData.CeaseDays + " "
                                                      + LetterSentences.CeaseNote8 + " "
                                                      + LetterSentences.CeaseNote18;
@@ -142,7 +150,7 @@ namespace GeneralDepartmentOfLawAffairs
                     }
                     else if (i == 1 && j == 2)
                     {
-                        TableParagraph(c, "", "times new roman", 14);
+                        TableParagraph(c, _letterData.GuiltyJob + " - " + "ب" + _letterData.GuiltyRank, "times new roman", 14);
                     }
                 }
             }
@@ -153,8 +161,9 @@ namespace GeneralDepartmentOfLawAffairs
             separatorParagraph.AddFormatted("", "Times New Roman", 1);
 
             string str13 = LetterSentences.CeaseNote16 + " "
+                                                       + _letterData.CeaseMonths + " "
                                                        + LetterSentences.CeaseNote17 + " "
-                                                       + LetterSentences.CeaseNote26 + " "
+                                                       + LetterSentences.CeaseNote26
                                                        + _letterData.CeaseDays + " "
                                                        + LetterSentences.CeaseNote8 + " "
                                                        + LetterSentences.CeaseNote18;
@@ -167,7 +176,7 @@ namespace GeneralDepartmentOfLawAffairs
             noteParagraph14.FormattedSentence(LetterSentences.Second, "pt bold heading", 12);
 
             string str15 = LetterSentences.Third + LetterSentences.CeaseNote20 + " "
-                           + _letterData.CeaseDays + LetterSentences.CeaseNote21;
+                           + _letterData.CeaseDays + " " + LetterSentences.CeaseNote21;
             var noteParagraph15 = new Paragraph(_doc);
             noteParagraph15.AddFormatted(str15, "Times New Roman", 14, false, true);
             noteParagraph15.FormattedSentence(LetterSentences.Third, "pt bold heading", 12);
@@ -306,6 +315,9 @@ namespace GeneralDepartmentOfLawAffairs
                 var draftResParagraph10 = new Paragraph(_doc);
                 draftResParagraph10.AddFormatted(draftResStr10, "pt bold heading", 12, true, true, true);
 
+                
+
+                
                 string draftResStr11 = LetterSentences.CeaseNote14;
                 var draftResParagraph11 = new Paragraph(_doc);
                 draftResParagraph11.AddFormatted(draftResStr11, "Times New Roman", 14, false, true);
@@ -335,7 +347,7 @@ namespace GeneralDepartmentOfLawAffairs
                         }
                         else if (i == 1 && j == 2)
                         {
-                            TableParagraph(c, "", "times new roman", 14);
+                            TableParagraph(c, _letterData.GuiltyJob + " - " + "ب" + _letterData.GuiltyRank, "times new roman", 14);
                         }
                     }
                 }
@@ -347,12 +359,13 @@ namespace GeneralDepartmentOfLawAffairs
 
                 string str13 = LetterSentences.CeaseNote16 + " "
                                                            + LetterSentences.CeaseNote17 + " "
-                                                           + LetterSentences.CeaseNote26 + " "
+                                                           + LetterSentences.CeaseNote26
                                                            + _letterData.CeaseDays + " "
                                                            + LetterSentences.CeaseNote8 + " "
                                                            + LetterSentences.CeaseNote18;
                 var noteParagraph13 = new Paragraph(_doc);
                 noteParagraph13.AddFormatted(str13, "Times New Roman", 14, false, true);
+                
 
                 string draftResStr12 = LetterSentences.DraftResolution13;
                 var draftResParagraph12 = new Paragraph(_doc);

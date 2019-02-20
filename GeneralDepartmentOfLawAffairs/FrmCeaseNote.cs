@@ -4,6 +4,7 @@ using System.Data.OleDb;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace GeneralDepartmentOfLawAffairs
 {
@@ -89,6 +90,9 @@ namespace GeneralDepartmentOfLawAffairs
             {
                 FrmLetterData.HasDraftResolution = true;
             }
+
+            FrmLetterData.GuiltyJob = txtGuiltyJob.Text;
+            FrmLetterData.GuiltyRank = txtGuiltyRank.Text;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -107,60 +111,23 @@ namespace GeneralDepartmentOfLawAffairs
                 FrmLetterData.InvYear = investInfoRow.Field<string>("subject_year");
                 txtYear.Text = LetterSentences.ForYear + " " + FrmLetterData.InvYear;
                 FrmLetterData.Subject = investInfoRow.Field<string>("subject_about");
+                FrmLetterData.DepartmentName = investInfoRow.Field<string>("subject_assignmentDept");
+                DateTime date = investInfoRow.Field<DateTime>("subject_assignmentLetterDate");
+                FrmLetterData.IncomingLetterDate = date.ToShortDateString();
+                FrmLetterData.IncomingLetterNumber = investInfoRow.Field<string>("subject_assignmentLetterNum");
+                FrmLetterData.Name = investInfoRow.Field<string>("subject_guiltyName");
+                FrmLetterData.CeaseDays = investInfoRow.Field<string>("subject_ceaseDays");
+                FrmLetterData.CeaseMonths = investInfoRow.Field<string>("subject_ceaseMonths");
+                txtDepartment.Text = FrmLetterData.DepartmentName;
                 txtSubject.Text = FrmLetterData.Subject;
             }
-        }
 
-        private void FrmCeaseNote_Load(object sender, EventArgs e)
-        {
-            chbxDraftRes.Checked = true;
-
-            var cDepts = from cdpt in _cDeptsDs.Tables["tblCentralDepartments"].AsEnumerable()
-                select cdpt;
-
-            foreach (var cDept in cDepts)
-            {
-                cmbCDept.Items.Add(cDept.Field<string>("centralDepts_name"));
-            }
-
-            var gDepts = from gd in _gDeptsDs.Tables["tblDepartments"].AsEnumerable()
-                select gd;
-
-            foreach (var gdept in gDepts)
-            {
-                cmbxDepartments.Items.Add(gdept.Field<string>("Dept_name"));
-            }
-
-            var investigations = from sb in _subjectsDs.Tables["tblSubjects"].AsEnumerable()
-                where sb.Field<string>("subject_type").Equals(LetterSentences.Investigation)
-                select sb;
-
-            foreach (var investigation in investigations)
-            {
-                cmbxInvestigationNum.Items.Add(investigation.Field<string>("subject_num"));
-            }
-
-
-            cmbxDepartments.SelectedIndex = 0;
-        }
-
-        private void FrmCeaseNote_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
-        {
-            _cDepartmentsDataAdapter?.Dispose();
-            _cDeptsOdbCommand?.Dispose();
-            _cDeptsDt?.Dispose();
-            _gDepartmentsDataAdapter?.Dispose();
-            _gDeptsOdbCommand?.Dispose();
-        }
-
-        private void cmbxDepartments_SelectedIndexChanged(object sender, EventArgs e)
-        {
             string conString = "SELECT tblCentralDepartments.centralDepts_name, " +
                                "tblCentralDepartments.centralDepts_headName " +
                                "FROM tblCentralDepartments " +
                                "INNER JOIN tblDepartments " +
                                "ON tblCentralDepartments.[cDept_id] = tblDepartments.[cDept_id] " +
-                               "WHERE (((tblDepartments.dept_name)=\"" + cmbxDepartments.Text + "\"));";
+                               "WHERE (((tblDepartments.dept_name)=\"" + txtDepartment.Text + "\"));";
 
             _cDeptsOdbCommand.CommandText = conString;
             _cDepartmentsDataAdapter.SelectCommand = _cDeptsOdbCommand;
@@ -180,8 +147,46 @@ namespace GeneralDepartmentOfLawAffairs
             {
                 MessageBox.Show("No Match Departments Found!");
             }
+        }
 
-            FrmLetterData.DepartmentName = cmbxDepartments.Text;
+        private void FrmCeaseNote_Load(object sender, EventArgs e)
+        {
+            chbxDraftRes.Checked = true;
+
+            var cDepts = from cdpt in _cDeptsDs.Tables["tblCentralDepartments"].AsEnumerable()
+                select cdpt;
+
+            foreach (var cDept in cDepts)
+            {
+                cmbCDept.Items.Add(cDept.Field<string>("centralDepts_name"));
+            }
+
+            var investigations = from sb in _subjectsDs.Tables["tblSubjects"].AsEnumerable()
+                where sb.Field<string>("subject_type").Equals(LetterSentences.Investigation)
+                select sb;
+
+            foreach (var investigation in investigations)
+            {
+                cmbxInvestigationNum.Items.Add(investigation.Field<string>("subject_num"));
+            }
+
+            cmbxInvestigationNum.SelectedIndex = 0;
+        }
+
+        private void FrmCeaseNote_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            _cDepartmentsDataAdapter?.Dispose();
+            _cDeptsOdbCommand?.Dispose();
+            _cDeptsDt?.Dispose();
+            _gDepartmentsDataAdapter?.Dispose();
+            _gDeptsOdbCommand?.Dispose();
+        }
+
+        private void cmbxDepartments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+            
         }
     }
 }
