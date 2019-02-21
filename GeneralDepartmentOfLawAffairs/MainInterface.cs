@@ -65,8 +65,8 @@ namespace GeneralDepartmentOfLawAffairs
                 _letterData.AssignmentDate = invesRow.Field<DateTime>("subject_assignmentDate");
                 _letterData.Subject = invesRow.Field<string>("subject_about");
                 _letterData.ProcedureName = invesRow.Field<string>("Subject_procedureName");
-                _letterData.ProcedureDate = invesRow.Field<DateTime>("Subject_procedureDate");
-                _letterData.ProcedureOutComDate = invesRow.Field<DateTime>("Subject_procedureOutComDate");
+                //_letterData.ProcedureDate = invesRow.Field<DateTime>("Subject_procedureDate");
+                //_letterData.ProcedureOutComDate = invesRow.Field<DateTime>("Subject_procedureOutComDate");
 
                 btnItem.Tag = _letterData;
                 mnuRush.Items.Add(btnItem);

@@ -37,10 +37,10 @@
             this.dtPkrInvestigationYear = new System.Windows.Forms.DateTimePicker();
             this.lblInvestigationNum = new System.Windows.Forms.Label();
             this.mtxtInvestigationNum = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGuiltyName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCeaseDays = new System.Windows.Forms.Button();
             this.cmbxDepartments = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -78,9 +78,9 @@
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(105, 150);
+            this.pnlButtons.Location = new System.Drawing.Point(234, 150);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(377, 51);
+            this.pnlButtons.Size = new System.Drawing.Size(248, 51);
             this.pnlButtons.TabIndex = 64;
             // 
             // btnCancel
@@ -162,17 +162,17 @@
             this.mtxtInvestigationNum.Size = new System.Drawing.Size(33, 26);
             this.mtxtInvestigationNum.TabIndex = 68;
             // 
-            // textBox1
+            // txtGuiltyName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(105, 117);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(253, 26);
-            this.textBox1.TabIndex = 69;
+            this.txtGuiltyName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.txtGuiltyName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGuiltyName.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtGuiltyName.Location = new System.Drawing.Point(101, 117);
+            this.txtGuiltyName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGuiltyName.Name = "txtGuiltyName";
+            this.txtGuiltyName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtGuiltyName.Size = new System.Drawing.Size(257, 26);
+            this.txtGuiltyName.TabIndex = 69;
             // 
             // label2
             // 
@@ -198,15 +198,15 @@
             this.label3.TabIndex = 71;
             this.label3.Text = "بالكتاب رقم:";
             // 
-            // button1
+            // btnCeaseDays
             // 
-            this.button1.Location = new System.Drawing.Point(366, 116);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 27);
-            this.button1.TabIndex = 72;
-            this.button1.Text = "ايام الانقطاع";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnCeaseDays.Location = new System.Drawing.Point(366, 116);
+            this.btnCeaseDays.Name = "btnCeaseDays";
+            this.btnCeaseDays.Size = new System.Drawing.Size(116, 27);
+            this.btnCeaseDays.TabIndex = 72;
+            this.btnCeaseDays.Text = "ايام الانقطاع";
+            this.btnCeaseDays.UseVisualStyleBackColor = true;
+            this.btnCeaseDays.Click += new System.EventHandler(this.btnCeaseDays_Click);
             // 
             // cmbxDepartments
             // 
@@ -256,10 +256,10 @@
             // 
             this.mtxtAssignmentLetter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
             this.mtxtAssignmentLetter.ForeColor = System.Drawing.SystemColors.Info;
-            this.mtxtAssignmentLetter.Location = new System.Drawing.Point(103, 84);
+            this.mtxtAssignmentLetter.Location = new System.Drawing.Point(101, 84);
             this.mtxtAssignmentLetter.Mask = "0000";
             this.mtxtAssignmentLetter.Name = "mtxtAssignmentLetter";
-            this.mtxtAssignmentLetter.Size = new System.Drawing.Size(132, 26);
+            this.mtxtAssignmentLetter.Size = new System.Drawing.Size(134, 26);
             this.mtxtAssignmentLetter.TabIndex = 96;
             // 
             // FrmAddCeaseInvestigation
@@ -272,9 +272,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbxDepartments);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCeaseDays);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtGuiltyName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.mtxtInvestigationNum);
             this.Controls.Add(this.lblHistory);
@@ -304,10 +304,10 @@
         private System.Windows.Forms.DateTimePicker dtPkrInvestigationYear;
         private System.Windows.Forms.Label lblInvestigationNum;
         private System.Windows.Forms.MaskedTextBox mtxtInvestigationNum;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGuiltyName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCeaseDays;
         private System.Windows.Forms.ComboBox cmbxDepartments;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;

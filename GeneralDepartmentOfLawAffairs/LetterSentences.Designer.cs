@@ -295,6 +295,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إنقطاع.
+        /// </summary>
+        public static string Cease {
+            get {
+                return ResourceManager.GetString("Cease", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to في التحقيق رقم.
         /// </summary>
         public static string CeaseNote1 {

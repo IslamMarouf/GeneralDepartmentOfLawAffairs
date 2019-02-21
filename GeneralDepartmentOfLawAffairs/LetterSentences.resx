@@ -873,4 +873,7 @@
   <data name="Rush" xml:space="preserve">
     <value>إستعجال في ال</value>
   </data>
+  <data name="Cease" xml:space="preserve">
+    <value>إنقطاع</value>
+  </data>
 </root>
