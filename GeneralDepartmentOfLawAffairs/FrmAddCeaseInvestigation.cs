@@ -1,9 +1,11 @@
-﻿using System;
+﻿
+using System;
 using System.Collections;
 using System.Data;
 using System.Data.OleDb;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace GeneralDepartmentOfLawAffairs
 {
@@ -18,6 +20,9 @@ namespace GeneralDepartmentOfLawAffairs
         readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
         readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
         private readonly DataSet _subjectsDs = new DataSet();
+
+        private string ceaseDays = string.Empty;
+        private string ceaseMonths = string.Empty;
 
         public FrmAddCeaseInvestigation()
         {
@@ -85,7 +90,7 @@ namespace GeneralDepartmentOfLawAffairs
             _subjectsOdbCommand.Parameters.Add("@Subject_type", OleDbType.Char).Value = LetterSentences.Investigation;
             _subjectsOdbCommand.Parameters.Add("@Subject_num", OleDbType.Char).Value = mtxtInvestigationNum.Text;
             _subjectsOdbCommand.Parameters.Add("@Subject_year", OleDbType.Char).Value = dtPkrInvestigationYear.Value.Year.ToString();
-            _subjectsOdbCommand.Parameters.Add("@Subject_about", OleDbType.Char).Value = "";
+            _subjectsOdbCommand.Parameters.Add("@Subject_about", OleDbType.Char).Value = LetterSentences.Cease + " " + txtGuiltyName.Text + " " + LetterSentences.CeaseNote23 + cmbxDepartments.Text + " " + LetterSentences.CeaseNote27 + " " + ceaseDays + " " + LetterSentences.CeaseNote8;
             _subjectsOdbCommand.Parameters.Add("@Subject_assignmentDate", OleDbType.Date).Value = dtpAssignmentDate.Value.Date;
             _subjectsOdbCommand.Parameters.Add("@Subject_investigationType", OleDbType.Char).Value = LetterSentences.Cease;
             _subjectsOdbCommand.Parameters.Add("@Subject_assignmentDept", OleDbType.Char).Value = cmbxDepartments.Text;

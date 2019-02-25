@@ -876,4 +876,7 @@
   <data name="Cease" xml:space="preserve">
     <value>إنقطاع</value>
   </data>
+  <data name="CeaseNote27" xml:space="preserve">
+    <value>عن العمل</value>
+  </data>
 </root>

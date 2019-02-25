@@ -475,6 +475,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عن العمل.
+        /// </summary>
+        public static string CeaseNote27 {
+            get {
+                return ResourceManager.GetString("CeaseNote27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to وما ارفق به من أوراق والمحال الى هذه الإدارة للتحقيق في.
         /// </summary>
         public static string CeaseNote3 {

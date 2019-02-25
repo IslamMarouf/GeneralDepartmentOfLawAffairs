@@ -64,10 +64,10 @@
             // dTPickerIncomDate
             // 
             this.dTPickerIncomDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(108)))), ((int)(((byte)(86)))));
-            this.dTPickerIncomDate.Location = new System.Drawing.Point(348, 12);
+            this.dTPickerIncomDate.Location = new System.Drawing.Point(295, 84);
             this.dTPickerIncomDate.Name = "dTPickerIncomDate";
             this.dTPickerIncomDate.RightToLeftLayout = true;
-            this.dTPickerIncomDate.Size = new System.Drawing.Size(134, 26);
+            this.dTPickerIncomDate.Size = new System.Drawing.Size(183, 26);
             this.dTPickerIncomDate.TabIndex = 66;
             this.dTPickerIncomDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
             this.dTPickerIncomDate.ValueChanged += new System.EventHandler(this.dTPickerIncomDate_ValueChanged);
@@ -245,10 +245,10 @@
             // dtpAssignmentDate
             // 
             this.dtpAssignmentDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(108)))), ((int)(((byte)(86)))));
-            this.dtpAssignmentDate.Location = new System.Drawing.Point(295, 82);
+            this.dtpAssignmentDate.Location = new System.Drawing.Point(344, 11);
             this.dtpAssignmentDate.Name = "dtpAssignmentDate";
             this.dtpAssignmentDate.RightToLeftLayout = true;
-            this.dtpAssignmentDate.Size = new System.Drawing.Size(187, 26);
+            this.dtpAssignmentDate.Size = new System.Drawing.Size(138, 26);
             this.dtpAssignmentDate.TabIndex = 95;
             this.dtpAssignmentDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
             // 
