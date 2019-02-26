@@ -16,13 +16,10 @@ namespace GeneralDepartmentOfLawAffairs
         private readonly OleDbCommand _gDeptsOdbCommand = new OleDbCommand();
         private readonly DataSet _gDeptsDs = new DataSet();
 
-        private string _subjectsConStr = "SELECT * FROM tblSubjects";
-        readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
-        readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
-        private readonly DataSet _subjectsDs = new DataSet();
+        private readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
+        private readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
 
         private string ceaseDays = string.Empty;
-        private string ceaseMonths = string.Empty;
 
         public FrmAddCeaseInvestigation()
         {
@@ -40,9 +37,9 @@ namespace GeneralDepartmentOfLawAffairs
             var gDepts = from gd in _gDeptsDs.Tables["tblDepartments"].AsEnumerable()
                 select gd;
 
-            foreach (var gdept in gDepts)
+            foreach (var gDept in gDepts)
             {
-                cmbxDepartments.Items.Add(gdept.Field<string>("Dept_name"));
+                cmbxDepartments.Items.Add(gDept.Field<string>("Dept_name"));
             }
 
             cmbxDepartments.SelectedIndex = 0;

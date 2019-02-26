@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Windows.Forms;
-using Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Ribbon;
 
 namespace GeneralDepartmentOfLawAffairs
