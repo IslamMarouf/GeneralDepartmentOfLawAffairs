@@ -598,7 +598,7 @@
     <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو</value>
   </data>
   <data name="about" xml:space="preserve">
-    <value>بشأن ....... </value>
+    <value>بشأن</value>
   </data>
   <data name="EditedIn" xml:space="preserve">
     <value>تحريرا في:</value>
@@ -878,5 +878,14 @@
   </data>
   <data name="CeaseNote27" xml:space="preserve">
     <value>عن العمل</value>
+  </data>
+  <data name="InvestInquiry1" xml:space="preserve">
+    <value>بمناسبة التحقيق الإداري رقم</value>
+  </data>
+  <data name="InvestInquiry2" xml:space="preserve">
+    <value>والذي تجريه الإدارة بشأن</value>
+  </data>
+  <data name="InvestInquiry3" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو موافاتنا</value>
   </data>
 </root>

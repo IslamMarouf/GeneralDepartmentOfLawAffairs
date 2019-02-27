@@ -61,7 +61,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to بشأن ....... .
+        ///   Looks up a localized string similar to بشأن.
         /// </summary>
         public static string about {
             get {
@@ -1497,6 +1497,33 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string InvestigationRefererring4 {
             get {
                 return ResourceManager.GetString("InvestigationRefererring4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بمناسبة التحقيق الإداري رقم.
+        /// </summary>
+        public static string InvestInquiry1 {
+            get {
+                return ResourceManager.GetString("InvestInquiry1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to والذي تجريه الإدارة بشأن.
+        /// </summary>
+        public static string InvestInquiry2 {
+            get {
+                return ResourceManager.GetString("InvestInquiry2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو موافاتنا.
+        /// </summary>
+        public static string InvestInquiry3 {
+            get {
+                return ResourceManager.GetString("InvestInquiry3", resourceCulture);
             }
         }
         

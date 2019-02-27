@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInvestInquiry));
             this.dtpAssignmentDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,10 +36,12 @@
             this.cmbxInvestigationNum = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblInvestigationNum = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtYear = new System.Windows.Forms.TextBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOK = new System.Windows.Forms.Button();
+            this.ctrlDirection = new GeneralDepartmentOfLawAffairs.Direction();
+            this.lblDirection = new System.Windows.Forms.Label();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,7 @@
             this.dtpAssignmentDate.Location = new System.Drawing.Point(368, 10);
             this.dtpAssignmentDate.Name = "dtpAssignmentDate";
             this.dtpAssignmentDate.RightToLeftLayout = true;
-            this.dtpAssignmentDate.Size = new System.Drawing.Size(168, 26);
+            this.dtpAssignmentDate.Size = new System.Drawing.Size(257, 26);
             this.dtpAssignmentDate.TabIndex = 84;
             this.dtpAssignmentDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
             // 
@@ -81,7 +84,7 @@
             this.txt_about.Multiline = true;
             this.txt_about.Name = "txt_about";
             this.txt_about.ReadOnly = true;
-            this.txt_about.Size = new System.Drawing.Size(437, 57);
+            this.txt_about.Size = new System.Drawing.Size(526, 57);
             this.txt_about.TabIndex = 80;
             // 
             // cmbxInvestigationNum
@@ -95,6 +98,7 @@
             this.cmbxInvestigationNum.Name = "cmbxInvestigationNum";
             this.cmbxInvestigationNum.Size = new System.Drawing.Size(53, 27);
             this.cmbxInvestigationNum.TabIndex = 85;
+            this.cmbxInvestigationNum.SelectedIndexChanged += new System.EventHandler(this.cmbxInvestigationNum_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -120,15 +124,15 @@
             this.lblInvestigationNum.TabIndex = 86;
             this.lblInvestigationNum.Text = "رقم التحقيق : ";
             // 
-            // textBox1
+            // txtYear
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Location = new System.Drawing.Point(211, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(64, 26);
-            this.textBox1.TabIndex = 91;
+            this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.txtYear.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtYear.Location = new System.Drawing.Point(211, 10);
+            this.txtYear.Name = "txtYear";
+            this.txtYear.ReadOnly = true;
+            this.txtYear.Size = new System.Drawing.Size(64, 26);
+            this.txtYear.TabIndex = 91;
             // 
             // pnlButtons
             // 
@@ -136,7 +140,7 @@
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(288, 109);
+            this.pnlButtons.Location = new System.Drawing.Point(377, 148);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(248, 51);
             this.pnlButtons.TabIndex = 117;
@@ -168,14 +172,44 @@
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "موافق";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // ctrlDirection
+            // 
+            this.ctrlDirection.ApAddresses = ((System.Collections.Generic.List<string>)(resources.GetObject("ctrlDirection.ApAddresses")));
+            this.ctrlDirection.ApAddressVal = "";
+            this.ctrlDirection.ApNames = ((System.Collections.Generic.List<string>)(resources.GetObject("ctrlDirection.ApNames")));
+            this.ctrlDirection.DeptNameVal = "";
+            this.ctrlDirection.Filled = false;
+            this.ctrlDirection.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlDirection.Location = new System.Drawing.Point(98, 109);
+            this.ctrlDirection.MrMrsVal = "";
+            this.ctrlDirection.Name = "ctrlDirection";
+            this.ctrlDirection.RecipientVal = "";
+            this.ctrlDirection.Size = new System.Drawing.Size(527, 33);
+            this.ctrlDirection.TabIndex = 119;
+            // 
+            // lblDirection
+            // 
+            this.lblDirection.AutoSize = true;
+            this.lblDirection.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDirection.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblDirection.Location = new System.Drawing.Point(13, 109);
+            this.lblDirection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDirection.Name = "lblDirection";
+            this.lblDirection.Size = new System.Drawing.Size(56, 19);
+            this.lblDirection.TabIndex = 118;
+            this.lblDirection.Text = "التوجيه :";
             // 
             // FrmInvestInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 166);
+            this.ClientSize = new System.Drawing.Size(630, 209);
+            this.Controls.Add(this.ctrlDirection);
+            this.Controls.Add(this.lblDirection);
             this.Controls.Add(this.pnlButtons);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtYear);
             this.Controls.Add(this.cmbxInvestigationNum);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblInvestigationNum);
@@ -185,6 +219,7 @@
             this.Controls.Add(this.txt_about);
             this.Name = "FrmInvestInquiry";
             this.Text = "استيفاء (تحقيق)";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInvestInquiry_FormClosing);
             this.Load += new System.EventHandler(this.FrmInvestInquiry_Load);
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -200,9 +235,11 @@
         private System.Windows.Forms.ComboBox cmbxInvestigationNum;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblInvestigationNum;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.Panel pnlButtons;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOK;
+        private Direction ctrlDirection;
+        private System.Windows.Forms.Label lblDirection;
     }
 }

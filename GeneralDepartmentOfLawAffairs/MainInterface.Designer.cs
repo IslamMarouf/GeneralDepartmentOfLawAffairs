@@ -333,7 +333,7 @@
             this.mnuRush.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.mnuRush.Dynamic = true;
             this.mnuRush.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.AlarmLetters;
-            this.mnuRush.Label = "menu1";
+            this.mnuRush.Label = "إستعجالات";
             this.mnuRush.Name = "mnuRush";
             this.mnuRush.ShowImage = true;
             // 

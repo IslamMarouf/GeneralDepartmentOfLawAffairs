@@ -103,9 +103,7 @@ namespace GeneralDepartmentOfLawAffairs
         {
             var investigationInfo = from sb in _subjectsDs.Tables["tblSubjects"].AsEnumerable()
                 where sb.Field<string>("subject_num").Equals(cmbxInvestigationNum.SelectedItem.ToString())
-                where sb.Field<string>("subject_type").Equals(LetterSentences.Investigation)
-                where sb.Field<string>("Subject_investigationType").Equals(LetterSentences.Cease)
-                                    select sb;
+                select sb;
 
             foreach (var investInfoRow in investigationInfo)
             {
@@ -165,6 +163,7 @@ namespace GeneralDepartmentOfLawAffairs
 
             var investigations = from sb in _subjectsDs.Tables["tblSubjects"].AsEnumerable()
                 where sb.Field<string>("subject_type").Equals(LetterSentences.Investigation)
+                where sb.Field<string>("Subject_investigationType").Equals(LetterSentences.Cease)
                 select sb;
 
             foreach (var investigation in investigations)
@@ -182,6 +181,8 @@ namespace GeneralDepartmentOfLawAffairs
             _cDeptsDt?.Dispose();
             _gDepartmentsDataAdapter?.Dispose();
             _gDeptsOdbCommand?.Dispose();
+            _subjectsDataAdapter?.Dispose();
+            _subjectsOdbCommand?.Dispose();
         }
 
         private void cmbxDepartments_SelectedIndexChanged(object sender, EventArgs e)
