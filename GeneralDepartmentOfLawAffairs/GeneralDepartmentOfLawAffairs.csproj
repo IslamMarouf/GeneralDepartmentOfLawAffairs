@@ -285,6 +285,12 @@
     <Compile Include="FrmRegularNotification.designer.cs">
       <DependentUpon>FrmRegularNotification.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRescriptSentLetter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegularNotification.resx">
       <DependentUpon>FrmRegularNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRescriptSentLetter.resx">
       <DependentUpon>FrmRescriptSentLetter.cs</DependentUpon>

@@ -32,7 +32,7 @@ namespace GeneralDepartmentOfLawAffairs
 
         private void MainInterface_Load(object sender, RibbonUIEventArgs e)
         {
-            btn_report.Enabled = false;
+            btn_report.Enabled = true;
 
 
             /*
