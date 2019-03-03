@@ -178,6 +178,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to (مرفق).
+        /// </summary>
+        public static string Attached {
+            get {
+                return ResourceManager.GetString("Attached", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مرفقات :.
         /// </summary>
         public static string Attachments {
@@ -1416,6 +1425,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Inspection {
             get {
                 return ResourceManager.GetString("Inspection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to بمناسبة الفحص.
+        /// </summary>
+        public static string Inspection1 {
+            get {
+                return ResourceManager.GetString("Inspection1", resourceCulture);
             }
         }
         

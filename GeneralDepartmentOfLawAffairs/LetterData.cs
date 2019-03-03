@@ -167,6 +167,7 @@ namespace GeneralDepartmentOfLawAffairs
         public DateTime ProcedureOutComDate { get; set; }
         public string ProcedureName { get; set; }
         public string InvYear { get; set; }
+        public string InspectYear { get; set; }
         public string CeaseMonths { get; set; }
         public string GuiltyRank { get; set; }
         public string GuiltyJob { get; set; }

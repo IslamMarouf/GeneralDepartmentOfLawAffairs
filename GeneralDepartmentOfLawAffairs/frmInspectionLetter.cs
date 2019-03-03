@@ -151,8 +151,7 @@ namespace GeneralDepartmentOfLawAffairs
         }
 
         private void txtSubject_KeyPress(object sender, KeyPressEventArgs e) {
-            if (e.KeyChar == (int) Keys.Back) {
-            }
+            
         }
 
         private void ctrlSentPhotoCopy_Load(object sender, EventArgs e) {

@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.Xml;
 
 namespace GeneralDepartmentOfLawAffairs
 {
@@ -13,8 +14,8 @@ namespace GeneralDepartmentOfLawAffairs
         private Point _pnlButtonsLocation;
 
         private string _subjectsConStr = "SELECT * FROM tblSubjects";
-        readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
-        readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
+        private readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
+        private readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
         private readonly DataSet _subjectsDs = new DataSet();
 
         public FrmInspecInquiry()
@@ -66,6 +67,7 @@ namespace GeneralDepartmentOfLawAffairs
             FrmLetterData.ReceiverDeptName = ctrlDirection.DeptNameVal;
             FrmLetterData.ApNames = ctrlDirection.ApNames;
             FrmLetterData.ApAddresses = ctrlDirection.ApAddresses;
+            FrmLetterData.AttachmentsCount = txtAttachmentsCount.Text;
 
             if (chkbxSentPhotoCopy.Checked)
             {
@@ -120,7 +122,9 @@ namespace GeneralDepartmentOfLawAffairs
             {
                 FrmLetterData.InspectionNumber = cmbxInspectionNum.Text;
                 txtYear.Text = inspectInfoRow.Field<string>("subject_year");
+                FrmLetterData.InspectYear = txtYear.Text;
                 txt_about.Text = inspectInfoRow.Field<string>("subject_about");
+                FrmLetterData.Subject = txt_about.Text;               
                 FrmLetterData.DepartmentName = inspectInfoRow.Field<string>("subject_assignmentDept");
                 DateTime date = inspectInfoRow.Field<DateTime>("subject_assignmentLetterDate");
                 dtpAssignmentDate.Value = inspectInfoRow.Field<DateTime>("subject_assignmentLetterDate");

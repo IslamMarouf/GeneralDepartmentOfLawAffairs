@@ -2,23 +2,27 @@
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Word;
 
-namespace GeneralDepartmentOfLawAffairs {
+namespace GeneralDepartmentOfLawAffairs
+{
     public class InspectionNote : Letter
     {
         private readonly Document _doc;
         private DialogResult _dialogResult;
         private LetterData _letterData;
 
-        public InspectionNote(Document doc) : base(doc) {
+        public InspectionNote(Document doc) : base(doc)
+        {
             _doc = doc;
         }
 
-        public override void Write() {
+        public override void Write()
+        {
             if (Initialize())
                 LetterSections();
         }
 
-        protected override bool Initialize() {
+        protected override bool Initialize()
+        {
             FrmInspectionNote frmInspectionNote = new FrmInspectionNote();
             _dialogResult = frmInspectionNote.ShowDialog();
             _letterData = frmInspectionNote.FrmLetterData;
@@ -26,16 +30,19 @@ namespace GeneralDepartmentOfLawAffairs {
             return (_dialogResult == DialogResult.OK) && !frmInspectionNote.FormHasEmptyFields;
         }
 
-        protected override void HeadingSection() {
+        protected override void HeadingSection()
+        {
             Heading(HeadingType.Full);
         }
 
-        protected override void DirectionSection() {
+        protected override void DirectionSection()
+        {
             Paragraph separatorParagraph = new Paragraph(_doc);
             separatorParagraph.AddFormatted(LetterSentences.TableNote1, "pt bold heading", 14, true, true, true);
         }
 
-        protected override void BodySection() {
+        protected override void BodySection()
+        {
             var tableParagraph = _doc.Paragraphs.Add();
             int columnsCount = 2;
             int rowsCount = 8;
@@ -57,7 +64,7 @@ namespace GeneralDepartmentOfLawAffairs {
                     }
                     else if (i == 1 && j == 2)
                     {
-                        string direction = (_letterData.Index == 0)
+                        string direction = _letterData.Index == 0
                             ? LetterSentences.MRS + " " +
                               Properties.Settings.Default.MinisterName + " - " +
                               LetterSentences.Minister
@@ -71,8 +78,11 @@ namespace GeneralDepartmentOfLawAffairs {
                     }
                     else if (i == 2 && j == 2)
                     {
-                        string direction = LetterSentences.CCDepartment + " - " +
-                                           LetterSentences.GeneralDepartName;
+                        string direction = _letterData.Index == 0
+                            ? LetterSentences.Head + " " + LetterSentences.HGC
+                              + " - " + LetterSentences.GeneralDepartName
+                            : LetterSentences.GeneralDepartName;
+
                         TableParagraph(c, direction, "pt bold heading", 12);
                     }
                     else if (i == 3 && j == 1)
@@ -161,7 +171,8 @@ namespace GeneralDepartmentOfLawAffairs {
             c.Range.ParagraphFormat.SpaceBefore = 0;
         }
 
-        protected override void RequestSection() {
+        protected override void RequestSection()
+        {
             string requestStr = (_letterData.Index == 0)
                 ? LetterSentences.TableNote4
                 : LetterSentences.TableNote5;
@@ -201,7 +212,8 @@ namespace GeneralDepartmentOfLawAffairs {
             separatorParagraph.AddFormatted(string.Empty, "Times New Roman", 1);
         }
 
-        protected override void SignSection() {
+        protected override void SignSection()
+        {
             base.SignSection();
         }
     }

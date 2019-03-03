@@ -888,4 +888,10 @@
   <data name="InvestInquiry3" xml:space="preserve">
     <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو موافاتنا</value>
   </data>
+  <data name="Attached" xml:space="preserve">
+    <value>(مرفق)</value>
+  </data>
+  <data name="Inspection1" xml:space="preserve">
+    <value>بمناسبة الفحص</value>
+  </data>
 </root>

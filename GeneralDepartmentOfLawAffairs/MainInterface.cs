@@ -7,32 +7,33 @@ namespace GeneralDepartmentOfLawAffairs
 {
     public partial class MainInterface
     {
+        /*
+            In LINQ to Object method, we must first build a DataSet and fill it with
+            our Subjects data table. The reason for that is because there is no direct
+            relationship between the LINQ and the Microsoft Access database, but we
+            can set up an indirect relationship between them using the LINQ to ADO.NET
+            since ADO.NET covers any kinds of database including the Microsoft Access
+            20016. In order to set up this relationship, a DataSet must be built by
+            filling it with the desired data table such as Subjects in this case.
+            One point to note is that this DataSet is a nontyped DataSet if it is 
+            built in this way, and you must use the field location, not field name,
+            to identify each column in the data table.
+        */
+
+        private const string ConString = "SELECT * FROM tblSubjects";
+        private readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
+        private readonly OleDbCommand _odbCommand = new OleDbCommand();
+
+        /*
+           The DataSet is used to query data using the LINQ to DataSet method since
+           there is no direct way to connect LINQ to the Microsoft Access database.
+        */
+        private readonly DataSet _ds = new DataSet();
+
         private void MainInterface_Load(object sender, RibbonUIEventArgs e)
         {
             btn_report.Enabled = false;
 
-            /*
-               In LINQ to Object method, we must first build a DataSet and fill it with
-               our Subjects data table. The reason for that is because there is no direct
-               relationship between the LINQ and the Microsoft Access database, but we
-               can set up an indirect relationship between them using the LINQ to ADO.NET
-               since ADO.NET covers any kinds of database including the Microsoft Access
-               20016. In order to set up this relationship, a DataSet must be built by
-               filling it with the desired data table such as Subjects in this case.
-               One point to note is that this DataSet is a nontyped DataSet if it is 
-               built in this way, and you must use the field location, not field name,
-               to identify each column in the data table.
-             */
-
-            string conString = "SELECT * FROM tblSubjects";
-            OleDbDataAdapter subjectsDataAdapter = new OleDbDataAdapter();
-            OleDbCommand odbCommand = new OleDbCommand();
-
-            /*
-               The DataSet is used to query data using the LINQ to DataSet method since
-               there is no direct way to connect LINQ to the Microsoft Access database.
-             */
-            DataSet ds = new DataSet();
 
             /*
              * Globals.ThisAddIn.SubjectsConnection used to access and get the original
@@ -40,14 +41,14 @@ namespace GeneralDepartmentOfLawAffairs
              * The Command instance is initialized with the Connection object that is
              * created in the ThisAddIn_Startup event.
              */
-            odbCommand.Connection = Globals.ThisAddIn.SubjectsConnection;
-            odbCommand.CommandType = CommandType.Text;
-            odbCommand.CommandText = conString;
-            subjectsDataAdapter.SelectCommand = odbCommand;
-            subjectsDataAdapter.Fill(ds, "tblSubjects");
+            _odbCommand.Connection = Globals.ThisAddIn.SubjectsConnection;
+            _odbCommand.CommandType = CommandType.Text;
+            _odbCommand.CommandText = ConString;
+            _subjectsDataAdapter.SelectCommand = _odbCommand;
+            _subjectsDataAdapter.Fill(_ds, "tblSubjects");
 
-            var investigations = from sb in ds.Tables["tblSubjects"].AsEnumerable()
-                                select sb;          
+            var investigations = from sb in _ds.Tables["tblSubjects"].AsEnumerable()
+                select sb;
 
             foreach (var invesRow in investigations)
             {
@@ -56,20 +57,18 @@ namespace GeneralDepartmentOfLawAffairs
                     $"{LetterSentences.Rush + invesRow.Field<string>("subject_type") + " " + LetterSentences.Num + " [" + invesRow.Field<string>("subject_num") + "] " + LetterSentences.ForYear + " " + invesRow.Field<string>("subject_year")}";
                 btnItem.Name = "btn" + invesRow.Field<string>("subject_num");
                 btnItem.Click += MnuRush_Click;
-                LetterData _letterData = new LetterData();
+                LetterData letterData = new LetterData();
 
-                _letterData.SubjectType = invesRow.Field<string>("subject_type");
-                _letterData.AssignmentDate = invesRow.Field<DateTime>("subject_assignmentDate");
-                _letterData.Subject = invesRow.Field<string>("subject_about");
-                _letterData.ProcedureName = invesRow.Field<string>("Subject_procedureName");
+                letterData.SubjectType = invesRow.Field<string>("subject_type");
+                letterData.AssignmentDate = invesRow.Field<DateTime>("subject_assignmentDate");
+                letterData.Subject = invesRow.Field<string>("subject_about");
+                letterData.ProcedureName = invesRow.Field<string>("Subject_procedureName");
                 //_letterData.ProcedureDate = invesRow.Field<DateTime>("Subject_procedureDate");
                 //_letterData.ProcedureOutComDate = invesRow.Field<DateTime>("Subject_procedureOutComDate");
 
-                btnItem.Tag = _letterData;
+                btnItem.Tag = letterData;
                 mnuRush.Items.Add(btnItem);
             }
-            subjectsDataAdapter?.Dispose();
-            odbCommand?.Dispose();
         }
 
 
@@ -236,7 +235,8 @@ namespace GeneralDepartmentOfLawAffairs
 
         private void MainInterface_Close(object sender, EventArgs e)
         {
-
+            _subjectsDataAdapter?.Dispose();
+            _odbCommand?.Dispose();
         }
     }
 }

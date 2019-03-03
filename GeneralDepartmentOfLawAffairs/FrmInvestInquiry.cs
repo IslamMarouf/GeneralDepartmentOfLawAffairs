@@ -14,7 +14,7 @@ namespace GeneralDepartmentOfLawAffairs
         readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
         private readonly DataSet _subjectsDs = new DataSet();
 
-        public FrmInvestInquiry()
+        public FrmInvestInquiry()   
         {
             InitializeComponent();
             FrmLetterData = new LetterData();

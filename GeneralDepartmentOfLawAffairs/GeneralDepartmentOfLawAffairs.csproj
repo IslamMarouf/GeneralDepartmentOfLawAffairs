@@ -379,6 +379,9 @@
     <EmbeddedResource Include="frmInspectionLetter.resx">
       <DependentUpon>frmInspectionLetter.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmInspectionNote.resx">
+      <DependentUpon>FrmInspectionNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInspectionRef.resx">
       <DependentUpon>FrmInspectionRef.cs</DependentUpon>
     </EmbeddedResource>

@@ -54,7 +54,6 @@
             this.btnInvestigationRefererringLetter = this.Factory.CreateRibbonButton();
             this.separator1 = this.Factory.CreateRibbonSeparator();
             this.mnuInspection = this.Factory.CreateRibbonMenu();
-            this.btnInspectionLetter = this.Factory.CreateRibbonButton();
             this.btnInspecInquiry = this.Factory.CreateRibbonButton();
             this.btnInspectionNote = this.Factory.CreateRibbonButton();
             this.btnInspctionRefererringLetter = this.Factory.CreateRibbonButton();
@@ -236,20 +235,12 @@
             // 
             this.mnuInspection.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.mnuInspection.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.justice_balance_icon;
-            this.mnuInspection.Items.Add(this.btnInspectionLetter);
             this.mnuInspection.Items.Add(this.btnInspecInquiry);
             this.mnuInspection.Items.Add(this.btnInspectionNote);
             this.mnuInspection.Items.Add(this.btnInspctionRefererringLetter);
             this.mnuInspection.Label = "فحص";
             this.mnuInspection.Name = "mnuInspection";
             this.mnuInspection.ShowImage = true;
-            // 
-            // btnInspectionLetter
-            // 
-            this.btnInspectionLetter.Label = "خطاب فحص شكوى";
-            this.btnInspectionLetter.Name = "btnInspectionLetter";
-            this.btnInspectionLetter.ShowImage = true;
-            this.btnInspectionLetter.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInspectionLetter_Click);
             // 
             // btnInspecInquiry
             // 
@@ -432,7 +423,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnTableNote;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInvestInquiry;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInvestigationRefererringLetter;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInspectionLetter;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInspectionNote;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInspecInquiry;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHelp;
