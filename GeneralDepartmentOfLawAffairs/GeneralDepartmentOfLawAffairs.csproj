@@ -106,6 +106,10 @@
   -->
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -343,6 +347,12 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="UI\Direction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Direction.Designer.cs">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Direction.resx">
       <DependentUpon>Direction.cs</DependentUpon>
     </EmbeddedResource>
@@ -441,6 +451,9 @@
     <EmbeddedResource Include="SentPhotoCopy.resx">
       <DependentUpon>SentPhotoCopy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Direction.resx">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="GeneralDepartmentOfLawAffairs_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -476,9 +489,7 @@
   <ItemGroup>
     <None Include="Resources\Document-Add-icon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

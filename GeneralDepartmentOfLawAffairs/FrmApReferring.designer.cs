@@ -132,6 +132,7 @@
             this.cmbxInvestigationNum.Name = "cmbxInvestigationNum";
             this.cmbxInvestigationNum.Size = new System.Drawing.Size(53, 27);
             this.cmbxInvestigationNum.TabIndex = 96;
+            this.cmbxInvestigationNum.SelectedIndexChanged += new System.EventHandler(this.cmbxInvestigationNum_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -220,6 +221,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FrmApReferring";
             this.Text = "خطاب إحالة تحقيق للنيابة الإدارية";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmApReferring_FormClosing);
             this.Load += new System.EventHandler(this.FrmApReferring_Load);
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -256,7 +256,7 @@ namespace GeneralDepartmentOfLawAffairs {
                             }
                             else if ((i == 4) && (j == 3)) {
                                 var str = LetterSentences.Attachments + attachmentsStr;
-                                TableParagraph(c, str, 8);
+                                TableParagraph(c, str, 7);
                                 c.Range.Borders.Enable = 1;
                             }
                             else if ((i == 5) && (j == 1)) {
@@ -373,7 +373,7 @@ namespace GeneralDepartmentOfLawAffairs {
                                 TableParagraph(c, LetterSentences.History, 8);
                             }
                             else if ((i == 2) && (j == 2)) {
-                                TableParagraph(c, LetterSentences.InvNo + attachmentsStr, 8);
+                                TableParagraph(c, LetterSentences.InvNo + attachmentsStr, 7);
                             }
                         }
 
@@ -440,7 +440,7 @@ namespace GeneralDepartmentOfLawAffairs {
                             }
                             else if ((i == 4) && (j == 3)) {
                                 var str = LetterSentences.Attachments + attachmentsStr;
-                                TableParagraph(c, str, 8);
+                                TableParagraph(c, str, 7);
                             }
                             else if ((i == 5) && (j == 1)) {
                                 TableParagraph(c, LetterSentences.GeneralDepartName, 8);

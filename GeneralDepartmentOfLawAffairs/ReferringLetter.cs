@@ -29,7 +29,7 @@ namespace GeneralDepartmentOfLawAffairs {
             string optStr = LetterSentences.InvestigationRefererring4 + " " +
                             _letterData.InvestigationNumber + " " +
                             LetterSentences.ForYear + " " +
-                            _letterData.InvestDate + " ";
+                            _letterData.InvYear + " ";
 
             Heading(HeadingType.Typical, optStr);
         }
@@ -60,7 +60,7 @@ namespace GeneralDepartmentOfLawAffairs {
             string strBody = LetterSentences.InvestigationRefererring1 + " " +
                              _letterData.InvestigationNumber + " " +
                              LetterSentences.ForYear + " " + 
-                             _letterData.InvestDate + " " +
+                             _letterData.InvYear + " " +
                              _letterData.Subject + " " +
                              LetterSentences.InvestigationRefererring2 + "";
 
@@ -72,6 +72,7 @@ namespace GeneralDepartmentOfLawAffairs {
         protected override void RequestSection() {
             Paragraph request = new Paragraph(_doc);
             request.AddFormatted(LetterSentences.InvestigationRefererring3, "PT Bold Heading", 11, false);
+            request.GetRange().ListFormat.ApplyBulletDefault();
         }
     }   
 }
