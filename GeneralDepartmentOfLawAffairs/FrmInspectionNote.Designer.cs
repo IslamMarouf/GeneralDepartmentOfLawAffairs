@@ -247,6 +247,7 @@
             this.Controls.Add(this.lblDirection);
             this.Name = "FrmInspectionNote";
             this.Text = "مذكرة فحص";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmInspectionNote_FormClosing);
             this.Load += new System.EventHandler(this.FrmInspectionNote_Load);
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);

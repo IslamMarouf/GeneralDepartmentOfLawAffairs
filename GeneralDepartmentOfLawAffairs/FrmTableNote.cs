@@ -78,5 +78,11 @@ namespace GeneralDepartmentOfLawAffairs
                 FrmLetterData.CeaseMonths = investInfoRow.Field<string>("subject_ceaseMonths");
             }
         }
+
+        private void FrmTableNote_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            _subjectsDataAdapter?.Dispose();
+            _subjectsOdbCommand?.Dispose();
+        }
     }
 }

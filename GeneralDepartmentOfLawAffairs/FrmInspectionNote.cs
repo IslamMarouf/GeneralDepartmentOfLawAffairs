@@ -77,5 +77,11 @@ namespace GeneralDepartmentOfLawAffairs
                 FrmLetterData.IncomingLetterNumber = inspectInfoRow.Field<string>("subject_assignmentLetterNum");
             }
         }
+
+        private void FrmInspectionNote_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
+        {
+            _subjectsDataAdapter?.Dispose();
+            _subjectsOdbCommand?.Dispose();
+        }
     }
 }

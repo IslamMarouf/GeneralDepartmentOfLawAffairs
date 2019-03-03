@@ -247,6 +247,7 @@
             this.Controls.Add(this.lblDirection);
             this.Name = "FrmTableNote";
             this.Text = "مذكرة (جدول) ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmTableNote_FormClosing);
             this.Load += new System.EventHandler(this.FrmTableNote_Load);
             this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
