@@ -26,10 +26,10 @@ namespace GeneralDepartmentOfLawAffairs {
         }
 
         protected override void HeadingSection() {
-            string optStr = LetterSentences.InspctionRefererring4 + " " +
-                            _letterData.InspectionNumber + " " +
-                            LetterSentences.ForYear + " " +
-                            _letterData.InspectionDate + " ";
+            string optStr = LetterSentences.InspctionRefererring4 
+                            + " " + _letterData.InspectionNumber 
+                            + " " + LetterSentences.ForYear 
+                            + " " + _letterData.InspectYear;
             Heading(HeadingType.Typical, optStr);
         }
 
@@ -56,12 +56,13 @@ namespace GeneralDepartmentOfLawAffairs {
         }
 
         protected override void BodySection() {
-            string strBody = LetterSentences.InspctionRefererring1 + " " +
-                             _letterData.InspectionNumber + " " +
-                             LetterSentences.ForYear + " " +
-                             _letterData.InspectionDate + " " +
-                             _letterData.Subject + " " +
-                             LetterSentences.InspctionRefererring2 + "";
+            string strBody = LetterSentences.InspctionRefererring1 
+                             + " " + _letterData.InspectionNumber 
+                             + " " + LetterSentences.ForYear 
+                             + " " + _letterData.InspectYear
+                             + " " + LetterSentences.about
+                             + " " + _letterData.Subject 
+                             + " " + LetterSentences.InspctionRefererring2;
 
             Paragraph body1Paragraph = new Paragraph(_doc);
             body1Paragraph.AddFormatted(strBody, "Times New Roman", 14, false, true);
@@ -71,6 +72,7 @@ namespace GeneralDepartmentOfLawAffairs {
         protected override void RequestSection() {
             Paragraph request = new Paragraph(_doc);
             request.AddFormatted(LetterSentences.InspctionRefererring3, "PT Bold Heading", 11, false);
+            request.GetRange().ListFormat.ApplyBulletDefault();
         }
     }
 }

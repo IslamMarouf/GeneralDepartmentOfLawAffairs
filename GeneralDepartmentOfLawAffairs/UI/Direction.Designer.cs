@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Direction";
-            this.Size = new System.Drawing.Size(399, 63);
+            this.Size = new System.Drawing.Size(493, 63);
             this.ResumeLayout(false);
 
         }
