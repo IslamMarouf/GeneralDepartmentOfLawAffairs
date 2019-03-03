@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_about = new System.Windows.Forms.TextBox();
+            this.txtAttachmentsCount = new System.Windows.Forms.MaskedTextBox();
+            this.lblCompanionsCount = new System.Windows.Forms.Label();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,10 +56,10 @@
             this.cmbxDirection.Items.AddRange(new object[] {
             "معالي الوزيرة",
             "رئيس القطاع"});
-            this.cmbxDirection.Location = new System.Drawing.Point(106, 114);
+            this.cmbxDirection.Location = new System.Drawing.Point(105, 113);
             this.cmbxDirection.Name = "cmbxDirection";
             this.cmbxDirection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cmbxDirection.Size = new System.Drawing.Size(392, 27);
+            this.cmbxDirection.Size = new System.Drawing.Size(263, 27);
             this.cmbxDirection.TabIndex = 90;
             this.cmbxDirection.SelectedIndexChanged += new System.EventHandler(this.cmbxDirection_SelectedIndexChanged);
             // 
@@ -65,7 +67,7 @@
             // 
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(106, 156);
+            this.pnlButtons.Location = new System.Drawing.Point(106, 158);
             this.pnlButtons.Name = "pnlButtons";
             this.pnlButtons.Size = new System.Drawing.Size(392, 34);
             this.pnlButtons.TabIndex = 89;
@@ -105,7 +107,7 @@
             this.lblDirection.AutoSize = true;
             this.lblDirection.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDirection.ForeColor = System.Drawing.SystemColors.Info;
-            this.lblDirection.Location = new System.Drawing.Point(15, 117);
+            this.lblDirection.Location = new System.Drawing.Point(14, 116);
             this.lblDirection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDirection.Name = "lblDirection";
             this.lblDirection.Size = new System.Drawing.Size(82, 19);
@@ -201,11 +203,37 @@
             this.txt_about.Size = new System.Drawing.Size(392, 57);
             this.txt_about.TabIndex = 112;
             // 
+            // txtAttachmentsCount
+            // 
+            this.txtAttachmentsCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.txtAttachmentsCount.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtAttachmentsCount.HidePromptOnLeave = true;
+            this.txtAttachmentsCount.Location = new System.Drawing.Point(465, 113);
+            this.txtAttachmentsCount.Mask = "000";
+            this.txtAttachmentsCount.Name = "txtAttachmentsCount";
+            this.txtAttachmentsCount.Size = new System.Drawing.Size(33, 26);
+            this.txtAttachmentsCount.TabIndex = 121;
+            this.txtAttachmentsCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblCompanionsCount
+            // 
+            this.lblCompanionsCount.AutoSize = true;
+            this.lblCompanionsCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanionsCount.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblCompanionsCount.Location = new System.Drawing.Point(375, 116);
+            this.lblCompanionsCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompanionsCount.Name = "lblCompanionsCount";
+            this.lblCompanionsCount.Size = new System.Drawing.Size(83, 19);
+            this.lblCompanionsCount.TabIndex = 120;
+            this.lblCompanionsCount.Text = "عدد المرفقات:";
+            // 
             // FrmInspectionNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 203);
+            this.ClientSize = new System.Drawing.Size(507, 204);
+            this.Controls.Add(this.txtAttachmentsCount);
+            this.Controls.Add(this.lblCompanionsCount);
             this.Controls.Add(this.txtYear);
             this.Controls.Add(this.cmbxInspectionNum);
             this.Controls.Add(this.label4);
@@ -241,5 +269,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_about;
+        private System.Windows.Forms.MaskedTextBox txtAttachmentsCount;
+        private System.Windows.Forms.Label lblCompanionsCount;
     }
 }

@@ -894,4 +894,7 @@
   <data name="Inspection1" xml:space="preserve">
     <value>بمناسبة الفحص</value>
   </data>
+  <data name="Subject2" xml:space="preserve">
+    <value>تم قيد الموضوع لدى الإدارة بال</value>
+  </data>
 </root>

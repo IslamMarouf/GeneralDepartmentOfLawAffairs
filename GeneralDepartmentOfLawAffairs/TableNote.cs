@@ -26,7 +26,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
 
         protected override void HeadingSection() {
-            Heading(HeadingType.Full);
+            Heading(HeadingType.Full, _letterData.AttachmentsCount);
         }
 
         protected override void DirectionSection() {
@@ -64,8 +64,10 @@ namespace GeneralDepartmentOfLawAffairs {
                         c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                     }
                     else if (i == 2 && j == 2) {
-                        string direction = LetterSentences.CCDepartment + " - " +
-                                           LetterSentences.GeneralDepartName;
+                        string direction = _letterData.Index == 0
+                            ? LetterSentences.Head + " " + LetterSentences.HGC
+                              + " - " + LetterSentences.GeneralDepartName
+                            : LetterSentences.GeneralDepartName;
                         TableParagraph(c, direction, "pt bold heading", 12);
                     }
                     else if (i == 3 && j == 1) {
@@ -98,8 +100,16 @@ namespace GeneralDepartmentOfLawAffairs {
                         TableParagraph(c, LetterSentences.ProcAndResult, "PT Bold Heading", 12);
                         c.Range.ParagraphFormat.Alignment = WdParagraphAlignment.wdAlignParagraphCenter;
                     }
-                    else if (i == 6 && j == 2) {
-                        TableParagraph(c, string.Empty, "times new roman", 14);
+                    else if (i == 6 && j == 2)
+                    {
+                        string procStr = LetterSentences.Subject2
+                                         + LetterSentences.Investigation
+                                         + " " + LetterSentences.Num
+                                         + " " + _letterData.InvestigationNumber
+                                         + " " + LetterSentences.ForYear
+                                         + " " + _letterData.InvYear;
+
+                        TableParagraph(c, procStr, "times new roman", 14);
                         c.Range.Font.BoldBi = 1;
                     }
                     else if (i == 7 && j == 1) {

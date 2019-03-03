@@ -32,7 +32,7 @@ namespace GeneralDepartmentOfLawAffairs
 
         protected override void HeadingSection()
         {
-            Heading(HeadingType.Full);
+            Heading(HeadingType.Full, _letterData.AttachmentsCount);
         }
 
         protected override void DirectionSection()
@@ -124,7 +124,14 @@ namespace GeneralDepartmentOfLawAffairs
                     }
                     else if (i == 6 && j == 2)
                     {
-                        TableParagraph(c, string.Empty, "times new roman", 14);
+                        string procStr = LetterSentences.Subject2
+                            + LetterSentences.Inspection 
+                            + " " + LetterSentences.Num 
+                            + " " + _letterData.InspectionNumber
+                            + " " + LetterSentences.ForYear 
+                            + " " + _letterData.InspectYear;
+
+                        TableParagraph(c, procStr, "times new roman", 14);
                         c.Range.Font.BoldBi = 1;
                     }
                     else if (i == 7 && j == 1)

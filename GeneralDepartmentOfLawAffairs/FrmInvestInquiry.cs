@@ -9,9 +9,9 @@ namespace GeneralDepartmentOfLawAffairs
         public LetterData FrmLetterData { get; set; }
         public bool FormHasEmptyFields { get; set; }
 
-        private string _subjectsConStr = "SELECT * FROM tblSubjects";
-        readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
-        readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
+        private const string SubjectsConStr = "SELECT * FROM tblSubjects";
+        private readonly OleDbDataAdapter _subjectsDataAdapter = new OleDbDataAdapter();
+        private readonly OleDbCommand _subjectsOdbCommand = new OleDbCommand();
         private readonly DataSet _subjectsDs = new DataSet();
 
         public FrmInvestInquiry()   
@@ -21,7 +21,7 @@ namespace GeneralDepartmentOfLawAffairs
 
             _subjectsOdbCommand.Connection = Globals.ThisAddIn.SubjectsConnection;
             _subjectsOdbCommand.CommandType = CommandType.Text;
-            _subjectsOdbCommand.CommandText = _subjectsConStr;
+            _subjectsOdbCommand.CommandText = SubjectsConStr;
             _subjectsDataAdapter.SelectCommand = _subjectsOdbCommand;
             _subjectsDataAdapter.Fill(_subjectsDs, "tblSubjects");
         }

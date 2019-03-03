@@ -2257,6 +2257,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to تم قيد الموضوع لدى الإدارة بال.
+        /// </summary>
+        public static string Subject2 {
+            get {
+                return ResourceManager.GetString("Subject2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to تكليف حضور.
         /// </summary>
         public static string Summon {

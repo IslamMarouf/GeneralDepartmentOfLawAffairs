@@ -412,6 +412,9 @@
     <EmbeddedResource Include="FrmSpecialNotification.resx">
       <DependentUpon>FrmSpecialNotification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTableNote.resx">
+      <DependentUpon>FrmTableNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTest.resx">
       <DependentUpon>frmTest.cs</DependentUpon>
     </EmbeddedResource>

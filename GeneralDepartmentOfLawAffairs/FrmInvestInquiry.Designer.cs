@@ -42,6 +42,8 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.ctrlDirection = new GeneralDepartmentOfLawAffairs.Direction();
             this.lblDirection = new System.Windows.Forms.Label();
+            this.txtAttachmentsCount = new System.Windows.Forms.MaskedTextBox();
+            this.lblCompanionsCount = new System.Windows.Forms.Label();
             this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +51,10 @@
             // 
             this.dtpAssignmentDate.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(108)))), ((int)(((byte)(86)))));
             this.dtpAssignmentDate.Enabled = false;
-            this.dtpAssignmentDate.Location = new System.Drawing.Point(368, 10);
+            this.dtpAssignmentDate.Location = new System.Drawing.Point(362, 7);
             this.dtpAssignmentDate.Name = "dtpAssignmentDate";
             this.dtpAssignmentDate.RightToLeftLayout = true;
-            this.dtpAssignmentDate.Size = new System.Drawing.Size(257, 26);
+            this.dtpAssignmentDate.Size = new System.Drawing.Size(133, 26);
             this.dtpAssignmentDate.TabIndex = 84;
             this.dtpAssignmentDate.Value = new System.DateTime(2018, 2, 17, 11, 35, 30, 0);
             // 
@@ -62,15 +64,15 @@
             this.label3.ForeColor = System.Drawing.SystemColors.Info;
             this.label3.Location = new System.Drawing.Point(7, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 19);
+            this.label3.Size = new System.Drawing.Size(45, 19);
             this.label3.TabIndex = 83;
-            this.label3.Text = "الموضوع:";
+            this.label3.Text = "ابشأن:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(281, 16);
+            this.label1.Location = new System.Drawing.Point(275, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 19);
             this.label1.TabIndex = 81;
@@ -128,10 +130,10 @@
             // 
             this.txtYear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
             this.txtYear.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtYear.Location = new System.Drawing.Point(211, 10);
+            this.txtYear.Location = new System.Drawing.Point(211, 11);
             this.txtYear.Name = "txtYear";
             this.txtYear.ReadOnly = true;
-            this.txtYear.Size = new System.Drawing.Size(64, 26);
+            this.txtYear.Size = new System.Drawing.Size(58, 26);
             this.txtYear.TabIndex = 91;
             // 
             // pnlButtons
@@ -140,9 +142,9 @@
             this.pnlButtons.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlButtons.Controls.Add(this.btnCancel);
             this.pnlButtons.Controls.Add(this.btnOK);
-            this.pnlButtons.Location = new System.Drawing.Point(377, 148);
+            this.pnlButtons.Location = new System.Drawing.Point(99, 148);
             this.pnlButtons.Name = "pnlButtons";
-            this.pnlButtons.Size = new System.Drawing.Size(248, 51);
+            this.pnlButtons.Size = new System.Drawing.Size(526, 51);
             this.pnlButtons.TabIndex = 117;
             // 
             // btnCancel
@@ -182,11 +184,11 @@
             this.ctrlDirection.DeptNameVal = "";
             this.ctrlDirection.Filled = false;
             this.ctrlDirection.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlDirection.Location = new System.Drawing.Point(98, 109);
+            this.ctrlDirection.Location = new System.Drawing.Point(87, 109);
             this.ctrlDirection.MrMrsVal = "";
             this.ctrlDirection.Name = "ctrlDirection";
             this.ctrlDirection.RecipientVal = "";
-            this.ctrlDirection.Size = new System.Drawing.Size(527, 33);
+            this.ctrlDirection.Size = new System.Drawing.Size(538, 33);
             this.ctrlDirection.TabIndex = 119;
             // 
             // lblDirection
@@ -201,11 +203,37 @@
             this.lblDirection.TabIndex = 118;
             this.lblDirection.Text = "التوجيه :";
             // 
+            // txtAttachmentsCount
+            // 
+            this.txtAttachmentsCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(83)))), ((int)(((byte)(71)))));
+            this.txtAttachmentsCount.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtAttachmentsCount.HidePromptOnLeave = true;
+            this.txtAttachmentsCount.Location = new System.Drawing.Point(592, 10);
+            this.txtAttachmentsCount.Mask = "000";
+            this.txtAttachmentsCount.Name = "txtAttachmentsCount";
+            this.txtAttachmentsCount.Size = new System.Drawing.Size(33, 26);
+            this.txtAttachmentsCount.TabIndex = 121;
+            this.txtAttachmentsCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblCompanionsCount
+            // 
+            this.lblCompanionsCount.AutoSize = true;
+            this.lblCompanionsCount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanionsCount.ForeColor = System.Drawing.SystemColors.Info;
+            this.lblCompanionsCount.Location = new System.Drawing.Point(502, 13);
+            this.lblCompanionsCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCompanionsCount.Name = "lblCompanionsCount";
+            this.lblCompanionsCount.Size = new System.Drawing.Size(83, 19);
+            this.lblCompanionsCount.TabIndex = 120;
+            this.lblCompanionsCount.Text = "عدد المرفقات:";
+            // 
             // FrmInvestInquiry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 209);
+            this.ClientSize = new System.Drawing.Size(634, 209);
+            this.Controls.Add(this.txtAttachmentsCount);
+            this.Controls.Add(this.lblCompanionsCount);
             this.Controls.Add(this.ctrlDirection);
             this.Controls.Add(this.lblDirection);
             this.Controls.Add(this.pnlButtons);
@@ -241,5 +269,7 @@
         private System.Windows.Forms.Button btnOK;
         private Direction ctrlDirection;
         private System.Windows.Forms.Label lblDirection;
+        private System.Windows.Forms.MaskedTextBox txtAttachmentsCount;
+        private System.Windows.Forms.Label lblCompanionsCount;
     }
 }
