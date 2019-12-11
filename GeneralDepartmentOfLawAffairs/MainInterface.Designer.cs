@@ -34,12 +34,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tab_lawAffairs = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
+            this.btnVersion = this.Factory.CreateRibbonButton();
+            this.separator9 = this.Factory.CreateRibbonSeparator();
             this.mnuAddSubject = this.Factory.CreateRibbonMenu();
             this.btnAddCeaseInvestigation = this.Factory.CreateRibbonButton();
             this.btnAddInvestigation = this.Factory.CreateRibbonButton();
             this.btnAddInspection = this.Factory.CreateRibbonButton();
+            this.btnCase = this.Factory.CreateRibbonButton();
+            this.btnLetter = this.Factory.CreateRibbonButton();
             this.separator4 = this.Factory.CreateRibbonSeparator();
             this.mnuInvestigation = this.Factory.CreateRibbonMenu();
             this.mnuNotification = this.Factory.CreateRibbonMenu();
@@ -57,11 +62,14 @@
             this.btnInspecInquiry = this.Factory.CreateRibbonButton();
             this.btnInspectionNote = this.Factory.CreateRibbonButton();
             this.btnInspctionRefererringLetter = this.Factory.CreateRibbonButton();
+            this.separator8 = this.Factory.CreateRibbonSeparator();
+            this.mnuCase = this.Factory.CreateRibbonMenu();
+            this.btnIssuanceRescript = this.Factory.CreateRibbonButton();
+            this.btnRescriptSent = this.Factory.CreateRibbonButton();
             this.separator2 = this.Factory.CreateRibbonSeparator();
             this.mnuMescLetters = this.Factory.CreateRibbonMenu();
             this.btnGeneralLetter = this.Factory.CreateRibbonButton();
-            this.btnIssuanceRescript = this.Factory.CreateRibbonButton();
-            this.btnRescriptSent = this.Factory.CreateRibbonButton();
+            this.btnLetterReplay = this.Factory.CreateRibbonButton();
             this.btnNominationLetters = this.Factory.CreateRibbonButton();
             this.btnMission = this.Factory.CreateRibbonButton();
             this.separator3 = this.Factory.CreateRibbonSeparator();
@@ -74,6 +82,8 @@
             this.menu_help = this.Factory.CreateRibbonMenu();
             this.btnHelp = this.Factory.CreateRibbonButton();
             this.btnAbout = this.Factory.CreateRibbonButton();
+            this.AlertsTimer = new System.Windows.Forms.Timer(this.components);
+            this.acSubjectsAlert = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             this.tab_lawAffairs.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -87,11 +97,15 @@
             // 
             // group1
             // 
+            this.group1.Items.Add(this.btnVersion);
+            this.group1.Items.Add(this.separator9);
             this.group1.Items.Add(this.mnuAddSubject);
             this.group1.Items.Add(this.separator4);
             this.group1.Items.Add(this.mnuInvestigation);
             this.group1.Items.Add(this.separator1);
             this.group1.Items.Add(this.mnuInspection);
+            this.group1.Items.Add(this.separator8);
+            this.group1.Items.Add(this.mnuCase);
             this.group1.Items.Add(this.separator2);
             this.group1.Items.Add(this.mnuMescLetters);
             this.group1.Items.Add(this.separator3);
@@ -105,6 +119,18 @@
             this.group1.Label = "إدارة التحقيقات";
             this.group1.Name = "group1";
             // 
+            // btnVersion
+            // 
+            this.btnVersion.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.btnVersion.Enabled = false;
+            this.btnVersion.Label = "button1";
+            this.btnVersion.Name = "btnVersion";
+            this.btnVersion.ShowImage = true;
+            // 
+            // separator9
+            // 
+            this.separator9.Name = "separator9";
+            // 
             // mnuAddSubject
             // 
             this.mnuAddSubject.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -112,6 +138,8 @@
             this.mnuAddSubject.Items.Add(this.btnAddCeaseInvestigation);
             this.mnuAddSubject.Items.Add(this.btnAddInvestigation);
             this.mnuAddSubject.Items.Add(this.btnAddInspection);
+            this.mnuAddSubject.Items.Add(this.btnCase);
+            this.mnuAddSubject.Items.Add(this.btnLetter);
             this.mnuAddSubject.Label = "موضوع جديد";
             this.mnuAddSubject.Name = "mnuAddSubject";
             this.mnuAddSubject.ShowImage = true;
@@ -136,6 +164,20 @@
             this.btnAddInspection.Name = "btnAddInspection";
             this.btnAddInspection.ShowImage = true;
             this.btnAddInspection.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAddInspection_Click);
+            // 
+            // btnCase
+            // 
+            this.btnCase.Label = "قضية";
+            this.btnCase.Name = "btnCase";
+            this.btnCase.ShowImage = true;
+            this.btnCase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnCase_Click);
+            // 
+            // btnLetter
+            // 
+            this.btnLetter.Label = "مكاتبة";
+            this.btnLetter.Name = "btnLetter";
+            this.btnLetter.ShowImage = true;
+            this.btnLetter.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnLetter_Click);
             // 
             // separator4
             // 
@@ -263,29 +305,19 @@
             this.btnInspctionRefererringLetter.ShowImage = true;
             this.btnInspctionRefererringLetter.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInspectionReferringLetter_Click);
             // 
-            // separator2
+            // separator8
             // 
-            this.separator2.Name = "separator2";
+            this.separator8.Name = "separator8";
             // 
-            // mnuMescLetters
+            // mnuCase
             // 
-            this.mnuMescLetters.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.mnuMescLetters.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.DiffLetters;
-            this.mnuMescLetters.Items.Add(this.btnGeneralLetter);
-            this.mnuMescLetters.Items.Add(this.btnIssuanceRescript);
-            this.mnuMescLetters.Items.Add(this.btnRescriptSent);
-            this.mnuMescLetters.Items.Add(this.btnNominationLetters);
-            this.mnuMescLetters.Items.Add(this.btnMission);
-            this.mnuMescLetters.Label = "مكاتبات مختلفة";
-            this.mnuMescLetters.Name = "mnuMescLetters";
-            this.mnuMescLetters.ShowImage = true;
-            // 
-            // btnGeneralLetter
-            // 
-            this.btnGeneralLetter.Label = "خطاب عام";
-            this.btnGeneralLetter.Name = "btnGeneralLetter";
-            this.btnGeneralLetter.ShowImage = true;
-            this.btnGeneralLetter.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnGeneralLetter_Click);
+            this.mnuCase.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.mnuCase.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.justice_balance_icon;
+            this.mnuCase.Items.Add(this.btnIssuanceRescript);
+            this.mnuCase.Items.Add(this.btnRescriptSent);
+            this.mnuCase.Label = "قضية";
+            this.mnuCase.Name = "mnuCase";
+            this.mnuCase.ShowImage = true;
             // 
             // btnIssuanceRescript
             // 
@@ -300,6 +332,35 @@
             this.btnRescriptSent.Name = "btnRescriptSent";
             this.btnRescriptSent.ShowImage = true;
             this.btnRescriptSent.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnRescriptSent_Click);
+            // 
+            // separator2
+            // 
+            this.separator2.Name = "separator2";
+            // 
+            // mnuMescLetters
+            // 
+            this.mnuMescLetters.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.mnuMescLetters.Image = global::GeneralDepartmentOfLawAffairs.Properties.Resources.DiffLetters;
+            this.mnuMescLetters.Items.Add(this.btnGeneralLetter);
+            this.mnuMescLetters.Items.Add(this.btnLetterReplay);
+            this.mnuMescLetters.Items.Add(this.btnNominationLetters);
+            this.mnuMescLetters.Items.Add(this.btnMission);
+            this.mnuMescLetters.Label = "مكاتبات مختلفة";
+            this.mnuMescLetters.Name = "mnuMescLetters";
+            this.mnuMescLetters.ShowImage = true;
+            // 
+            // btnGeneralLetter
+            // 
+            this.btnGeneralLetter.Label = "خطاب عام";
+            this.btnGeneralLetter.Name = "btnGeneralLetter";
+            this.btnGeneralLetter.ShowImage = true;
+            this.btnGeneralLetter.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnGeneralLetter_Click);
+            // 
+            // btnLetterReplay
+            // 
+            this.btnLetterReplay.Label = "خطاب للرد على مكاتبة";
+            this.btnLetterReplay.Name = "btnLetterReplay";
+            this.btnLetterReplay.ShowImage = true;
             // 
             // btnNominationLetters
             // 
@@ -327,6 +388,7 @@
             this.mnuRush.Label = "إستعجالات";
             this.mnuRush.Name = "mnuRush";
             this.mnuRush.ShowImage = true;
+            this.mnuRush.ItemsLoading += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.mnuRush_ItemsLoading);
             // 
             // separator5
             // 
@@ -339,6 +401,7 @@
             this.btn_report.Label = "بيان";
             this.btn_report.Name = "btn_report";
             this.btn_report.ShowImage = true;
+            this.btn_report.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_report_Click);
             // 
             // separator7
             // 
@@ -374,6 +437,7 @@
             this.btnHelp.Label = "التعليمات";
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.ShowImage = true;
+            this.btnHelp.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnHelp_Click);
             // 
             // btnAbout
             // 
@@ -381,6 +445,17 @@
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.ShowImage = true;
             this.btnAbout.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnAbout_Click);
+            // 
+            // AlertsTimer
+            // 
+            this.AlertsTimer.Enabled = true;
+            this.AlertsTimer.Interval = 60000;
+            this.AlertsTimer.Tick += new System.EventHandler(this.AlertsTimer_Tick);
+            // 
+            // acSubjectsAlert
+            // 
+            this.acSubjectsAlert.BeforeFormShow += new DevExpress.XtraBars.Alerter.AlertFormEventHandler(this.acSubjectsAlert_BeforeFormShow);
+            this.acSubjectsAlert.FormLoad += new DevExpress.XtraBars.Alerter.AlertFormLoadEventHandler(this.acSubjectsAlert_FormLoad);
             // 
             // MainInterface
             // 
@@ -427,8 +502,6 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInspecInquiry;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnHelp;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAbout;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnIssuanceRescript;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnRescriptSent;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnNominationLetters;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGeneralLetter;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnMission;
@@ -439,6 +512,17 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddInvestigation;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnAddInspection;
         internal Microsoft.Office.Tools.Ribbon.RibbonMenu mnuRush;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnCase;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator8;
+        internal Microsoft.Office.Tools.Ribbon.RibbonMenu mnuCase;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnIssuanceRescript;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnRescriptSent;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnLetterReplay;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnLetter;
+        internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator9;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnVersion;
+        private System.Windows.Forms.Timer AlertsTimer;
+        private DevExpress.XtraBars.Alerter.AlertControl acSubjectsAlert;
     }
 
     partial class ThisRibbonCollection

@@ -70,6 +70,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إضافة.
+        /// </summary>
+        public static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to النيابة الإدارية .
         /// </summary>
         public static string AdministrativeProsecution {
@@ -133,6 +142,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطاب استصدار قرار نيابة.
+        /// </summary>
+        public static string APIssuance {
+            get {
+                return ResourceManager.GetString("APIssuance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to إلحاقا لكتابنا رقم .
         /// </summary>
         public static string append {
@@ -151,6 +169,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطاب ارسال قرار للنيابة.
+        /// </summary>
+        public static string APResSent {
+            get {
+                return ResourceManager.GetString("APResSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to جمهورية مصر العربية.
         /// </summary>
         public static string arabRepublicOfEgypt {
@@ -165,6 +192,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Asiut {
             get {
                 return ResourceManager.GetString("Asiut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تاريخ الإحالة.
+        /// </summary>
+        public static string AssignmentDate {
+            get {
+                return ResourceManager.GetString("AssignmentDate", resourceCulture);
             }
         }
         
@@ -219,6 +255,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Cairo {
             get {
                 return ResourceManager.GetString("Cairo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قضية.
+        /// </summary>
+        public static string Case {
+            get {
+                return ResourceManager.GetString("Case", resourceCulture);
             }
         }
         
@@ -907,6 +952,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطأ.
+        /// </summary>
+        public static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to التضامن الاجتماعي بالفيوم.
         /// </summary>
         public static string Fayoum {
@@ -1384,6 +1438,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إستيفاء.
+        /// </summary>
+        public static string Inquiry {
+            get {
+                return ResourceManager.GetString("Inquiry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نرسل لسيادتكم مرافقاً لكتابنا هذا ملف وأوراق الفحص رقم.
         /// </summary>
         public static string InspctionRefererring1 {
@@ -1470,6 +1533,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string intensive_2 {
             get {
                 return ResourceManager.GetString("intensive_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إخطار مشدد.
+        /// </summary>
+        public static string IntensiveNotification {
+            get {
+                return ResourceManager.GetString("IntensiveNotification", resourceCulture);
             }
         }
         
@@ -1632,6 +1704,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string KafrElSheikh {
             get {
                 return ResourceManager.GetString("KafrElSheikh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to اخر إجراء.
+        /// </summary>
+        public static string LastProcedure {
+            get {
+                return ResourceManager.GetString("LastProcedure", resourceCulture);
             }
         }
         
@@ -1951,6 +2032,15 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إخطار.
+        /// </summary>
+        public static string Notification {
+            get {
+                return ResourceManager.GetString("Notification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to رقم.
         /// </summary>
         public static string Num {
@@ -2005,6 +2095,24 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to إجراء.
+        /// </summary>
+        public static string Procedure {
+            get {
+                return ResourceManager.GetString("Procedure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to إجراء في ال.
+        /// </summary>
+        public static string ProcedureIn {
+            get {
+                return ResourceManager.GetString("ProcedureIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to التضامن الاجتماعي بالقليوبية.
         /// </summary>
         public static string Qalyobeya {
@@ -2032,11 +2140,47 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to خطاب إحالة للنيابة الإدارية.
+        /// </summary>
+        public static string RefLetter {
+            get {
+                return ResourceManager.GetString("RefLetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مدير مديرية .
         /// </summary>
         public static string RegonalManaget {
             get {
                 return ResourceManager.GetString("RegonalManaget", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to قيد الواقعة مخالفة إدارية طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016.
+        /// </summary>
+        public static string RegularNote1 {
+            get {
+                return ResourceManager.GetString("RegularNote1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to وحيث أن هذا التصرف من جانبه يعد إخلالا بواجباته الوظيفية مما يشكل في حقه ذنباً إدارياً يستوجب مؤاخذته عليه تأديبياً طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016..
+        /// </summary>
+        public static string RegularNote2 {
+            get {
+                return ResourceManager.GetString("RegularNote2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to التوصية بأعمال ما جاء بلائحة الجزاءات الصادرة بالقرار الوزاري رقم 252/96 في بندها.
+        /// </summary>
+        public static string RegularNote3 {
+            get {
+                return ResourceManager.GetString("RegularNote3", resourceCulture);
             }
         }
         
@@ -2203,7 +2347,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to برجاء التنبيه بالحضور على:.
+        ///   Looks up a localized string similar to برجاء التنبيه على:.
         /// </summary>
         public static string Stimulation {
             get {
@@ -2212,7 +2356,7 @@ namespace GeneralDepartmentOfLawAffairs {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to بالحضور لمقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم .
+        ///   Looks up a localized string similar to بضرورة الحضور الى مقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم .
         /// </summary>
         public static string StimulationSummon {
             get {
@@ -2397,6 +2541,15 @@ namespace GeneralDepartmentOfLawAffairs {
         public static string Wednesday {
             get {
                 return ResourceManager.GetString("Wednesday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ومعه.
+        /// </summary>
+        public static string With {
+            get {
+                return ResourceManager.GetString("With", resourceCulture);
             }
         }
     }

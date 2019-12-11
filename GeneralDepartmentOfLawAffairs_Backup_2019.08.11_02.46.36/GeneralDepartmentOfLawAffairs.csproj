@@ -1,0 +1,918 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85D20281-63EF-414A-98DA-7E7745EBFCA3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>GeneralDepartmentOfLawAffairs</RootNamespace>
+    <AssemblyName>GeneralDepartmentOfLawAffairs</AssemblyName>
+    <LoadBehavior>3</LoadBehavior>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <DefineConstants>VSTO40</DefineConstants>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>HomeSite</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Word</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.SpellChecker.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpellChecker.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JbsaPrintDataGridView">
+      <HintPath>..\..\..\..\..\Visual Studio 2017\PROJECTS\PrintDataGridView\PrintDataGridView\bin\Debug\JbsaPrintDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Telerik.WinControls, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.115.40\Telerik.WinControls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.115.40\Telerik.WinControls.UI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=2019.1.115.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <HintPath>..\lib\RCWF\2019.1.115.40\TelerikCommon.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.v4.0.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <Private>False</Private>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="Letters\CeaseNote.cs" />
+    <Compile Include="Temp\Direction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Temp\Direction.designer.cs">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Letters\DraftResolution.cs" />
+    <Compile Include="Letters\EmptyLetter.cs" />
+    <Compile Include="Temp\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\frmAbout.designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmAddCeaseInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmAddCeaseInvestigation.Designer.cs">
+      <DependentUpon>FrmAddCeaseInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmAddInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmAddInspection.Designer.cs">
+      <DependentUpon>FrmAddInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmAddInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmAddInvestigation.Designer.cs">
+      <DependentUpon>FrmAddInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmApReferring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmApReferring.designer.cs">
+      <DependentUpon>FrmApReferring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmCeaseNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmCeaseNote.Designer.cs">
+      <DependentUpon>FrmCeaseNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmDraftResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmDraftResolution.Designer.cs">
+      <DependentUpon>FrmDraftResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmEmptyLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmEmptyLetter.Designer.cs">
+      <DependentUpon>FrmEmptyLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmHurryLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmHurryLetters.designer.cs">
+      <DependentUpon>FrmHurryLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmInspecInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmInspecInquiry.Designer.cs">
+      <DependentUpon>FrmInspecInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\frmInspectionLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\frmInspectionLetter.designer.cs">
+      <DependentUpon>frmInspectionLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmInspectionNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmInspectionNote.Designer.cs">
+      <DependentUpon>FrmInspectionNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmInspectionRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmInspectionRef.Designer.cs">
+      <DependentUpon>FrmInspectionRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmIntensiveNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmIntensiveNotification.designer.cs">
+      <DependentUpon>FrmIntensiveNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmInvestInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmInvestInquiry.Designer.cs">
+      <DependentUpon>FrmInvestInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmIssuanceRescriptLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmIssuanceRescriptLetter.Designer.cs">
+      <DependentUpon>FrmIssuanceRescriptLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmNominationLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmNominationLetter.Designer.cs">
+      <DependentUpon>FrmNominationLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmProcedure.Designer.cs">
+      <DependentUpon>FrmProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmRegularNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmRegularNote.Designer.cs">
+      <DependentUpon>FrmRegularNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmRegularNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmRegularNotification.designer.cs">
+      <DependentUpon>FrmRegularNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmReport.Designer.cs">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmRescriptSentLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmRescriptSentLetter.Designer.cs">
+      <DependentUpon>FrmRescriptSentLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmSettings.designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmSpecialNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmSpecialNotification.designer.cs">
+      <DependentUpon>FrmSpecialNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\FrmTableNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\FrmTableNote.Designer.cs">
+      <DependentUpon>FrmTableNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\frmTest.designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Temp\GeneralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Temp\GeneralForm.designer.cs">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Letters\InspecInquiryLetter.cs" />
+    <Compile Include="Letters\InspectionLetter.cs" />
+    <Compile Include="Letters\InspectionNote.cs" />
+    <Compile Include="Letters\InspectionRefLetter.cs" />
+    <Compile Include="Letters\IntensiveNotificationLetter.cs" />
+    <Compile Include="Letters\InvestInquiryLetter.cs" />
+    <Compile Include="Letters\IssuanceRescriptLetter.cs" />
+    <Compile Include="Letters\Letter.cs" />
+    <Compile Include="Letters\LetterData.cs" />
+    <Compile Include="LetterSentences.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LetterSentences.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainInterface.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainInterface.Designer.cs">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Letters\MissionLetter.cs" />
+    <Compile Include="Letters\NominationLetter.cs" />
+    <Compile Include="Utils\About.cs" />
+    <Compile Include="Utils\Paragraph.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Utils\QueryFormType.cs" />
+    <Compile Include="UI\Direction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Direction.Designer.cs">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SentPhotoCopy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SentPhotoCopy.Designer.cs">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XfrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XfrmAbout.Designer.cs">
+      <DependentUpon>XfrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmAddCase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmAddCase.Designer.cs">
+      <DependentUpon>XFrmAddCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmAddCeaseInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmAddCeaseInvestigation.Designer.cs">
+      <DependentUpon>XFrmAddCeaseInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmAddInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmAddInspection.Designer.cs">
+      <DependentUpon>XFrmAddInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmAddInvestigation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmAddInvestigation.Designer.cs">
+      <DependentUpon>XFrmAddInvestigation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmAddLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmAddLetter.Designer.cs">
+      <DependentUpon>XFrmAddLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmApReferring.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmApReferring.Designer.cs">
+      <DependentUpon>XFrmApReferring.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmCaseProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmCaseProcedure.Designer.cs">
+      <DependentUpon>XFrmCaseProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmCaseProcOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmCaseProcOut.Designer.cs">
+      <DependentUpon>XFrmCaseProcOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmCeaseNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmCeaseNote.Designer.cs">
+      <DependentUpon>XFrmCeaseNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmDraftResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmDraftResolution.Designer.cs">
+      <DependentUpon>XFrmDraftResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmEmptyLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmEmptyLetter.Designer.cs">
+      <DependentUpon>XFrmEmptyLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmGeneralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmGeneralForm.Designer.cs">
+      <DependentUpon>XFrmGeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmHurryLetters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmHurryLetters.Designer.cs">
+      <DependentUpon>XFrmHurryLetters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInspecInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInspecInquiry.Designer.cs">
+      <DependentUpon>XFrmInspecInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XfrmInspectionLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XfrmInspectionLetter.Designer.cs">
+      <DependentUpon>XfrmInspectionLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInspectionNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInspectionNote.Designer.cs">
+      <DependentUpon>XFrmInspectionNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInspectionRef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInspectionRef.Designer.cs">
+      <DependentUpon>XFrmInspectionRef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInspectProcOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInspectProcOut.Designer.cs">
+      <DependentUpon>XFrmInspectProcOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmIntensiveNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmIntensiveNotification.Designer.cs">
+      <DependentUpon>XFrmIntensiveNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInvestInquiry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInvestInquiry.Designer.cs">
+      <DependentUpon>XFrmInvestInquiry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInspectProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInspectProcedure.Designer.cs">
+      <DependentUpon>XFrmInspectProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInvestProcOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInvestProcOut.Designer.cs">
+      <DependentUpon>XFrmInvestProcOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmIssuanceRescriptLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmIssuanceRescriptLetter.Designer.cs">
+      <DependentUpon>XFrmIssuanceRescriptLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmLetterProcOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmLetterProcOut.Designer.cs">
+      <DependentUpon>XFrmLetterProcOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmNominationLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmNominationLetter.Designer.cs">
+      <DependentUpon>XFrmNominationLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmInvestProcedure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmInvestProcedure.Designer.cs">
+      <DependentUpon>XFrmInvestProcedure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmRegularNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmRegularNote.Designer.cs">
+      <DependentUpon>XFrmRegularNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmRegularNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmRegularNotification.Designer.cs">
+      <DependentUpon>XFrmRegularNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmReport.Designer.cs">
+      <DependentUpon>XFrmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmRescriptSentLetter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmRescriptSentLetter.Designer.cs">
+      <DependentUpon>XFrmRescriptSentLetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmSettings.Designer.cs">
+      <DependentUpon>XFrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmSpecialNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmSpecialNotification.Designer.cs">
+      <DependentUpon>XFrmSpecialNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmTableNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmTableNote.Designer.cs">
+      <DependentUpon>XFrmTableNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XFrmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XFrmTest.Designer.cs">
+      <DependentUpon>XFrmTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\XGeneralForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\XGeneralForm.Designer.cs">
+      <DependentUpon>XGeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\SystemInfo.cs" />
+    <EmbeddedResource Include="Temp\Direction.resx">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmAddCeaseInvestigation.resx">
+      <DependentUpon>FrmAddCeaseInvestigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmAddInspection.resx">
+      <DependentUpon>FrmAddInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmAddInvestigation.resx">
+      <DependentUpon>FrmAddInvestigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmApReferring.resx">
+      <DependentUpon>FrmApReferring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmCeaseNote.resx">
+      <DependentUpon>FrmCeaseNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmDraftResolution.resx">
+      <DependentUpon>FrmDraftResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmEmptyLetter.resx">
+      <DependentUpon>FrmEmptyLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmHurryLetters.resx">
+      <DependentUpon>FrmHurryLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmInspecInquiry.resx">
+      <DependentUpon>FrmInspecInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\frmInspectionLetter.resx">
+      <DependentUpon>frmInspectionLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmInspectionNote.resx">
+      <DependentUpon>FrmInspectionNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmInspectionRef.resx">
+      <DependentUpon>FrmInspectionRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmIntensiveNotification.resx">
+      <DependentUpon>FrmIntensiveNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmInvestInquiry.resx">
+      <DependentUpon>FrmInvestInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmIssuanceRescriptLetter.resx">
+      <DependentUpon>FrmIssuanceRescriptLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmNominationLetter.resx">
+      <DependentUpon>FrmNominationLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmProcedure.resx">
+      <DependentUpon>FrmProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmRegularNote.resx">
+      <DependentUpon>FrmRegularNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmRegularNotification.resx">
+      <DependentUpon>FrmRegularNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmReport.resx">
+      <DependentUpon>FrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmRescriptSentLetter.resx">
+      <DependentUpon>FrmRescriptSentLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmSpecialNotification.resx">
+      <DependentUpon>FrmSpecialNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\FrmTableNote.resx">
+      <DependentUpon>FrmTableNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\frmTest.resx">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Temp\GeneralForm.resx">
+      <DependentUpon>GeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LetterSentences.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LetterSentences.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainInterface.resx">
+      <DependentUpon>MainInterface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Temp\SentPhotoCopy.resx">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Direction.resx">
+      <DependentUpon>Direction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SentPhotoCopy.resx">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XfrmAbout.resx">
+      <DependentUpon>XfrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmAddCase.resx">
+      <DependentUpon>XFrmAddCase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmAddCeaseInvestigation.resx">
+      <DependentUpon>XFrmAddCeaseInvestigation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmAddInspection.resx">
+      <DependentUpon>XFrmAddInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmAddInvestigation.resx">
+      <DependentUpon>XFrmAddInvestigation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmAddLetter.resx">
+      <DependentUpon>XFrmAddLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmApReferring.resx">
+      <DependentUpon>XFrmApReferring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmCaseProcedure.resx">
+      <DependentUpon>XFrmCaseProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmCaseProcOut.resx">
+      <DependentUpon>XFrmCaseProcOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmCeaseNote.resx">
+      <DependentUpon>XFrmCeaseNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmDraftResolution.resx">
+      <DependentUpon>XFrmDraftResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmEmptyLetter.resx">
+      <DependentUpon>XFrmEmptyLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmGeneralForm.resx">
+      <DependentUpon>XFrmGeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmHurryLetters.resx">
+      <DependentUpon>XFrmHurryLetters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInspecInquiry.resx">
+      <DependentUpon>XFrmInspecInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XfrmInspectionLetter.resx">
+      <DependentUpon>XfrmInspectionLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInspectionNote.resx">
+      <DependentUpon>XFrmInspectionNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInspectionRef.resx">
+      <DependentUpon>XFrmInspectionRef.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInspectProcOut.resx">
+      <DependentUpon>XFrmInspectProcOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmIntensiveNotification.resx">
+      <DependentUpon>XFrmIntensiveNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInvestInquiry.resx">
+      <DependentUpon>XFrmInvestInquiry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInspectProcedure.resx">
+      <DependentUpon>XFrmInspectProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInvestProcOut.resx">
+      <DependentUpon>XFrmInvestProcOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmIssuanceRescriptLetter.resx">
+      <DependentUpon>XFrmIssuanceRescriptLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmLetterProcOut.resx">
+      <DependentUpon>XFrmLetterProcOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmNominationLetter.resx">
+      <DependentUpon>XFrmNominationLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmInvestProcedure.resx">
+      <DependentUpon>XFrmInvestProcedure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmRegularNote.resx">
+      <DependentUpon>XFrmRegularNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmRegularNotification.resx">
+      <DependentUpon>XFrmRegularNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmReport.resx">
+      <DependentUpon>XFrmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmRescriptSentLetter.resx">
+      <DependentUpon>XFrmRescriptSentLetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmSettings.resx">
+      <DependentUpon>XFrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmSpecialNotification.resx">
+      <DependentUpon>XFrmSpecialNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmTableNote.resx">
+      <DependentUpon>XFrmTableNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XFrmTest.resx">
+      <DependentUpon>XFrmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\XGeneralForm.resx">
+      <DependentUpon>XGeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="GeneralDepartmentOfLawAffairs_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Letters\ReferringLetter.cs" />
+    <Compile Include="Letters\RegularNote.cs" />
+    <Compile Include="Letters\RegularNotificationLetter.cs" />
+    <Compile Include="Letters\RescriptSentLetter.cs" />
+    <Compile Include="Temp\SentPhotoCopy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Temp\SentPhotoCopy.designer.cs">
+      <DependentUpon>SentPhotoCopy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Letters\SpecialNotificationLetter.cs" />
+    <Compile Include="Letters\TableNote.cs" />
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Document-Add-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GeneralDepartmentOfLawAffairs_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CF480BFC976C05B04A285ED4A75C989E651A47A0</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <!-- Include the build rules for a C# project. -->
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/x" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="GeneralDepartmentOfLawAffairs" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="arabRepublicOfEgypt" xml:space="preserve">
+    <value>جمهورية مصر العربية</value>
+  </data>
+  <data name="CCDepartment" xml:space="preserve">
+    <value>رئيس الادارة المركزية لشئون مكتب الوزير</value>
+  </data>
+  <data name="CDepartment" xml:space="preserve">
+    <value>مدير إدارة التحقيقات</value>
+  </data>
+  <data name="CentralDepartName" xml:space="preserve">
+    <value>الإدارة المركزية لشئون مكتب الوزير</value>
+  </data>
+  <data name="CM_Dept" xml:space="preserve">
+    <value>رئيس الادارة المركزية</value>
+  </data>
+  <data name="CM_Dept_adj" xml:space="preserve">
+    <value>والمشرف على شئون مكتب الوزير</value>
+  </data>
+  <data name="CM_Dept_comp" xml:space="preserve">
+    <value>لشئون مكتب الوزير</value>
+  </data>
+  <data name="DepartmentName" xml:space="preserve">
+    <value>إدارة التحقيقات</value>
+  </data>
+  <data name="detective" xml:space="preserve">
+    <value>المحقق</value>
+  </data>
+  <data name="doContinue" xml:space="preserve">
+    <value>هل تريد الاستمرار؟</value>
+  </data>
+  <data name="emptyFields" xml:space="preserve">
+    <value>الحقول الاتية فارغة</value>
+  </data>
+  <data name="GeneralDepartName" xml:space="preserve">
+    <value>الإدارة العامة للشئون القانونية</value>
+  </data>
+  <data name="GeneralManager" xml:space="preserve">
+    <value>المدير العام</value>
+  </data>
+  <data name="GM_Dept" xml:space="preserve">
+    <value>مدير عام </value>
+  </data>
+  <data name="Greeting" xml:space="preserve">
+    <value>وتفضلوا بقبول فائق الاحترام،</value>
+  </data>
+  <data name="inspectionRequest" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو فحص الشكوى المشار إليها وموافاتنا بنتيجة الفحص مدعمة بالمستندات حتى يتسنى لنا اتخاذ اللازم.</value>
+  </data>
+  <data name="MinistryMame" xml:space="preserve">
+    <value>وزارة التضامن الاجتماعي</value>
+  </data>
+  <data name="Researcher" xml:space="preserve">
+    <value>الباحث القانوني</value>
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value>مرفقات :</value>
+  </data>
+  <data name="AdministrativeProsecution" xml:space="preserve">
+    <value>النيابة الإدارية </value>
+  </data>
+  <data name="CDept1" xml:space="preserve">
+    <value>الادارة المركزية للحماية الاجتماعية</value>
+  </data>
+  <data name="CDept2" xml:space="preserve">
+    <value>الادارة المركزية للتنمية الاجتماعية</value>
+  </data>
+  <data name="CDept3" xml:space="preserve">
+    <value>الادارة المركزية للرعاية الاجتماعية</value>
+  </data>
+  <data name="CDept4" xml:space="preserve">
+    <value>الادارة المركزية للجمعيات والاتحادات</value>
+  </data>
+  <data name="CDept5" xml:space="preserve">
+    <value>الادارة المركزية للشئون المالية والادارية</value>
+  </data>
+  <data name="CDept6" xml:space="preserve">
+    <value>الادارة المركزية للتنمية البشرية</value>
+  </data>
+  <data name="CDept7" xml:space="preserve">
+    <value>الادارة المركزية لشئون المديريات</value>
+  </data>
+  <data name="GDept1" xml:space="preserve">
+    <value>الإدارة العامة للمكتب الفني</value>
+  </data>
+  <data name="GDept10" xml:space="preserve">
+    <value>الإدارة العامة للتوثيق والمعلومات</value>
+  </data>
+  <data name="GDept11" xml:space="preserve">
+    <value>الإدارة العامة للشئون الإدارية</value>
+  </data>
+  <data name="GDept12" xml:space="preserve">
+    <value>الإدارة العامة للشئون المالية</value>
+  </data>
+  <data name="GDept13" xml:space="preserve">
+    <value>الإدارة العامة للدفاع الاجتماعي</value>
+  </data>
+  <data name="GDept14" xml:space="preserve">
+    <value>الإدارة العامة لشئون العاملين</value>
+  </data>
+  <data name="GDept15" xml:space="preserve">
+    <value>الإدارة العامة للأسرة والطفولة</value>
+  </data>
+  <data name="GDept16" xml:space="preserve">
+    <value>الإدارة العامة للأمن</value>
+  </data>
+  <data name="GDept17" xml:space="preserve">
+    <value>الإدارة العامة للجمعيات</value>
+  </data>
+  <data name="GDept18" xml:space="preserve">
+    <value>الإدارة العامة للإتحادات والمؤسسات</value>
+  </data>
+  <data name="GDept19" xml:space="preserve">
+    <value>الإدارة العامة للمنظمات الأهلية والتعاونيات</value>
+  </data>
+  <data name="GDept2" xml:space="preserve">
+    <value>الإدارة العامة للتدريب</value>
+  </data>
+  <data name="GDept20" xml:space="preserve">
+    <value>الإدارة العامة لشئون المديريات - وجه بحري</value>
+  </data>
+  <data name="GDept21" xml:space="preserve">
+    <value>الإدارة العامة لشئون المديريات - وجه قبلي</value>
+  </data>
+  <data name="GDept22" xml:space="preserve">
+    <value>الإدارة العامة لشئون المديريات - القاهرة الكبرى</value>
+  </data>
+  <data name="GDept23" xml:space="preserve">
+    <value>الإدارة العامة للتنظيم والإدارة</value>
+  </data>
+  <data name="GDept24" xml:space="preserve">
+    <value>الإدارة العامة للغلاقات العامة والإعلام</value>
+  </data>
+  <data name="GDept25" xml:space="preserve">
+    <value>الإدارة العامة لخدمة المواطنين</value>
+  </data>
+  <data name="GDept26" xml:space="preserve">
+    <value>الإدارة العامة لتأهيل المعاقين</value>
+  </data>
+  <data name="GDept27" xml:space="preserve">
+    <value>الإدارة العامة للخدمة العامة</value>
+  </data>
+  <data name="GDept28" xml:space="preserve">
+    <value>الإدارة العامة لشئون المرأة</value>
+  </data>
+  <data name="GDept29" xml:space="preserve">
+    <value>الإدارة العامة للأندية</value>
+  </data>
+  <data name="GDept3" xml:space="preserve">
+    <value>الإدارة العامة للإتصالات السياسية</value>
+  </data>
+  <data name="GDept30" xml:space="preserve">
+    <value>الإدارة العامة للمتابعة</value>
+  </data>
+  <data name="GDept31" xml:space="preserve">
+    <value>الإدارة العامة للغلاقات الخارجية</value>
+  </data>
+  <data name="GDept32" xml:space="preserve">
+    <value>الإدارة العامة للضمان الاجتماعي والتعويضات</value>
+  </data>
+  <data name="GDept33" xml:space="preserve">
+    <value>الإدارة العامة للأزمات والإغاثة</value>
+  </data>
+  <data name="GDept4" xml:space="preserve">
+    <value>الإدارة العامة للإعداد الفني والتوجيه</value>
+  </data>
+  <data name="GDept5" xml:space="preserve">
+    <value>الإدارة العامة للتسويق والمعارض</value>
+  </data>
+  <data name="GDept6" xml:space="preserve">
+    <value>الإدارة العامة للتكوين المهني والصناعات الصغيرة</value>
+  </data>
+  <data name="GDept7" xml:space="preserve">
+    <value>الإدارة العامة لتنمية المجتمعات المحلية</value>
+  </data>
+  <data name="GDept8" xml:space="preserve">
+    <value>الإدارة العامة للشئون الهندسية</value>
+  </data>
+  <data name="GDept9" xml:space="preserve">
+    <value>الإدارة العامة للمجتمعات العمرانية الجديدة</value>
+  </data>
+  <data name="Head" xml:space="preserve">
+    <value>رئيس </value>
+  </data>
+  <data name="MR" xml:space="preserve">
+    <value>السيد الاستاذ/</value>
+  </data>
+  <data name="MRS" xml:space="preserve">
+    <value>السيدة الاستاذة/</value>
+  </data>
+  <data name="greet" xml:space="preserve">
+    <value>تحية طيبة .... وبعد</value>
+  </data>
+  <data name="sentCopyText" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالعلم والإحاطة.</value>
+  </data>
+  <data name="sentPhotoCopyTo" xml:space="preserve">
+    <value>صورة مرسلة إلى </value>
+  </data>
+  <data name="Advisor" xml:space="preserve">
+    <value>السيد الأستاذ المستشار/</value>
+  </data>
+  <data name="Advisor2" xml:space="preserve">
+    <value>نائب رئيس هيئة النيابة الإدارية</value>
+  </data>
+  <data name="Advisor3" xml:space="preserve">
+    <value>ومدير </value>
+  </data>
+  <data name="Alexandria" xml:space="preserve">
+    <value>التضامن الاجتماعي بالإسكندرية</value>
+  </data>
+  <data name="Asiut" xml:space="preserve">
+    <value>التضامن الاجتماعي بأسيوط</value>
+  </data>
+  <data name="Aswan" xml:space="preserve">
+    <value>التضامن الاجتماعي بأسوان</value>
+  </data>
+  <data name="BanySwaif" xml:space="preserve">
+    <value>التضامن الاجتماعي ببني سويف</value>
+  </data>
+  <data name="Behera" xml:space="preserve">
+    <value>التضامن الاجتماعي بالبحيرة</value>
+  </data>
+  <data name="Cairo" xml:space="preserve">
+    <value>التضامن الاجتماعي بالقاهرة</value>
+  </data>
+  <data name="Daqahleya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالدقهلية</value>
+  </data>
+  <data name="ElWadyElGadid" xml:space="preserve">
+    <value>التضامن الاجتماعي بالوادي الجديد</value>
+  </data>
+  <data name="Fayoum" xml:space="preserve">
+    <value>التضامن الاجتماعي بالفيوم</value>
+  </data>
+  <data name="Gharbeya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالغربية</value>
+  </data>
+  <data name="Giza" xml:space="preserve">
+    <value>التضامن الاجتماعي بالجيزة</value>
+  </data>
+  <data name="Ismaeileya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالإسماعيلية</value>
+  </data>
+  <data name="KafrElSheikh" xml:space="preserve">
+    <value>التضامن الاجتماعي بكفر الشيخ</value>
+  </data>
+  <data name="Luxor" xml:space="preserve">
+    <value>التضامن الاجتماعي بالأقصر</value>
+  </data>
+  <data name="MarsaMatrouh" xml:space="preserve">
+    <value>التضامن الاجتماعي بمرسى مطروح</value>
+  </data>
+  <data name="Menya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالمنيا</value>
+  </data>
+  <data name="Monofeya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالمنوفية</value>
+  </data>
+  <data name="NorthSinai" xml:space="preserve">
+    <value>التضامن الاجتماعي بشمال سيناء</value>
+  </data>
+  <data name="PortSaid" xml:space="preserve">
+    <value>التضامن الاجتماعي ببور سعيد</value>
+  </data>
+  <data name="Qalyobeya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالقليوبية</value>
+  </data>
+  <data name="Quena" xml:space="preserve">
+    <value>التضامن الاجتماعي بقنا</value>
+  </data>
+  <data name="RedSea" xml:space="preserve">
+    <value>التضامن الاجتماعي بالبحر الأحمر</value>
+  </data>
+  <data name="RegonalManaget" xml:space="preserve">
+    <value>مدير مديرية </value>
+  </data>
+  <data name="Sharqeya" xml:space="preserve">
+    <value>التضامن الاجتماعي بالشرقية</value>
+  </data>
+  <data name="Sohag" xml:space="preserve">
+    <value>التضامن الاجتماعي بسوهاج</value>
+  </data>
+  <data name="SouthSinai" xml:space="preserve">
+    <value>التضامن الاجتماعي بجنوب سيناء</value>
+  </data>
+  <data name="Swez" xml:space="preserve">
+    <value>التضامن الاجتماعي بالسويس</value>
+  </data>
+  <data name="DeptAddress" xml:space="preserve">
+    <value>19 شارع المراغي - العجوزة </value>
+  </data>
+  <data name="History" xml:space="preserve">
+    <value>التاريخ </value>
+  </data>
+  <data name="InvNo" xml:space="preserve">
+    <value>تحقيق رقم </value>
+  </data>
+  <data name="OutCome" xml:space="preserve">
+    <value>صادر </value>
+  </data>
+  <data name="HGC" xml:space="preserve">
+    <value>قطاع الشئون المالية والادارية والتنمية البشرية وشئون المديريات</value>
+  </data>
+  <data name="ApRefRequest" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو التحقيق في الواقعة وموافاتنا برقم القيد القضائي ونتيجة التحقيق حتى يتسنى لنا اتخاذ اللازم.</value>
+  </data>
+  <data name="LblMessage" xml:space="preserve">
+    <value>يجب كتابة أو اختيار رقم التحقيق</value>
+  </data>
+  <data name="LblMessage_1" xml:space="preserve">
+    <value>يجب كتابة الموضوع بشكل واضح</value>
+  </data>
+  <data name="LblMessage_2" xml:space="preserve">
+    <value>يجب كتابة اسم المطلوب حضوره</value>
+  </data>
+  <data name="LblMessage_3" xml:space="preserve">
+    <value>تم تحديد موعد الجلسة بتاريخ سابق</value>
+  </data>
+  <data name="LblMessage_4" xml:space="preserve">
+    <value>سيتم تحديد موعد الجلسة بتاريخ اليوم</value>
+  </data>
+  <data name="Summon" xml:space="preserve">
+    <value>تكليف حضور</value>
+  </data>
+  <data name="Stimulation" xml:space="preserve">
+    <value>برجاء التنبيه على:</value>
+  </data>
+  <data name="ThankYou" xml:space="preserve">
+    <value>شاكرين لسيادتكم حسن تعاونكم معنا</value>
+  </data>
+  <data name="Friday" xml:space="preserve">
+    <value>الجمعة </value>
+  </data>
+  <data name="Monday" xml:space="preserve">
+    <value>الاثنين </value>
+  </data>
+  <data name="Saturday" xml:space="preserve">
+    <value>السبت </value>
+  </data>
+  <data name="StimulationSummon" xml:space="preserve">
+    <value>بضرورة الحضور الى مقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم </value>
+  </data>
+  <data name="StimulationSummon_2" xml:space="preserve">
+    <value>لسماع أقواله في التحقيق رقم </value>
+  </data>
+  <data name="StimulationSummon_3" xml:space="preserve">
+    <value>أمام الأستاذ/</value>
+  </data>
+  <data name="StimulationSummon_4" xml:space="preserve">
+    <value> المحقق بالإدارة</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>الاحد </value>
+  </data>
+  <data name="Thursday" xml:space="preserve">
+    <value>الخميس </value>
+  </data>
+  <data name="Tuesday" xml:space="preserve">
+    <value>الثلاثاء </value>
+  </data>
+  <data name="Wednesday" xml:space="preserve">
+    <value>الاربعاء </value>
+  </data>
+  <data name="LblMessage_5" xml:space="preserve">
+    <value>يجب تحديد تاريخ الإحالة بشكل صحيح</value>
+  </data>
+  <data name="LblMessage_6" xml:space="preserve">
+    <value>يجب كتابة رقم الصادر لاخر اخطار</value>
+  </data>
+  <data name="LblMessage_7" xml:space="preserve">
+    <value>يجب تحديد تاريخ الصادر بشكل صحيح</value>
+  </data>
+  <data name="append" xml:space="preserve">
+    <value>إلحاقا لكتابنا رقم </value>
+  </data>
+  <data name="Dated" xml:space="preserve">
+    <value>بتاريخ</value>
+  </data>
+  <data name="Dated_1" xml:space="preserve">
+    <value>المؤرخ </value>
+  </data>
+  <data name="intensive" xml:space="preserve">
+    <value>بشأن طلب حضور السيد/ </value>
+  </data>
+  <data name="intensive_1" xml:space="preserve">
+    <value>برجاء التفضل بالتنبيه مشددا على المذكور بضرورة الحضور لمقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم </value>
+  </data>
+  <data name="intensive_2" xml:space="preserve">
+    <value>ويخطر بأنه في حالة عدم حضوره سيعتبر متنازلا عن حقه في الدفاع عن نفسه.</value>
+  </data>
+  <data name="GeneralLetter" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم.</value>
+  </data>
+  <data name="InspctionRefererring1" xml:space="preserve">
+    <value>نرسل لسيادتكم مرافقاً لكتابنا هذا ملف وأوراق الفحص رقم</value>
+  </data>
+  <data name="InspctionRefererring2" xml:space="preserve">
+    <value>والمؤشر على مذكرته من معالي الوزيرة بالإحالة للنيابة الإدارية.</value>
+  </data>
+  <data name="InspctionRefererring3" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل باتخاذ اللازم نحو التحقيق في الشكوى محل الفحص وموافاتنا بتاريخ ورقم القيد القضائي ونتيجة التحقيق حتى يتسنى لنا اتخاذ اللازم.</value>
+  </data>
+  <data name="InspctionRefererring4" xml:space="preserve">
+    <value>ملف الفحص رقم </value>
+  </data>
+  <data name="InvestigationRefererring1" xml:space="preserve">
+    <value>نرسل لسيادتكم مرافقاً لكتابنا هذا ملف وأوراق التحقيق رقم</value>
+  </data>
+  <data name="InvestigationRefererring2" xml:space="preserve">
+    <value>والمؤشر على مذكرته من معالي الوزيرة بالإحالة للنيابة الإدارية.</value>
+  </data>
+  <data name="InvestigationRefererring3" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل باتخاذ اللازم نحو التحقيق في الواقعة وموافاتنا بتاريخ ورقم القيد القضائي ونتيجة التحقيق حتى يتسنى لنا اتخاذ اللازم.</value>
+  </data>
+  <data name="InvestigationRefererring4" xml:space="preserve">
+    <value>ملف التحقيق رقم </value>
+  </data>
+  <data name="IssuanceRescript1" xml:space="preserve">
+    <value>إيماءً إلى كتاب هيئة النيابة الإدارية </value>
+  </data>
+  <data name="IssuanceRescript2" xml:space="preserve">
+    <value>والمرفق به قرار لجنة التأديب رقم </value>
+  </data>
+  <data name="IssuanceRescript3" xml:space="preserve">
+    <value>والصادر بنتيجة التصرف في القضية رقم </value>
+  </data>
+  <data name="IssuanceRescript4" xml:space="preserve">
+    <value>نرسل مرافقاً لكتابنا هذا مشروع القرار التنفيذي طبقاً لما انتهى إليه رأي النيابة الإدارية في القضية المشار إليها.</value>
+  </data>
+  <data name="IssuanceRescript5" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو استصدار قرار تنفيذي بنتيجة التصرف في القضية المشار إليها طبقا لمشروع القرار المرفق مشفوعا بتوقيع المخالف بالاسم الثلاثي بما يفيد العلم بهذا القرار وتاريخه وذلك طبقاً لطلب النيابة.</value>
+  </data>
+  <data name="IssuanceRescript6" xml:space="preserve">
+    <value>المسطر بعالية صورة ما أرسل إلى الإدارة وذلك بالإشارة إلى كتابكم رقم </value>
+  </data>
+  <data name="IssuanceRescript7" xml:space="preserve">
+    <value>وسوف نوافيكم بالمطلوب فور وروده إلينا.</value>
+  </data>
+  <data name="RescriptSent1" xml:space="preserve">
+    <value>بالإشارة إلى كتابكم رقم </value>
+  </data>
+  <data name="RescriptSent2" xml:space="preserve">
+    <value>والمرفق به قرار لجنة التأديب رقم </value>
+  </data>
+  <data name="RescriptSent3" xml:space="preserve">
+    <value>بشأن القضية رقم </value>
+  </data>
+  <data name="RescriptSent4" xml:space="preserve">
+    <value>والمقيدة ضد / </value>
+  </data>
+  <data name="RescriptSent5" xml:space="preserve">
+    <value>نرسل مرافقاً لكتابنا هذا صورة ضوئية من القرار رقم </value>
+  </data>
+  <data name="RescriptSent6" xml:space="preserve">
+    <value>والصادر بنتيجة التصرف في القضية المشار اليها موقعا عليه ثلاثيا من المخالف بما يفيد العلم.</value>
+  </data>
+  <data name="RescriptSent7" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالعلم والاحاطة واتخاذ اللازم.</value>
+  </data>
+  <data name="ForYear" xml:space="preserve">
+    <value>لسنة</value>
+  </data>
+  <data name="LblMessage_8" xml:space="preserve">
+    <value>يجب ملء الحقول الخالية والتأكد من صحة التواريخ</value>
+  </data>
+  <data name="Num" xml:space="preserve">
+    <value>رقم</value>
+  </data>
+  <data name="LblMessage_9" xml:space="preserve">
+    <value>يجب كتابة او اختيار رقم التحقيق</value>
+  </data>
+  <data name="LblMessage_10" xml:space="preserve">
+    <value>يجب كتابة او اختيار رقم الفحص</value>
+  </data>
+  <data name="LblMessage_11" xml:space="preserve">
+    <value>يجب ملء الحقول الخالية </value>
+  </data>
+  <data name="GeneralRequest" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>بشأن</value>
+  </data>
+  <data name="EditedIn" xml:space="preserve">
+    <value>تحريرا في:</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>تكليف بمأمورية</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>الموضوع</value>
+  </data>
+  <data name="EmpName" xml:space="preserve">
+    <value>اسم الموظف:</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="Mission1" xml:space="preserve">
+    <value>الوظيفة:</value>
+  </data>
+  <data name="Mission2" xml:space="preserve">
+    <value>المستوى الوظيفي:</value>
+  </data>
+  <data name="Mission3" xml:space="preserve">
+    <value>الإدارة التابع لها الموظف:</value>
+  </data>
+  <data name="Mission4" xml:space="preserve">
+    <value>جهة تنفيذ المأمورية:</value>
+  </data>
+  <data name="Mission5" xml:space="preserve">
+    <value>عنوان جهة المأمورية:</value>
+  </data>
+  <data name="Mission6" xml:space="preserve">
+    <value>الغرض من المأمورية:</value>
+  </data>
+  <data name="Mission7" xml:space="preserve">
+    <value>مدة المأمورية:</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>إلى</value>
+  </data>
+  <data name="NominationLetter1" xml:space="preserve">
+    <value>والمتضمن طلب ترشيح أحد أعضاء الإدارة للاشتراك في اعمال اللجنة المزمع تشكيلها.</value>
+  </data>
+  <data name="NominationLetter2" xml:space="preserve">
+    <value>نحيط علم سيادتكم بأن الإدارة قد رشحت الأستاذ/</value>
+  </data>
+  <data name="NominationLetter3" xml:space="preserve">
+    <value>الباحث القانوني بالإدارة للاشتراك في اعمال تلك اللجنة.</value>
+  </data>
+  <data name="NominationLetter4" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو موافاتنا بصورة من قرار تشكيل اللجنة المشار اليها حتى يتسنى لنا اتخاذ اللازم.</value>
+  </data>
+  <data name="Agreement" xml:space="preserve">
+    <value>المطلوب</value>
+  </data>
+  <data name="Gazzette" xml:space="preserve">
+    <value>الوقائع</value>
+  </data>
+  <data name="Minister" xml:space="preserve">
+    <value>وزير التضامن الاجتماعي</value>
+  </data>
+  <data name="Openion" xml:space="preserve">
+    <value>الرأي</value>
+  </data>
+  <data name="ProcAndResult" xml:space="preserve">
+    <value>الاجراء والنتيجة</value>
+  </data>
+  <data name="TableNote1" xml:space="preserve">
+    <value>مذكرة للعرض</value>
+  </data>
+  <data name="TableNote2" xml:space="preserve">
+    <value>تفضل معاليكم بالموافقة علي</value>
+  </data>
+  <data name="TableNote3" xml:space="preserve">
+    <value>تفضل سيادتكم بالموافقة علي</value>
+  </data>
+  <data name="TableNote4" xml:space="preserve">
+    <value>وتفضلوا معاليكم بقبول وافر التحية والتقدير..</value>
+  </data>
+  <data name="TableNote5" xml:space="preserve">
+    <value>وتفضلوا سيادتكم بقبول وافر التحية والتقدير..</value>
+  </data>
+  <data name="Thanks" xml:space="preserve">
+    <value>مع الشكر</value>
+  </data>
+  <data name="CeaseNote1" xml:space="preserve">
+    <value>في التحقيق رقم</value>
+  </data>
+  <data name="CeaseNote10" xml:space="preserve">
+    <value>وحيث أن هذا التصرف من جانبه يعد إخلالا بواجباته الوظيفية مما يشكل في حقه ذنباً إدارياً يستوجب مؤاخذته عليه تأديبياً طبقاً لنص المواد 46، 58، 61، 62 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016.</value>
+  </data>
+  <data name="CeaseNote11" xml:space="preserve">
+    <value>لذلك وتأسيساً على ما تقدم:</value>
+  </data>
+  <data name="CeaseNote12" xml:space="preserve">
+    <value>تتشرف الإدارة بإحالة الأوراق إلي السيد الأستاذ</value>
+  </data>
+  <data name="CeaseNote13" xml:space="preserve">
+    <value>لاتخاذ اللازم نحو</value>
+  </data>
+  <data name="CeaseNote14" xml:space="preserve">
+    <value> قيد الواقعة مخالفة إدارية طبقاً لنص للمواد 46، 58، 61، 62 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016</value>
+  </data>
+  <data name="CeaseNote15" xml:space="preserve">
+    <value>ضد</value>
+  </data>
+  <data name="CeaseNote16" xml:space="preserve">
+    <value>لأنه في غضون</value>
+  </data>
+  <data name="CeaseNote17" xml:space="preserve">
+    <value>بوصفه السابق وبدائرة عمله المشار اليها</value>
+  </data>
+  <data name="CeaseNote18" xml:space="preserve">
+    <value>على النحو الوارد تفصيلا بالتحقيق.</value>
+  </data>
+  <data name="CeaseNote19" xml:space="preserve">
+    <value> مجازاة المذكور إداريا لما نسب إليه.</value>
+  </data>
+  <data name="CeaseNote2" xml:space="preserve">
+    <value>توجز الواقعة فيما تضمنه كتاب</value>
+  </data>
+  <data name="CeaseNote20" xml:space="preserve">
+    <value> احتساب</value>
+  </data>
+  <data name="CeaseNote21" xml:space="preserve">
+    <value>انقطاع عن العمل بدون إذن وبدون أجر.</value>
+  </data>
+  <data name="CeaseNote22" xml:space="preserve">
+    <value>التوصية بأعمال ما جاء بلائحة الجزاءات الصادرة بالقرار الوزاري رقم 252/96 في بندها الأول الخاص بمواعيد العمل الرسمية المخالفة رقم (3) والتي حددت الحد الأدنى للانقطاع عن العمل بدون إذن أو عذر مقبول بالإنذار والحد الأقصى بخصم عشرة أيام من الراتب.</value>
+  </data>
+  <data name="CeaseNote23" xml:space="preserve">
+    <value>من العاملين ب</value>
+  </data>
+  <data name="CeaseNote3" xml:space="preserve">
+    <value>وما ارفق به من أوراق والمحال الى هذه الإدارة للتحقيق في</value>
+  </data>
+  <data name="CeaseNote4" xml:space="preserve">
+    <value>وبسؤال/</value>
+  </data>
+  <data name="CeaseNote5" xml:space="preserve">
+    <value>وحيث أنه تم الاطلاع على المستندات الاتية:</value>
+  </data>
+  <data name="CeaseNote6" xml:space="preserve">
+    <value>وحيث يبين من العرض السابق للواقعة أنه نسب إلى /</value>
+  </data>
+  <data name="CeaseNote7" xml:space="preserve">
+    <value>انقطاعه عن العمل </value>
+  </data>
+  <data name="CeaseNote8" xml:space="preserve">
+    <value>بدون اذن</value>
+  </data>
+  <data name="CeaseNote9" xml:space="preserve">
+    <value>علما بإن المذكور ليس لديه رصيد من الاجازات العارضة او الاعتيادية عن العام الحالي</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>مذكرة</value>
+  </data>
+  <data name="CeaseNote24" xml:space="preserve">
+    <value>عما هو منسوب اليه من</value>
+  </data>
+  <data name="CeaseNote25" xml:space="preserve">
+    <value>وحيث ان هذه المخالفة ثابتة في حقه من واقع اعترافه شخصيا بذلك ولا وجه لما تعلل به من أسباب لم يعززها بدليل يساندها.</value>
+  </data>
+  <data name="CeaseNote26" xml:space="preserve">
+    <value>انقطع عن العمل </value>
+  </data>
+  <data name="Fifth" xml:space="preserve">
+    <value>خامسا: -</value>
+  </data>
+  <data name="First" xml:space="preserve">
+    <value>اولاً: -</value>
+  </data>
+  <data name="Fourth" xml:space="preserve">
+    <value>رابعا: -</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>ثانيا: -</value>
+  </data>
+  <data name="Seventh" xml:space="preserve">
+    <value>سابعا: -</value>
+  </data>
+  <data name="Sixth" xml:space="preserve">
+    <value>سادسا: -</value>
+  </data>
+  <data name="Third" xml:space="preserve">
+    <value>ثالثا: -</value>
+  </data>
+  <data name="AffairsSector" xml:space="preserve">
+    <value>قطاع الشئون</value>
+  </data>
+  <data name="DraftResolution1" xml:space="preserve">
+    <value>قرار</value>
+  </data>
+  <data name="DraftResolution10" xml:space="preserve">
+    <value>وبناءً على ما عرضه علينا السيد الأستاذ / مدير عام</value>
+  </data>
+  <data name="DraftResolution11" xml:space="preserve">
+    <value>قررنا</value>
+  </data>
+  <data name="DraftResolution12" xml:space="preserve">
+    <value>المادة الأولى</value>
+  </data>
+  <data name="DraftResolution13" xml:space="preserve">
+    <value>المادة الثانية</value>
+  </data>
+  <data name="DraftResolution14" xml:space="preserve">
+    <value>المادة الثالثة</value>
+  </data>
+  <data name="DraftResolution15" xml:space="preserve">
+    <value>المادة الرابعة</value>
+  </data>
+  <data name="DraftResolution16" xml:space="preserve">
+    <value>المادة الخامسة</value>
+  </data>
+  <data name="DraftResolution17" xml:space="preserve">
+    <value>المادة السادسة</value>
+  </data>
+  <data name="DraftResolution18" xml:space="preserve">
+    <value>المادة السابعة</value>
+  </data>
+  <data name="DraftResolution19" xml:space="preserve">
+    <value>المادة الثامنة</value>
+  </data>
+  <data name="DraftResolution2" xml:space="preserve">
+    <value>بعد الاطلاع على قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016 ولائحته التنفيذية.</value>
+  </data>
+  <data name="DraftResolution20" xml:space="preserve">
+    <value>المادة التاسعة</value>
+  </data>
+  <data name="DraftResolution21" xml:space="preserve">
+    <value>المادة العاشرة</value>
+  </data>
+  <data name="DraftResolution22" xml:space="preserve">
+    <value>على جميع الجهات المختصة تنفيذ هذا القرار كل فيما يخصه.</value>
+  </data>
+  <data name="DraftResolution3" xml:space="preserve">
+    <value>وعلى قرار رئيس الجمهورية</value>
+  </data>
+  <data name="DraftResolution4" xml:space="preserve">
+    <value>بشأن التشكيل الوزاري الحالي.</value>
+  </data>
+  <data name="DraftResolution5" xml:space="preserve">
+    <value>وعلى القرار الوزاري رقم 252 / 96 بشأن لائحة الجزاءات التأديبية للعاملين بديوان عام الوزارة.</value>
+  </data>
+  <data name="DraftResolution6" xml:space="preserve">
+    <value>وعلى كتاب</value>
+  </data>
+  <data name="DraftResolution7" xml:space="preserve">
+    <value>والمرفق به مذكرة التحقيق الإداري</value>
+  </data>
+  <data name="DraftResolution8" xml:space="preserve">
+    <value>والمقيد ضد /</value>
+  </data>
+  <data name="DraftResolution9" xml:space="preserve">
+    <value>في الموضوع الموضح فيما بعد.</value>
+  </data>
+  <data name="DraftResolution23" xml:space="preserve">
+    <value>مجازاة المذكور إداريا لما نسب إليه بخصم          </value>
+  </data>
+  <data name="DraftResolution24" xml:space="preserve">
+    <value>من الراتب.</value>
+  </data>
+  <data name="Organisation" xml:space="preserve">
+    <value>هيئة</value>
+  </data>
+  <data name="Inspection" xml:space="preserve">
+    <value>فحص</value>
+  </data>
+  <data name="Investigation" xml:space="preserve">
+    <value>تحقيق</value>
+  </data>
+  <data name="Rush" xml:space="preserve">
+    <value>إستعجال في ال</value>
+  </data>
+  <data name="Cease" xml:space="preserve">
+    <value>إنقطاع</value>
+  </data>
+  <data name="CeaseNote27" xml:space="preserve">
+    <value>عن العمل</value>
+  </data>
+  <data name="InvestInquiry1" xml:space="preserve">
+    <value>بمناسبة التحقيق الإداري رقم</value>
+  </data>
+  <data name="InvestInquiry2" xml:space="preserve">
+    <value>والذي تجريه الإدارة بشأن</value>
+  </data>
+  <data name="InvestInquiry3" xml:space="preserve">
+    <value>برجاء بعد الاطلاع التفضل بالتنبيه باتخاذ اللازم نحو موافاتنا</value>
+  </data>
+  <data name="Attached" xml:space="preserve">
+    <value>(مرفق)</value>
+  </data>
+  <data name="Inspection1" xml:space="preserve">
+    <value>بمناسبة الفحص</value>
+  </data>
+  <data name="Subject2" xml:space="preserve">
+    <value>تم قيد الموضوع لدى الإدارة بال</value>
+  </data>
+  <data name="AssignmentDate" xml:space="preserve">
+    <value>تاريخ الإحالة</value>
+  </data>
+  <data name="LastProcedure" xml:space="preserve">
+    <value>اخر إجراء</value>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>إستيفاء</value>
+  </data>
+  <data name="IntensiveNotification" xml:space="preserve">
+    <value>إخطار مشدد</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>إخطار</value>
+  </data>
+  <data name="RegularNote1" xml:space="preserve">
+    <value>قيد الواقعة مخالفة إدارية طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016</value>
+  </data>
+  <data name="RegularNote2" xml:space="preserve">
+    <value>وحيث أن هذا التصرف من جانبه يعد إخلالا بواجباته الوظيفية مما يشكل في حقه ذنباً إدارياً يستوجب مؤاخذته عليه تأديبياً طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016.</value>
+  </data>
+  <data name="RegularNote3" xml:space="preserve">
+    <value>التوصية بأعمال ما جاء بلائحة الجزاءات الصادرة بالقرار الوزاري رقم 252/96 في بندها</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>ومعه</value>
+  </data>
+  <data name="RefLetter" xml:space="preserve">
+    <value>خطاب إحالة للنيابة الإدارية</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="APResSent" xml:space="preserve">
+    <value>خطاب ارسال قرار للنيابة</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>إجراء</value>
+  </data>
+  <data name="ProcedureIn" xml:space="preserve">
+    <value>إجراء في ال</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>قضية</value>
+  </data>
+</root>

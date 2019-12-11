@@ -442,7 +442,7 @@
     <value>تكليف حضور</value>
   </data>
   <data name="Stimulation" xml:space="preserve">
-    <value>برجاء التنبيه بالحضور على:</value>
+    <value>برجاء التنبيه على:</value>
   </data>
   <data name="ThankYou" xml:space="preserve">
     <value>شاكرين لسيادتكم حسن تعاونكم معنا</value>
@@ -457,7 +457,7 @@
     <value>السبت </value>
   </data>
   <data name="StimulationSummon" xml:space="preserve">
-    <value>بالحضور لمقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم </value>
+    <value>بضرورة الحضور الى مقر إدارة التحقيقات بالعنوان أعلاه في العاشرة صباح يوم </value>
   </data>
   <data name="StimulationSummon_2" xml:space="preserve">
     <value>لسماع أقواله في التحقيق رقم </value>
@@ -896,5 +896,56 @@
   </data>
   <data name="Subject2" xml:space="preserve">
     <value>تم قيد الموضوع لدى الإدارة بال</value>
+  </data>
+  <data name="AssignmentDate" xml:space="preserve">
+    <value>تاريخ الإحالة</value>
+  </data>
+  <data name="LastProcedure" xml:space="preserve">
+    <value>اخر إجراء</value>
+  </data>
+  <data name="Inquiry" xml:space="preserve">
+    <value>إستيفاء</value>
+  </data>
+  <data name="IntensiveNotification" xml:space="preserve">
+    <value>إخطار مشدد</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>إخطار</value>
+  </data>
+  <data name="RegularNote1" xml:space="preserve">
+    <value>قيد الواقعة مخالفة إدارية طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016</value>
+  </data>
+  <data name="RegularNote2" xml:space="preserve">
+    <value>وحيث أن هذا التصرف من جانبه يعد إخلالا بواجباته الوظيفية مما يشكل في حقه ذنباً إدارياً يستوجب مؤاخذته عليه تأديبياً طبقاً لنص للمادة 58 من قانون الخدمة المدنية الصادر بالقانون رقم 81 لسنة 2016.</value>
+  </data>
+  <data name="RegularNote3" xml:space="preserve">
+    <value>التوصية بأعمال ما جاء بلائحة الجزاءات الصادرة بالقرار الوزاري رقم 252/96 في بندها</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>خطأ</value>
+  </data>
+  <data name="With" xml:space="preserve">
+    <value>ومعه</value>
+  </data>
+  <data name="RefLetter" xml:space="preserve">
+    <value>خطاب إحالة للنيابة الإدارية</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
+  <data name="APResSent" xml:space="preserve">
+    <value>خطاب ارسال قرار للنيابة</value>
+  </data>
+  <data name="Procedure" xml:space="preserve">
+    <value>إجراء</value>
+  </data>
+  <data name="ProcedureIn" xml:space="preserve">
+    <value>إجراء في ال</value>
+  </data>
+  <data name="Case" xml:space="preserve">
+    <value>قضية</value>
+  </data>
+  <data name="APIssuance" xml:space="preserve">
+    <value>خطاب استصدار قرار نيابة</value>
   </data>
 </root>
